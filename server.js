@@ -1,11 +1,12 @@
 //Require environment variables
-require('dotenv').config()
+require("dotenv").config();
 
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+const authenticatedRoutes = require("./routes/authenticated-html-routes");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -23,6 +24,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// THis is the authenticate router we built with Bobby
+app.use("/authenticated", authenticatedRoutes);
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
