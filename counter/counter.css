@@ -1,0 +1,27 @@
+body {
+    background-color: #3A5772;
+}
+
+#counter {
+    max-width: 500px;
+    margin: 35px auto;
+    opacity: 0.9;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+}
+
+#responsive-chart {
+    grid-column: 2/span 10;
+    grid-row: 1;
+    z-index: 1;
+}
+
+#mtn-img {
+    max-height: 100px;
+    grid-column: 4/span 5;
+    grid-row: 1;
+    margin-top: 60px;
+    margin-left: 10px;
+    width: 95%;
+}
