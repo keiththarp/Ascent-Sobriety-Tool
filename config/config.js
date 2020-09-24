@@ -2,7 +2,7 @@ module.exports = {
   development: {
     username: DB_USER,
     password: DB_PASS,
-    database: "passport_demo",
+    database: "ascent_db",
     host: "127.0.0.1",
     dialect: "mysql"
   },
