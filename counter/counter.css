@@ -1,5 +1,14 @@
 body {
-    background-color: #3A5772;
+    background-color: #537899;
+}
+
+div.mtn-logo-top {
+    height: 8vw;
+}
+
+img.mtn-logo {
+    margin-top: 5px;;
+    height: 100%;
 }
 
 #counter {
@@ -18,10 +27,54 @@ body {
 }
 
 #mtn-img {
-    max-height: 100px;
-    grid-column: 4/span 5;
+    grid-column: 4/span 6;
     grid-row: 1;
-    margin-top: 60px;
+    /* margin-left: 10px; */
+    width: 100%;
+}
+
+div.days-until {
+    color: white;
+    background-color: #3A5772;
+    width: 65%;
+    /* padding: 5px; */
+    border-radius: 10px;
+}
+
+div.days-until p {
+    margin: .25rem 0;
+    font-size: 3vw;
+    width: 100%;
+}
+
+span.star {
+    color: yellow;
+    font-size: 5vw;
     margin-left: 10px;
-    width: 95%;
+}
+
+
+
+@media screen and (min-width: 600px) {
+    div.mtn-logo-top {
+        height: 5vw;
+    }
+
+    div.days-until {
+        width: 50%;
+    }
+
+    div.days-until p {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    div.mtn-logo-top {
+        height: 4vw;
+    }
+
+    div.days-until p {
+        font-size: 2vw;
+    }
 }
