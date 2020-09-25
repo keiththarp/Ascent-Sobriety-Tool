@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     authorId: {
-      type: DataTypes.TEXT,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
 
