@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false
+      allowNull: false,
+      autoIncrement: true
     },
 
     authorId: {
@@ -14,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
-      len: [1]
+      len: [1, 144]
     },
 
     feeling: {
