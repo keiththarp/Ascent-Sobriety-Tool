@@ -35,7 +35,7 @@ db.Sequelize = Sequelize;
 
 //Relations
 
-db.Post.belongsTo(db.User);
-db.User.hasMany(db.Post);
+db.Post.belongsTo(db.User, {targetKey: 'id'});
+db.User.hasMany(db.Post, {foreignKey: 'authorId'});
 
 module.exports = db;
