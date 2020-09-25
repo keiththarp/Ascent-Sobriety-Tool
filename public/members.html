@@ -9,73 +9,87 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Peddana&family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
   <link rel="icon" href="img/logo.png">
   <link href="stylesheets/members.css" rel="stylesheet">
   <title>Ascent</title>
 </head>
 
-<body class="background">
-
+<body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg" role="navigation">
     <!-- Logo -->
     <div class="navbar-brand text-center">
       <img SRC="img/logo-white.png" alt="mountain logo" class="logo">
-      <h1>Ascent</h1>
+      <h1>ASCENT</h1>
     </div>
-    <!-- toggle button -->
+    <!-- toggle icon -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuList"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+    <!-- menu list -->
     <div class="collapse navbar-collapse" id="menuList">
       <ul class="navbar-nav my-2 my-lg-0">
-        <li class="nav-item active">
+        <!-- resources -->
+        <li class="nav-item">
           <a class="nav-link" href="/">
             resources
           </a>
         </li>
-        <li class="nav-item active">
+        <!-- articles -->
+        <li class="nav-item">
           <a class="nav-link" href="/">
             articles
           </a>
         </li>
-        <li class="nav-item active">
+        <!-- logout -->
+        <li class="nav-item">
           <a class="nav-link" href="/logout">
             logout
           </a>
         </li>
     </div>
   </nav>
+
+  <!-- Members Main Content -->
   <div class="main-content">
 
-    <h2 class="user-name">Welcome <span class="member-name">User</span></h2>
+    <!-- Welcome Header -->
+    <header>
+      <h2 class="user-name">WELCOME <span class="member-name">USER</span></h2>
+    </header>
 
+    <!-- Mood Emoji Box -->
     <div class="box mood-box">
       <h4 class="mood-title">How are you feeling today?</h4>
       <div class="mood-buttons">
         <div class="mood-label">
-          <button type="button" class="btn mood" id="mood1">1</button>
+          <button type="button" class="btn mood" id="mood1" aria-label="really-sad"><span>1</span></button>
           <p>low</p>
         </div>
-        <button type="button" class="btn mood" id="mood2">2</button>
-        <button type="button" class="btn mood" id="mood3">3</button>
-        <button type="button" class="btn mood" id="mood4">4</button>
+        <button type="button" class="btn mood" id="mood2" aria-label="sad"><span>2</span></button>
+        <button type="button" class="btn mood" id="mood3" aria-label="indifferent"><span>3</span></button>
+        <button type="button" class="btn mood" id="mood4" aria-label="happy"><span>4</span></button>
         <div class="mood-label">
-          <button type="button" class="btn mood" id="mood5">5</button>
+          <button type="button" class="btn mood" id="mood5" aria-label="really-happy"><span>5</span></button>
           <p>high</p>
         </div>
       </div>
     </div>
 
+    <!-- Written Check In -->
     <div class="box">
+      <!-- Title -->
       <h4 class="checkin-title">Check In:</h4>
       <form>
+        <!-- Text Input -->
         <input type="text" placeholder="Today was really...">
-        <div class="remember">
+        <!-- Sobriety Check -->
+        <div class="checkbox">
           <input type="checkbox" value="soberYN"> <label for="soberYN">Didn't Drink</label>
         </div>
+        <!-- Submit Btn -->
         <button class="btn sober-btn">Submit</button>
       </form>
     </div>
