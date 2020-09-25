@@ -1,0 +1,2 @@
+INSERT INTO `users` (`id`, `email`, `password`, `name`, `soberSince`, `stars`, `nextBadge`, `createdAt`, `updatedAt`) VALUES (1, 'sample1@gmail.com', 'password', 'username1', '2020-09-25 13:03:44', 5, '2020-09-30 13:03:49', '2020-09-25 13:04:18', '2020-09-25 13:04:25');
+INSERT INTO `users` (`id`, `email`, `password`, `name`, `soberSince`, `stars`, `nextBadge`, `createdAt`, `updatedAt`) VALUES (2, 'sample2@gmail.com', 'password', 'username2', '2020-09-25 13:05:03', 3, '2020-09-30 13:05:08', '2020-09-25 13:05:19', '2020-09-25 13:05:28');

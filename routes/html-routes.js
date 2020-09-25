@@ -19,4 +19,12 @@ module.exports = function (app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
+
+  app.get("/post", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/post");
+    }
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
 };
