@@ -33,4 +33,9 @@ Object.keys(db).forEach(function (modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+//Relations
+
+db.Post.belongsTo(db.User);
+db.User.hasMany(db.Post);
+
 module.exports = db;
