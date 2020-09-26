@@ -5,10 +5,10 @@ const router = require("express").Router();
 
 const passport = require("../config/passport");
 
-const postRoutes = require("./post-routes");
+const checkInRoutes = require("./checkin-routes");
 
 // Consider changing to checkIn
-router.use(postRoutes);
+router.use(checkInRoutes);
 
 // Using the passport.authenticate middleware with our local strategy.
 // If the user has valid login credentials, send them to the members page.
@@ -65,4 +65,20 @@ router.get("/user_data", (req, res) => {
 //   }
 // });
 
+//   // template for app.post to make sure post is working in postman
+//   router.post("/user_data", (req, res) => {
+//     if (!req.user) {
+//       res.json({});
+//     } else {
+//       res.json({
+//         id: res.user.id,
+//         email: res.user.email,
+//         name: res.user.name,
+//         soberSince: res.user.soberSince,
+//         stars: res.user.stars,
+//         nextBadge: res.user.nextBadge
+//       });
+//     }
+//   });
+// };
 module.exports = router;
