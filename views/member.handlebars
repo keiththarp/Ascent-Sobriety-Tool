@@ -1,78 +1,89 @@
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg" role="navigation">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" role="navigation">
     <!-- Logo -->
     <div class="navbar-brand text-center">
-        <img SRC="img/logo-white.png" alt="mountain logo" class="logo">
-        <h1>ASCENT</h1>
+      <img SRC="img/logo-white.png" alt="mountain logo" class="logo">
+      <h1>ASCENT</h1>
     </div>
     <!-- toggle icon -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuList"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <!-- menu list -->
     <div class="collapse navbar-collapse" id="menuList">
-        <ul class="navbar-nav my-2 my-lg-0">
-            <!-- resources -->
-            <li class="nav-item">
-                <a class="nav-link" href="/">
-                    resources
-                </a>
-            </li>
-            <!-- articles -->
-            <li class="nav-item">
-                <a class="nav-link" href="/">
-                    articles
-                </a>
-            </li>
-            <!-- logout -->
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">
-                    logout
-                </a>
-            </li>
+      <ul class="navbar-nav my-2 my-lg-0">
+        <!-- resources -->
+        <li class="nav-item">
+          <a class="nav-link" href="resources.html">
+            resources
+          </a>
+        </li>
+        <!-- journal -->
+        <li class="nav-item active">
+          <a class="nav-link" href="journal.html">
+            journal
+          </a>
+        </li>
+        <!-- logout button -->
+        <button type="button" class="btn btn-outline-light nav-link">
+          logout
+        </button>
+      </ul>
     </div>
-</nav>
+  </nav>
 
-<!-- Members Main Content -->
-<div class="main-content">
+  <!-- Members Main Content -->
+  <div class="main-content">
 
     <!-- Welcome Header -->
     <header>
-        <h2 class="user-name">WELCOME <span class="member-name">USER</span></h2>
+      <h2 class="welcome-title">Hi there, {{name}}!</h2>
     </header>
 
     <!-- Mood Emoji Box -->
     <div class="box mood-box">
-        <h4 class="mood-title">How are you feeling today?</h4>
-        <div class="mood-buttons">
-            <div class="mood-label">
-                <button type="button" class="btn mood" id="mood1" aria-label="really-sad"><span>1</span></button>
-                <p>low</p>
-            </div>
-            <button type="button" class="btn mood" id="mood2" aria-label="sad"><span>2</span></button>
-            <button type="button" class="btn mood" id="mood3" aria-label="indifferent"><span>3</span></button>
-            <button type="button" class="btn mood" id="mood4" aria-label="happy"><span>4</span></button>
-            <div class="mood-label">
-                <button type="button" class="btn mood" id="mood5" aria-label="really-happy"><span>5</span></button>
-                <p>high</p>
-            </div>
+      <h4 class="mood-title">How are you feeling today?</h4>
+      <div class="mood-buttons">
+        <div class="mood-label">
+          <button type="button" class="btn mood active" id="mood1" aria-pressed="true"
+            aria-label="really-sad"><span>1</span></button>
+          <p>low</p>
         </div>
+        <button type="button" class="btn mood" id="mood2" aria-pressed="true"
+          aria-label="sad"><span>2</span></button>
+        <button type="button" class="btn mood" id="mood3" aria-pressed="true"
+          aria-label="indifferent"><span>3</span></button>
+        <button type="button" class="btn mood" id="mood4" aria-pressed="true"
+          aria-label="happy"><span>4</span></button>
+        <div class="mood-label">
+          <button type="button" class="btn mood" id="mood5" aria-pressed="true"
+            aria-label="really-happy"><span>5</span></button>
+          <p>high</p>
+        </div>
+      </div>
     </div>
 
     <!-- Written Check In -->
     <div class="box">
-        <!-- Title -->
-        <h4 class="checkin-title">Check In:</h4>
-        <form>
-            <!-- Text Input -->
-            <input type="text" placeholder="Today was really...">
-            <!-- Sobriety Check -->
-            <div class="checkbox">
-                <input type="checkbox" value="soberYN"> <label for="soberYN">Didn't Drink</label>
-            </div>
-            <!-- Submit Btn -->
-            <button class="btn sober-btn">Submit</button>
-        </form>
+      <!-- Title -->
+      <h4 class="checkin-title">Check In:</h4>
+      <form>
+        <!-- Text Input -->
+        <input type="text" placeholder="Today was really...">
+        <!-- Sobriety Check -->
+        <div class="checkbox">
+          <input type="checkbox" value="soberYN"> <label for="soberYN">Didn't Drink</label>
+        </div>
+        <!-- Submit Btn -->
+        <button class="btn sober-btn">Submit</button>
+      </form>
     </div>
-</div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/members.js"></script>

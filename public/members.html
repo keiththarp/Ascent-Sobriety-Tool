@@ -33,22 +33,21 @@
       <ul class="navbar-nav my-2 my-lg-0">
         <!-- resources -->
         <li class="nav-item">
-          <a class="nav-link" href="/">
+          <a class="nav-link" href="resources.html">
             resources
           </a>
         </li>
-        <!-- articles -->
-        <li class="nav-item">
-          <a class="nav-link" href="/">
-            articles
+        <!-- journal -->
+        <li class="nav-item active">
+          <a class="nav-link" href="journal.html">
+            journal
           </a>
         </li>
-        <!-- logout -->
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">
-            logout
-          </a>
-        </li>
+        <!-- logout button -->
+        <button type="button" class="btn btn-outline-light nav-link">
+          logout
+        </button>
+      </ul>
     </div>
   </nav>
 
@@ -57,7 +56,7 @@
 
     <!-- Welcome Header -->
     <header>
-      <h2 class="user-name">WELCOME <span class="member-name">USER</span></h2>
+      <h2 class="welcome-title">Hi there, <span class="member-name">Aiden</span>!</h2>
     </header>
 
     <!-- Mood Emoji Box -->
@@ -65,14 +64,19 @@
       <h4 class="mood-title">How are you feeling today?</h4>
       <div class="mood-buttons">
         <div class="mood-label">
-          <button type="button" class="btn mood" id="mood1" aria-label="really-sad"><span>1</span></button>
+          <button type="button" class="btn mood active" id="mood1" aria-pressed="true"
+            aria-label="really-sad"><span>1</span></button>
           <p>low</p>
         </div>
-        <button type="button" class="btn mood" id="mood2" aria-label="sad"><span>2</span></button>
-        <button type="button" class="btn mood" id="mood3" aria-label="indifferent"><span>3</span></button>
-        <button type="button" class="btn mood" id="mood4" aria-label="happy"><span>4</span></button>
+        <button type="button" class="btn mood" id="mood2" aria-pressed="true"
+          aria-label="sad"><span>2</span></button>
+        <button type="button" class="btn mood" id="mood3" aria-pressed="true"
+          aria-label="indifferent"><span>3</span></button>
+        <button type="button" class="btn mood" id="mood4" aria-pressed="true"
+          aria-label="happy"><span>4</span></button>
         <div class="mood-label">
-          <button type="button" class="btn mood" id="mood5" aria-label="really-happy"><span>5</span></button>
+          <button type="button" class="btn mood" id="mood5" aria-pressed="true"
+            aria-label="really-happy"><span>5</span></button>
           <p>high</p>
         </div>
       </div>
@@ -94,16 +98,6 @@
       </form>
     </div>
   </div>
-  <!-- <div class="swipeView box">
-      <section class="green">
-      </section>
-      <section class="purple">
-
-      </section>
-      <section class="orange">
-
-      </section>
-    </div> -->
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
