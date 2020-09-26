@@ -1,52 +1,81 @@
-// const express = require("express");
-
+const router = require("express").Router();
 const db = require("../models");
 
-// const router = require("./authenticated-html-routes");
-module.exports = function(app) {
-  // RETREIVES SINGLE POST BY POST ID
+// const isAuthenticated = require("../config/middleware/isAuthenticated");
+// router.use("/", isAuthenticated);
 
-  app.get("/api/checkIn/:id", (req, res) => {
-    db.CheckIn.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(dbCheckIn => {
-      res.json(dbCheckIn);
-    });
+// get method to retrieve past journal entries in the server
+router.get("/post", (req, res) => {
+  console.log("made it here!");
+  if (!req.user) {
+    res.json({});
+  } else {
+    // turned result to string just for testing
+    res.json({ id: "result" });
+  }
+});
+
+router.post("/post", (req, res) => {
+  if (!req.user) {
+    res.json({});
+  } else {
+    res.json({ id: result });
+  }
+});
+
+// RETRIEVES SINGLE POST BY POST ID
+
+router.get("/post/:id", (req, res) => {
+  db.Post.findOne({
+    where: {
+      id: req.params.id
+    }
+  }).then(dbPost => {
+    res.json(dbPost);
   });
+});
 
-  // POSTS CHECKIN
+//RETRIEVES ALL POSTS BY SINGLE USER ID
 
-  // app.post("/api/checkIn", (req, res) => {
-  //   if (!req.user) {
-  //     res.json({});
-  //   } else {
-  //     res.json({ id: result });
-  //   }
-  // });
-
-  //RETRIEVES ALL POSTS BY SINGLE USER ID
-
-  app.get("/api/checkIns", (req, res) => {
-    db.CheckIn.findAll({
-      where: {
-        authorId: req.body.id
-      }
-    }).then(dbCheckIn => {
-      res.json(dbCheckIn);
-    });
+// actual endpoint = /api/post/all or changed to checkIn /api/check-in/all
+router.get("/posts", (req, res) => {
+  db.CheckIn.findAll({
+    where: {
+      authorId: req.body.id
+    }
+  }).then(dbCheckIn => {
+    res.json(dbCheckIn);
   });
+});
 
-  // RETRIEVES ALL HICCUP POSTS
+// POSTS CHECKIN
 
-  app.get("/api/hiccups", (req, res) => {
-    db.CheckIn.findAll({
-      where: {
-        hiccup: req.body.hiccup
-      }
-    }).then(dbCheckIn => {
-      res.json(dbCheckIn);
-    });
+// app.post("/api/checkIn", (req, res) => {
+//   if (!req.user) {
+//     res.json({});
+//   } else {
+//     res.json({ id: result });
+//   }
+// });
+
+//RETRIEVES ALL POSTS BY SINGLE USER ID
+
+// RETRIEVES ALL HICCUP POSTS
+
+// router.get("/hiccups", (req, res) => {
+//   db.Post.findAll({
+//     where:
+//   })
+// })
+
+router.get("/hiccup/all", (req, res) => {
+  db.CheckIn.findAll({
+    where: {
+      hiccup: req.body.hiccup
+    }
+  }).then(dbCheckIn => {
+    res.json(dbCheckIn);
   });
-};
+});
+
+module.exports = router;

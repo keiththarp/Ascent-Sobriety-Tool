@@ -28,4 +28,10 @@ module.exports = function (app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
+
+  // Route for logging user out
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  });
 };
