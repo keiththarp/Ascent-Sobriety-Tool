@@ -1,42 +1,42 @@
 $(document).ready(() => {
   // Button Hover Graphics
   $("#mood1").hover(
-    function () {
+    function() {
       $(this).html("<i class='fas fa-sad-cry'></i>");
     },
-    function () {
+    function() {
       $(this).html("1");
     }
   );
   $("#mood2").hover(
-    function () {
+    function() {
       $(this).html("<i class='fas fa-grimace'></i>");
     },
-    function () {
+    function() {
       $(this).html("2");
     }
   );
   $("#mood3").hover(
-    function () {
+    function() {
       $(this).html("<i class='fas fa-meh'></i>");
     },
-    function () {
+    function() {
       $(this).html("3");
     }
   );
   $("#mood4").hover(
-    function () {
+    function() {
       $(this).html("<i class='fas fa-smile'></i>");
     },
-    function () {
+    function() {
       $(this).html("4");
     }
   );
   $("#mood5").hover(
-    function () {
+    function() {
       $(this).html("<i class='fas fa-laugh-beam'></i>");
     },
-    function () {
+    function() {
       $(this).html("5");
     }
   );
@@ -45,7 +45,7 @@ $(document).ready(() => {
   let checkIn = {};
 
   // Captures Mood Button Values on Click
-  $(".mood").on("click", function () {
+  $(".mood").on("click", function() {
     const userMood = $(this).val();
     $("#mood").val(userMood);
     console.log($("#mood").val());
