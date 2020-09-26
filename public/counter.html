@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./stylesheets/members.css">
+    <link rel="stylesheet" href="./stylesheets/counter.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- header, contains only the logo -->
+    <header>
+        <div class="container">
+            <div class="row mtn-logo-top">
+                <img class="mx-auto mtn-logo" src="./img/logo-dark.png" alt="mountain-logo">
+            </div>
+        </div>
+    </header>
+
+
+    <main role="main" class="flex-shrink-0">
+        <!-- container for the counter -->
+        <div class="container">
+            <div class="row align-items-center justify-content-center" id="counter">
+                <!-- Pie chart will be inserted into this div -->
+                <div id="responsive-chart"></div>
+                <div class="rounded-circle chart-inner"></div>
+                <img id="mtn-img" class="mx-auto" src="./img/logo-white.png" alt="mountain-logo">
+            </div>
+        </div>
+
+        <!-- Container for Days Until Next Badge + badges -->
+        <div class="container days-until text-center">
+            <div class="row text-center">
+                <p class="align-middle"><span id="time-left">{{days}}</span> Days Until Next Badge <span class="star"><i
+                            class="fas fa-star"></i></span></p>
+            </div>
+        </div>
+
+        <!-- Inspirational quote -->
+        <div class="quote-container container">
+            <p class="quote">{{quote}}</p>
+            <p class="quote-author">- {{author}}</p>
+        </div>
+
+    </main>
+
+
+    <!-- footer -->
+    <footer class="navbar fixed-bottom">
+        <div class="container">
+            <!-- <i class="fas fa-user-circle"></i>
+              <i class="fas fa-book-open"></i>
+              <i class="far fa-comments"></i> -->
+            <a href="/"><img class="icon" src="./img/icons/account.png" alt="account icon"></a>
+            <a href="/"><img class="icon" src="./img/icons/resources.png" alt="account icon"></a>
+            <a href="/"><img class="icon-connect" src="./img/icons/connect.png" alt="account icon"></a>
+            <a href="/"><img class="icon" src="./img/icons/notepad.png" alt="account icon"></a>
+        </div>
+    </footer>
+
+</body>
+<!-- Apex charts (can also do npm install) -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="./js/counter.js"></script>
+
+</html>
