@@ -95,17 +95,17 @@ a.nav-link:hover {
 
 h4.startPage {
   font-size: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
-div.start-btns {
+/* div.start-btns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+} */
 
-button.start-btn {
-  width: 45%;
+.start-btn {
+  width: 80%;
 }
 
 /* ---- Register Stylings ---- */
@@ -146,7 +146,7 @@ h2.login-title {
   margin-bottom: 48px;
 }
 
-button.login-btn:hover {
+.login-btn:hover {
   background-color: #3A5772;
   color: white;
 }
