@@ -3,7 +3,7 @@ const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -26,5 +26,11 @@ module.exports = function(app) {
       res.redirect("/post");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
+  // Route for logging user out
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
   });
 };
