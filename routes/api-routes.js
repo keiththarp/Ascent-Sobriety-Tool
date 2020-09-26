@@ -45,9 +45,23 @@ module.exports = function(app) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
+        // adding user data from DB structure
+        id: req.user.id,
         email: req.user.email,
-        id: req.user.id
+        name: req.user.name,
+        soberSince: req.user.soberSince,
+        stars: req.user.stars,
+        nextBadge: req.user.nextBadge
       });
     }
   });
+
+  // template for app.post to make sure post is working in postman
+  // app.post("/api/user_data", (req, res) => {
+  //   if (!req.user) {
+  //     res.json({});
+  //   } else {
+  //     res.json({ id: result });
+  //   }
+  // });
 };
