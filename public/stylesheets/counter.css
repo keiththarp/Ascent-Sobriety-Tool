@@ -1,0 +1,153 @@
+p {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Top of the page */
+div.mtn-logo-top {
+    height: 8vw;
+}
+
+img.mtn-logo {
+    margin-top: 5px;;
+    height: 100%;
+}
+
+/* The counter with chart */
+#counter {
+    max-width: 450px;
+    margin: 35px auto;
+    opacity: 0.9;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+}
+
+#responsive-chart, div.chart-inner{
+    grid-column: 2/span 10;
+    grid-row: 1;
+    z-index: 2;
+}
+
+#mtn-img  {
+    grid-column: 4/span 6;
+    grid-row: 1;
+    width: 100%;
+    z-index: 1;
+}
+
+/* For the overlay behind the mtn image */
+div.chart-inner {
+    grid-column: 3/span 8;
+    grid-row: 1;
+    background-color: #3a5772;
+    height: 90%;
+    z-index: 0;
+    margin: 15px;
+}
+
+/*  For days/etc until next badge */
+div.days-until {
+    background-color: #3a57729c;
+    width: 65%;
+    border-radius: 10px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+div.days-until p {
+    color: white;
+    margin: .25rem 0;
+    font-size: 3vw;
+    width: 100%;
+}
+
+span#time-left {
+    color: #BFF0CF;
+}
+
+span.star {
+    color: yellow;
+    font-size: 5vw;
+    margin-left: 10px;
+}
+
+/* Quote box */
+div.quote-container {
+    color: white;
+    background-color: #bff0cf9c;
+    width: 65%;
+    border-radius: 10px;
+}
+
+div.quote-container > p {
+    color: white;
+    font-size: 3.5vw;
+}
+
+p.quote {
+    font-style: italic;
+}
+
+footer {
+    background-color: #87A2BB;
+}
+
+footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+}
+
+/* Footer icons */
+img.icon {
+    max-width: 40px;
+    width: 5vw;
+}
+
+img.icon-connect {
+    max-width: 50px;
+    width: 7vw;
+}
+
+/* media queries */
+@media screen and (min-width: 400px) {
+    div.days-until {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+    div.mtn-logo-top {
+        height: 4vw;
+    }
+
+    div.days-until > p {
+        font-size: 24px;
+    }
+
+    div.quote-container > p {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    div.mtn-logo-top {
+        height: 5vw;
+    }
+
+    div.days-until, div.quote-container {
+        width: 50%;
+    }
+
+    div.days-until p {
+        font-size: 2.5vw;
+    }
+
+    div.quote-container > p {
+        font-size: 3vw;
+    }
+}
