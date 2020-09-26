@@ -1,4 +1,4 @@
-onconst router = require("express").Router();
+const router = require("express").Router();
 
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 // router.use("/", isAuthenticated);
