@@ -1,0 +1,4 @@
+INSERT INTO `posts` (`id`, `authorId`, `body`, `feeling`, `hiccup`, `createdAt`, `updatedAt`, `UserId`) VALUES (1, 1, 'Text for first post goes here', 3, 0, '2020-09-25 13:06:27', '2020-09-25 13:06:31', NULL);
+INSERT INTO `posts` (`id`, `authorId`, `body`, `feeling`, `hiccup`, `createdAt`, `updatedAt`, `UserId`) VALUES (2, 1, 'Text for post number 2', 1, 1, '2020-09-25 13:08:02', '2020-09-25 13:08:07', NULL);
+INSERT INTO `posts` (`id`, `authorId`, `body`, `feeling`, `hiccup`, `createdAt`, `updatedAt`, `UserId`) VALUES (3, 2, 'Text field for Post number 1, user 2', 5, 0, '2020-09-25 13:09:01', '2020-09-25 13:09:02', NULL);
+INSERT INTO `posts` (`id`, `authorId`, `body`, `feeling`, `hiccup`, `createdAt`, `updatedAt`, `UserId`) VALUES (4, 2, 'Text for post 2, user 2', 1, 1, '2020-09-25 13:09:43', '2020-09-25 13:09:45', NULL);
