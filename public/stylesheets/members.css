@@ -14,7 +14,7 @@ body {
     height: 100%;
 }
 
-/* heading stylings */
+/* heading */
 
 h2 {
     font-weight: bold;
@@ -60,7 +60,7 @@ span.navbar-toggler-icon {
     text-align: right;
 }
 
-a.nav-link {
+.nav-link {
     color: white;
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
@@ -73,7 +73,7 @@ a.nav-link:hover {
 
 /* End Navigation */
 
-div.main-content {
+.main-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,13 +124,21 @@ h2.user-name {
     flex-direction: column;
 }
 
+/****Check in****/
+
+h2.welcome-title, 
+h2.resources-title {
+    font-family: 'Quicksand', sans-serif;
+    margin: 2rem;
+    color: #3A5772;
+}
 .mood-box {
     margin-top: 0rem;
 }
 
 /* mood title */
 
-h4.mood-title, h4.checkin-title {
+h4 {
     color: white;
     font-family: 'Quicksand', sans-serif;
 }
@@ -162,7 +170,7 @@ p {
     align-items: center;
 }
 
-.mood:hover, .sober-btn:hover {
+.mood:hover, .sober-btn:hover, .article-btn:hover {
     background-color: #BFF0CF;
     border: 3px solid #3A5772;
     color: #3A5772;
@@ -178,7 +186,6 @@ span:hover {
     padding: 0;
 }
 
-/* Check in */
 
 h4.checkin-title {
     text-align: left;
@@ -201,7 +208,7 @@ input[type=checkbox] {
     width: 15px;
 }
 
-.sober-btn, .login-btn {
+.sober-btn, .login-btn, .article-btn {
     border-radius: 3px;
     height: 60px;
     background-color: #87A2BB;
@@ -209,6 +216,57 @@ input[type=checkbox] {
     font-size: 20px;
     transition-duration: 0.5s;
     margin-top: 20px;
+}
+
+/****Resources*****/
+
+.resource-box {
+    max-width: 800px;
+}
+
+/* title */
+
+h2.resources-title {
+    margin-bottom: 0px;
+}
+
+/* line after title: https://www.steckinsights.com/shorten-length-border-bottom-pure-css/ */
+/* 
+h4.resources-title:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 20px;
+    border-bottom: 5px dotted white;
+} */
+
+/* article icon */
+
+i.fa-book-open {
+    font-size: 8rem;
+    color: white;
+    margin: 1rem;
+}
+
+article {
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* article description */
+
+p.article-description {
+    color: white;
+    font-size: 15px;
+}
+
+/* article button */
+
+.article-btn {
+    margin-top: 5px;
 }
 
 @media only screen and (min-device-width: 280px) and (max-device-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
