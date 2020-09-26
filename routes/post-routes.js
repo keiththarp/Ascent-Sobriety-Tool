@@ -13,19 +13,6 @@ module.exports = function(app) {
     }
   });
 
-  // post method to send journal entry to the servers
-  // app.post("/api/post", (req, res) => {
-  //   const placeHolderConst = "placeholder";
-  //   try {
-  //     console.log(req.body);
-  //     // need to know what we're logging where
-  //     res.json("index", placeHolderConst);
-  //   } catch (err) {
-  //     console.error(err);
-  //     res.status(500).json(err);
-  //   }
-  // });
-
   app.post("/api/post", (req, res) => {
     if (!req.user) {
       res.json({});
@@ -60,9 +47,9 @@ module.exports = function(app) {
 
   // RETRIEVES ALL HICCUP POSTS
 
-  app.get("/api/hiccups", (req, res) => {
-    db.Post.findAll({
-      where:
-    })
-  })                                              
+  // app.get("/api/hiccups", (req, res) => {
+  //   db.Post.findAll({
+  //     where:
+  //   })
+  // })
 };
