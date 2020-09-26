@@ -1,7 +1,7 @@
 // How many sections in the chart; how many days/hours user has chosen for timeframe
-const seriesLength = 7;
+const seriesLength = 24;
 
-const currentTimePoints = 5;
+const currentTimePoints = 15;
 
 const seriesArray = [];
 
