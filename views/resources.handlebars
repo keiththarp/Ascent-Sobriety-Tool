@@ -38,35 +38,9 @@
 
     <div class="box resource-box">
 
-        <article>
-            <h4 class="article-title">Recovery and Sobriety in a Pandemic</h4>
-            <p class="article-description">Many 12-step meetings have been temporarily suspended and the list of
-                “No’s” and
-                “Suggested No’s” can seem overwhelming, even to those who are not in recovery. Read for some
-                practical
-                solutions to help you stay sober during this time.</p>
-            <a type="button" class="btn article-btn"
-                href="https://www.thefix.com/recovery-and-sobriety-during-pandemic">Read Me</a>
-        </article>
-
-        <article>
-            <h4 class="article-title">20 Tools to Help You Through Your Recovery Journey</h4>
-            <p class="article-description">Whether you’re in early recovery, later on in your journey, or just
-                thinking
-                about quitting drinking, it is important to keep your recovery toolbox well-stocked. This article
-                lays out 20
-                small tools to stock that toolbox with</p>
-            <a type="button" class="btn article-btn"
-                href="https://www.thetemper.com/sobriety-tools-for-your-recovery-journey/">Read Me</a>
-        </article>
-
-        <article>
-            <h4 class="article-title">12 Tips for Your Recovery</h4>
-            <p class="article-description">This has a great section about identifying triggers, recognizing relapse
-                warning
-                signs, and practicing healthy living.</p>
-            <a type="button" class="btn article-btn">Read Me</a>
-        </article>
+        {{#each Resource }}
+        {{> resource-block}}
+        {{/each}}
 
     </div>
 

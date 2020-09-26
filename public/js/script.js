@@ -1,13 +1,15 @@
-const signIn = $('.signIn')
-const signUp = $('.signUp')
-const back = $('.back')
+// const signIn = $('.signIn')
+// const signUp = $('.signUp')
+// const back = $('.back')
 
-$(".signIn").click(function(){
-    window.location.replace("signin.html");
-});
-$(".back").click(function(){
-    window.location.replace("start.html");
-});
-$(".signUp").click(function(){
-    window.location.replace("register.html");
-});
+// // these are routes that we will define in our router
+// // user anchor tags with hrefs in the html instead
+// $(".signIn").click(function(){
+//     window.location.replace("signin");
+// });
+// $(".back").click(function(){
+//     window.location.replace(""); //
+// });
+// $(".signUp").click(function(){
+//     window.location.replace("register");
+// });
