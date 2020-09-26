@@ -57,11 +57,18 @@ module.exports = function(app) {
   });
 
   // template for app.post to make sure post is working in postman
-  // app.post("/api/user_data", (req, res) => {
-  //   if (!req.user) {
-  //     res.json({});
-  //   } else {
-  //     res.json({ id: result });
-  //   }
-  // });
+  app.post("/api/user_data", (req, res) => {
+    if (!req.user) {
+      res.json({});
+    } else {
+      res.json({
+        id: res.user.id,
+        email: res.user.email,
+        name: res.user.name,
+        soberSince: res.user.soberSince,
+        stars: res.user.stars,
+        nextBadge: res.user.nextBadge
+      });
+    }
+  });
 };
