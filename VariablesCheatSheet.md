@@ -12,7 +12,7 @@ nextBadge- Date, same format as soberSince, used for the "next goal" countdown t
 createdAt- Date user was initially created at (automatically created)
 updatedAt- Date user data was updated at (automatically created)
 
-Post- everything journal/log related, one user may have many rows in this table :
+checkIn- everything journal/log related, one user may have many rows in this table :
 
 id- unique id for that post, auto-increments
 authorId- Links to the id on user page, identifies the user that the post belongs to
