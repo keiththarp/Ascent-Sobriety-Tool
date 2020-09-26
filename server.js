@@ -25,6 +25,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Set Handlebars.
+const exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // This is the authenticate router we built with Bobby
 app.use("/authenticated", authenticatedRoutes);
 // using post route based on Bobby's (not working)
