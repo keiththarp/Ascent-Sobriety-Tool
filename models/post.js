@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  const Post = sequelize.define("Post", {
+  const checkIn = sequelize.define("checkIn", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -29,5 +29,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return Post;
+  return checkIn;
 };
