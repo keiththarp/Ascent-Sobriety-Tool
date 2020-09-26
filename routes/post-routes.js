@@ -1,55 +1,60 @@
-// const express = require("express");
+onconst router = require("express").Router();
+
+// const isAuthenticated = require("../config/middleware/isAuthenticated");
+// router.use("/", isAuthenticated);
 
 const db = require("../models");
 
-// const router = require("./authenticated-html-routes");
-module.exports = function(app) {
-  // get method to retrieve past journal entrise in the server
-  app.get("/api/post", (req, res) => {
-    if (!req.user) {
-      res.json({});
-    } else {
-      res.json({ id: result });
+// get method to retrieve past journal entries in the server
+router.get("/post", (req, res) => {
+  console.log("made it here!");
+  if (!req.user) {
+    res.json({});
+  } else {
+    // turned result to string just for testing
+    res.json({ id: "result" });
+  }
+});
+
+router.post("/post", (req, res) => {
+  if (!req.user) {
+    res.json({});
+  } else {
+    res.json({ id: result });
+  }
+});
+
+// RETRIEVES SINGLE POST BY POST ID
+
+router.get("/post/:id", (req, res) => {
+  db.Post.findOne({
+    where: {
+      id: req.params.id
     }
+  }).then(dbPost => {
+    res.json(dbPost);
   });
+});
 
-  app.post("/api/post", (req, res) => {
-    if (!req.user) {
-      res.json({});
-    } else {
-      res.json({ id: result });
+//RETRIEVES ALL POSTS BY SINGLE USER ID
+
+// actual endpoint = /api/post/all or changed to checkIn /api/check-in/all
+router.get("/posts", (req, res) => {
+  db.Post.findAll({
+    where: {
+      authorId: req.body.id
     }
+  }).then(dbPost => {
+    res.json(dbPost);
   });
+});
 
-  // RETREIVES SINGLE POST BY POST ID
+// RETRIEVES ALL HICCUP POSTS
 
-  app.get("/api/post/:id", (req, res) => {
-    db.Post.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(dbPost => {
-      res.json(dbPost);
-    });
-  });
+// router.get("/hiccups", (req, res) => {
+//   db.Post.findAll({
+//     where:
+//   })
+// })
 
-  //RETRIEVES ALL POSTS BY SINGLE USER ID
-
-  app.get("/api/posts", (req, res) => {
-    db.Post.findAll({
-      where: {
-        authorId: req.body.id
-      }
-    }).then(dbPost => {
-      res.json(dbPost);
-    });
-  });
-
-  // RETRIEVES ALL HICCUP POSTS
-
-  // app.get("/api/hiccups", (req, res) => {
-  //   db.Post.findAll({
-  //     where:
-  //   })
-  // })
-};
+module.exports = router;
