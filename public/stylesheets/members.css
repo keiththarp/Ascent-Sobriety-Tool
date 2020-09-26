@@ -126,12 +126,12 @@ h2.user-name {
 
 /****Check in****/
 
-h2.welcome-title, 
-h2.resources-title {
+h2.welcome-title, h2.resources-title {
     font-family: 'Quicksand', sans-serif;
     margin: 2rem;
     color: #3A5772;
 }
+
 .mood-box {
     margin-top: 0rem;
 }
@@ -170,7 +170,7 @@ p {
     align-items: center;
 }
 
-.mood:hover, .sober-btn:hover, .article-btn:hover {
+.mood:hover, .sober-btn:hover, .article-btn:hover, .btn:focus {
     background-color: #BFF0CF;
     border: 3px solid #3A5772;
     color: #3A5772;
@@ -185,7 +185,6 @@ span:hover {
     margin: 0;
     padding: 0;
 }
-
 
 h4.checkin-title {
     text-align: left;
@@ -220,7 +219,7 @@ input[type=checkbox] {
 
 /****Resources*****/
 
-.resource-box {
+.resource-box, .journal-box {
     max-width: 800px;
 }
 
@@ -229,17 +228,6 @@ input[type=checkbox] {
 h2.resources-title {
     margin-bottom: 0px;
 }
-
-/* line after title: https://www.steckinsights.com/shorten-length-border-bottom-pure-css/ */
-/* 
-h4.resources-title:after {
-    content: "";
-    display: block;
-    margin: 0 auto;
-    width: 50%;
-    padding-top: 20px;
-    border-bottom: 5px dotted white;
-} */
 
 /* article icon */
 
@@ -258,7 +246,7 @@ article {
 
 /* article description */
 
-p.article-description {
+p {
     color: white;
     font-size: 15px;
 }
@@ -287,43 +275,3 @@ p.article-description {
         font-size: 18px;
     }
 }
-
-/* Swiped section*/
-
-/* https://codepen.io/zouhir/pen/RMMvGZ */
-
-/* 
-.swipeView {
-    text-align: center;
-    align-content: center;
-    border-radius: 8px;
-    margin-top: 0rem;
-    margin-bottom: 48px;
-    margin-left: 48px;
-    margin-right: 48px;
-    display: grid;
-    grid-template-columns: repeat(4, 100%);
-    will-change: transform;
-    overflow-x: auto;
-    scroll-snap-coordinate: 0 0;
-    scroll-snap-points-x: repeat(100%);
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-}
-
-section {
-    height: 80vh;
-    scroll-snap-align: start;
-}
-
-.green {
-    background: #3A5772;
-}
-
-.purple {
-    background: #537899;
-}
-
-.orange {
-    background: #87A2BB;
-} */
