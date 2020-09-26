@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Peddana&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="icon" href="img/logo.png">
+    <link href="stylesheets/members.css" rel="stylesheet">
+    <title>Ascent</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" role="navigation">
+        <!-- Logo -->
+        <div class="navbar-brand text-center">
+            <img SRC="img/logo-white.png" alt="mountain logo" class="logo">
+            <h1>ASCENT</h1>
+        </div>
+        <!-- toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuList"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuList">
+            <ul class="navbar-nav my-2 my-lg-0">
+                <!-- home -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="members.html">
+                        home
+                    </a>
+                </li>
+                <!-- resources -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="resources.html">
+                        resources
+                    </a>
+                </li>
+                <!-- logout button -->
+                <button type="button" class="btn btn-outline-light nav-link">
+                    logout
+                </button>
+            </ul>
+        </div>
+    </nav>
+    <div class="main-content">
+        <!-- Resource Title -->
+        <h2 class="resources-title">Your Daily Reflections</h2>
+
+
+        <div class="box journal-box">
+            <article>
+                <div class="journal-header">
+                    <h4 class="entry-date">Date: MM/DD/YY</h4>
+                    <h4 class="entry-mood">Mood: <i class='fas fa-smile'></i></h4>
+                </div>
+                <p class="entry-content">Thought of the day</p>
+                <div class="entry-btns">
+                    <button type="button" class="btn btn-outline-light">Edit</button>
+                    <button type="button" class="btn btn-outline-light">Share</button>
+                </div>
+            </article>
+            <article>
+                <div class="journal-header">
+                    <h4 class="entry-date">Date: MM/DD/YY</h4>
+                    <h4 class="entry-mood">Mood: <i class='fas fa-smile'></i></h4>
+                </div>
+                <p class="entry-content">Thought of the day</p>
+                <div class="entry-btns">
+                    <button type="button" class="btn btn-outline-light">Edit</button>
+                    <button type="button" class="btn btn-outline-light">Share</button>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

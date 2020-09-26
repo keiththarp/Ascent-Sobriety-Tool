@@ -1,0 +1,109 @@
+@font-face {
+    src: url(../font/Aspal.ttf);
+    font-family: aspal;
+}
+
+.background {
+    background: url(../img/mountain.jpg);
+    background-position: center;
+    background-size: cover;
+    background-size: auto;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.jumbotron {
+	text-align: center;
+	width: 500px;
+	border-radius: 8px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	margin: 64px auto;
+	background-color: #fff;
+    padding: 32px;
+    display: flex;
+    background-color: rgba(58, 87, 114, 0.4);
+}
+
+img {
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+input[type=text], input[type=password] {
+	width: 100%;
+	margin-bottom: 22px;
+	padding: 16px;
+	background-color: #ecf2f4;
+	border: none;
+}
+h2 {
+	margin-bottom: 48px;
+	font-weight: bold;
+    color: #BFF0CF;
+    font-family: aspal;
+    font-size: 45px;
+}
+#rememberme {
+    display: block;
+    float: left;
+}
+label {
+    color:#fff;
+}
+input[type=checkbox] {
+    height: 15px;
+    width: 15px;
+}
+.remember {
+    margin-right: 275px;
+}
+.btn {
+    border-radius: 3px;
+    height: 60px;
+    background-color: #87A2BB;
+    width: 65%;
+    font-size: 20px;
+    transition-duration: 0.5s;
+    margin-top: 20px;
+}
+.btn:hover {
+    background-color:#3A5772;
+    color: white;
+  }
+.box {
+	bottom: 0;
+	left: 0;
+	margin-bottom: 48px;
+	margin-left: 48px;
+    margin-right: 48px;
+    text-align: center;
+}
+@media only screen 
+  and (min-device-width: 280px) 
+  and (max-device-width: 500px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .jumbotron {
+        width: 300px;
+        margin-top: 40px;
+    }
+    input[type=text], input[type=password]{
+        margin-bottom: 10px;
+        font-size: 14px;
+        padding-bottom: 20px;
+        
+    }
+    .btn {
+        height: 45px;
+        font-size: 14px;
+    }
+    .remember {
+        margin-right: 75px;
+    }
+}
