@@ -1,5 +1,5 @@
-module.exports = function(sequelize, DataTypes) {
-  const Post = sequelize.define("Resource", {
+module.exports = function (sequelize, DataTypes) {
+  const Resource = sequelize.define("Resource", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -25,5 +25,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return Post;
+  return Resource;
 };
