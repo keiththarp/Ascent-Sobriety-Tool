@@ -45,6 +45,16 @@ div.chart-inner {
     margin: 15px;
 }
 
+/* for the days sober */
+p.days-sober {
+    grid-column: 6/span 2;
+    grid-row: 1;
+    z-index: 3;
+    margin-top: 250%;
+    font-size: calc(12px + 1vw);
+    color: yellow;
+}
+
 /*  For days/etc until next badge */
 div.days-until {
     background-color: #3a57729c;
