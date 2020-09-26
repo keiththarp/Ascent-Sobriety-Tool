@@ -24,7 +24,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// THis is the authenticate router we built with Bobby
+// This is the authenticate router we built with Bobby
 app.use("/authenticated", authenticatedRoutes);
 // Requiring our routes
 require("./routes/html-routes.js")(app);
