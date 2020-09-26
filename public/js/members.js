@@ -53,9 +53,9 @@ $(document).ready(() => {
 
   // when i submit, i want to send userMood, soberYN, and textValue to checkIn object with key value pairs
   $(".submit").on("click", () => {
-    let soberYN = false;
+    let soberYN = true;
     if ($("#soberYN").is(":checked")) {
-      soberYN = true;
+      soberYN = false;
     }
     checkIn = {
       // date: // date
@@ -65,10 +65,10 @@ $(document).ready(() => {
     };
     console.log(checkIn);
 
-    function (checkIn) {
-      $.post("/api/check_in", checkIn)
-        .then(getAuthors);
-    }
+    // function (checkIn) {
+    //   $.post("/api/check_in", checkIn)
+    //     .then(getAuthors);
+    // }
   });
 
   // This file just does a GET request to figure out which user is logged in

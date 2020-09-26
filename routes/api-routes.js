@@ -5,10 +5,10 @@ const router = require("express").Router();
 
 const passport = require("../config/passport");
 
-const postRoutes = require("./post-routes");
+const checkInRoutes = require("./checkin-routes");
 
 // Consider changing to checkIn
-router.use(postRoutes);
+router.use(checkInRoutes);
 
 // Using the passport.authenticate middleware with our local strategy.
 // If the user has valid login credentials, send them to the members page.
