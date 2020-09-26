@@ -10,7 +10,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render("index");
+    res.render("start");
   });
 
   app.get("/login", (req, res) => {
