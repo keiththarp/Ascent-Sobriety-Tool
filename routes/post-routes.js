@@ -48,7 +48,7 @@ module.exports = function(app) {
 
   //RETRIEVES ALL POSTS BY SINGLE USER ID
 
-  app.get("/api/posts/", (req, res) => {
+  app.get("/api/posts", (req, res) => {
     db.Post.findAll({
       where: {
         authorId: req.body.id
@@ -57,4 +57,12 @@ module.exports = function(app) {
       res.json(dbPost);
     });
   });
+
+  // RETRIEVES ALL HICCUP POSTS
+
+  app.get("/api/hiccups", (req, res) => {
+    db.Post.findAll({
+      where:
+    })
+  })                                              
 };
