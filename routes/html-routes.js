@@ -44,4 +44,10 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
+
+  // Does this need to be in authenticated html routes??
+  app.get("/counter", (req, res) => {
+    //as long as the use is logged in...
+    res.render("counter");
+  });
 };

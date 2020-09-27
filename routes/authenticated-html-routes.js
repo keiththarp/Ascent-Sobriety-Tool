@@ -8,4 +8,9 @@ router.get("/members", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/members.html"));
 });
 
+router.get("/counter", (req, res) => {
+  //as long as the use is logged in...
+  res.render("counter");
+});
+
 module.exports = router;
