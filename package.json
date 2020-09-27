@@ -17,7 +17,10 @@
     "bcryptjs": "2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.0",
+    "express-handlebars": "^5.1.0",
     "express-session": "^1.16.1",
+    "moment": "^2.29.0",
+
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
@@ -31,6 +34,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
+    "nodemon": "^2.0.4",
     "prettier": "^1.13.7"
   }
 }

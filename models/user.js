@@ -4,6 +4,13 @@ const bcrypt = require("bcryptjs");
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
+
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -15,6 +22,26 @@ module.exports = function(sequelize, DataTypes) {
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    name: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+
+    soberSince: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+
+    stars: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+
+    nextBadge: {
+      type: DataTypes.DATE,
       allowNull: false
     }
   });
@@ -31,5 +58,10 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+
+  User.associate = function(models) {
+    User.hasMany(models.CheckIn);
+  };
+
   return User;
 };

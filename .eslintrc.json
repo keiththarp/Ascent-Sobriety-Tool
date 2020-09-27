@@ -39,7 +39,7 @@
     "no-var": "error",
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
-    "prettier/prettier": "error",
+    "prettier/prettier": 1,
     "quotes": [
       "error",
       "double"
