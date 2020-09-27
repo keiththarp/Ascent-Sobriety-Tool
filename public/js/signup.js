@@ -1,19 +1,18 @@
 $(document).ready(() => {
-  // Getting references to our form and input
-  const signUpForm = $("#signUpBtn");
-  const nameInput = $("#name");
-  const emailInput = $("#email");
-  const passwordInput = $("#password");
-  const soberDateInput = $("#soberDate");
-
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("click", event => {
+  $("#signUpBtn").on("click", event => {
     event.preventDefault();
     const userData = {
-      name: nameInput.val().trim(),
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim(),
-      soberSince: soberDateInput.val()
+      name: $("#name")
+        .val()
+        .trim(),
+      email: $("#email")
+        .val()
+        .trim(),
+      password: $("#password")
+        .val()
+        .trim(),
+      soberSince: $("#soberDate").val()
     };
     console.log(userData);
     if (!userData.email || !userData.password) {
