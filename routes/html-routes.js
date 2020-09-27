@@ -43,4 +43,11 @@ module.exports = function (app) {
     }
     res.redirect("/start");
   });
+
+  app.get("/counter", (req, res) => {
+    // if (req.user) {
+      res.render("counter");
+    // }
+    // res.redirect("start");
+  });
 };
