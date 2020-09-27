@@ -4,11 +4,11 @@
 
 // Requiring our custom middleware for checking if a user is logged in
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/daily");
     }
     res.render("start");
   });
@@ -16,7 +16,7 @@ module.exports = function(app) {
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/daily");
     }
     res.render("login");
   });
@@ -24,7 +24,7 @@ module.exports = function(app) {
   app.get("/register", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/daily");
     }
     res.render("register");
   });
