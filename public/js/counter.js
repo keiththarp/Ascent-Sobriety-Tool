@@ -1,8 +1,7 @@
 // const moment = require("moment");
 
 // $(document).ready(() => {
-const today = moment().format();
-console.log(today);
+const today = moment();
 // variables for DOM elements
 const daysSoberContainer = $("p.days-sober");
 const timeLeft = $("span#time-left");
@@ -10,11 +9,10 @@ const quote = $("p.quote");
 const quoteAuthor = $("p.quote-author");
 
 const displayDaysSober = () => {
-  $.get("/api/user_data").then(response => {
-    console.log(response);
+  $.get("/api/user_data/1").then(response => {
     const soberDate = moment(response.soberSince);
     // need to calculate difference between datetime in mysql(soberSince) and today's date.
-    const daysSober = today - soberDate;
+    const daysSober = today.diff(soberDate, "days");
     daysSoberContainer.text(daysSober);
   });
 };
