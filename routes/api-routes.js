@@ -56,14 +56,15 @@ module.exports = function(app) {
     }
   });
 
-  // template for app.post to make sure post is working in postman
+  // user_data post request this would be specifically for register
   app.post("/api/user_data", (req, res) => {
     // if (!req.user) {
     //   res.json({});
     // } else {
-    db.User.create(req.body).then(newUser => {
-      res.json(newUser);
+    res.json({
+      soberSince: req.user.soberSince,
+      stars: req.user.stars,
+      nextBadge: req.user.nextBadge
     });
-    // }
   });
 };

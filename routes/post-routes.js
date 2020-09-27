@@ -18,13 +18,17 @@ module.exports = function(app) {
 
   // POSTS CHECKIN
 
-  // app.post("/api/checkIn", (req, res) => {
-  //   if (!req.user) {
-  //     res.json({});
-  //   } else {
-  //     res.json({ id: result });
-  //   }
-  // });
+  app.post("/api/checkIn", (req, res) => {
+    console.log(req.body);
+    db.CheckIn.create({
+      authorId: req.body.authorId,
+      body: req.body.body,
+      feeling: req.body.feeling,
+      hiccup: req.body.hiccup
+    }).then(dbCheckIn => {
+      res.json(dbCheckIn);
+    });
+  });
 
   //RETRIEVES ALL POSTS BY SINGLE USER ID
 
