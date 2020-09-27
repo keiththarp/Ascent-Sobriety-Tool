@@ -1,3 +1,7 @@
+/* **************
+Adding this to ensure that you are updating correctly at 11:50 9/27/20 
+*************** */
+
 //Require environment variables
 require("dotenv").config();
 
@@ -38,7 +42,7 @@ app.use("/authenticated", authenticatedRoutes);
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-require("./routes/post-routes.js")(app);
+require("./routes/checkin-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
