@@ -88,7 +88,8 @@ function sendCheckIn(userMood, soberYN, checkInText) {
     hiccup: soberYN
   })
     .then(() => {
-      window.location.replace("/resources");
+      // Commenting the below line out because the /resources route is not currently working from here.
+      window.location.replace("/daily");
     })
     .catch(console.error());
 }
