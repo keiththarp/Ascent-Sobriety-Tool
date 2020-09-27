@@ -1,15 +1,5 @@
-p {
+p.days-sober, p.quote, p.quote-author {
     font-family: 'Quicksand', sans-serif;
-}
-
-/* Top of the page */
-div.mtn-logo-top {
-    height: 8vw;
-}
-
-img.mtn-logo {
-    margin-top: 5px;;
-    height: 100%;
 }
 
 /* The counter with chart */
@@ -51,7 +41,7 @@ p.days-sober {
     grid-row: 1;
     z-index: 3;
     margin-top: 250%;
-    font-size: calc(12px + 1vw);
+    font-size: calc(12px + .8vw);
     color: yellow;
 }
 
@@ -65,9 +55,9 @@ div.days-until {
 }
 
 div.days-until p {
-    color: white;
     margin: .25rem 0;
-    font-size: 3vw;
+    /* font-size: 3vw; */
+    font-size: calc(14px + .7vw);
     width: 100%;
 }
 
@@ -91,7 +81,8 @@ div.quote-container {
 
 div.quote-container > p {
     color: white;
-    font-size: 3.5vw;
+    /* font-size: 3.5vw; */
+    font-size: calc(14px + .6vw)
 }
 
 p.quote {
@@ -125,39 +116,30 @@ img.icon-connect {
         margin-top: 30px;
         margin-bottom: 30px;
     }
-
 }
 
-
-
 @media screen and (min-width: 768px) {
-    div.mtn-logo-top {
-        height: 4vw;
-    }
 
-    div.days-until > p {
+    /* div.days-until > p {
         font-size: 24px;
-    }
+    } */
 
-    div.quote-container > p {
+    /* div.quote-container > p {
         font-size: 2vw;
-    }
+    } */
 }
 
 @media screen and (min-width: 600px) {
-    div.mtn-logo-top {
-        height: 5vw;
-    }
 
     div.days-until, div.quote-container {
         width: 50%;
     }
 
-    div.days-until p {
+    /* div.days-until p {
         font-size: 2.5vw;
-    }
+    } */
 
-    div.quote-container > p {
+    /* div.quote-container > p {
         font-size: 3vw;
-    }
+    } */
 }
