@@ -32,14 +32,13 @@
             </ul>
         </div>
     </nav>
-    
     <div class="main-content">
         <!-- Resource Title -->
         <h2 class="resources-title">Your Daily Reflections</h2>
 
 
         <div class="box journal-box">
-            {{#each check-in }}
+            {{#each entry}}
                 {{> journal-entry}}
             {{/each}}
         </div>

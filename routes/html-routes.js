@@ -1,6 +1,5 @@
 // Requiring path to so we can use relative routes to our HTML files
-// const path = require("path");
-// var user = require("../models/user");
+const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 
@@ -10,7 +9,7 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render("start");
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   app.get("/login", (req, res) => {
@@ -18,23 +17,15 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render("login");
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  app.get("/register", (req, res) => {
+  app.get("/post", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/post");
     }
-    res.render("register");
-  });
-
-  app.get("/checkin", (req, res) => {
-    // If the user already has an account send them to the members page
-    // if (!req.user) {
-    //   res.redirect("/register");
-    // }
-    res.render("checkin");
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // Route for logging user out
@@ -42,12 +33,4 @@ module.exports = function (app) {
     req.logout();
     res.redirect("/");
   });
-
-  // app.get("/post", (req, res) => {
-  //   // If the user already has an account send them to the members page
-  //   if (req.user) {
-  //     res.redirect("/post");
-  //   }
-  //   res.sendFile(path.join(__dirname, "../public/login.html"));
-  // });
 };

@@ -1,28 +1,3 @@
-// const moment = require("moment");
-
-// $(document).ready(() => {
-const today = moment().format();
-console.log(today);
-// variables for DOM elements
-const daysSoberContainer = $("p.days-sober");
-const timeLeft = $("span#time-left");
-const quote = $("p.quote");
-const quoteAuthor = $("p.quote-author");
-
-const displayDaysSober = () => {
-  $.get("/api/user_data").then(response => {
-    console.log(response);
-    const soberDate = moment(response.soberSince);
-    // need to calculate difference between datetime in mysql(soberSince) and today's date.
-    const daysSober = today - soberDate;
-    daysSoberContainer.text(daysSober);
-  });
-};
-
-displayDaysSober();
-// });
-
-// ********** FOR COUNTER/Chart ****************
 // How many sections in the chart; how many days/hours user has chosen for timeframe
 const seriesLength = 24;
 

@@ -5,9 +5,10 @@ const router = require("express").Router();
 
 const passport = require("../config/passport");
 
-const checkInRoutes = require("./checkIn-routes");
+const postRoutes = require("./post-routes");
 
-router.use(checkInRoutes);
+// Consider changing to checkIn
+router.use(postRoutes);
 
 // Using the passport.authenticate middleware with our local strategy.
 // If the user has valid login credentials, send them to the members page.
@@ -24,12 +25,9 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
 router.post("/signup", (req, res) => {
-  console.log(req.body);
   db.User.create({
-    name: req.body.name,
     email: req.body.email,
-    password: req.body.password,
-    soberSince: req.body.soberSince
+    password: req.body.password
   })
     .then(() => {
       res.redirect(307, "/api/login");
@@ -38,12 +36,6 @@ router.post("/signup", (req, res) => {
       res.status(401).json(err);
     });
 });
-
-// Route for logging user out
-// router.get("/logout", (req, res) => {
-//   req.logout();
-//   res.redirect("/");
-// });
 
 // Route for getting some data about our user to be used client side
 router.get("/user_data", (req, res) => {
@@ -64,20 +56,12 @@ router.get("/user_data", (req, res) => {
     });
   }
 });
-
 // template for app.post to make sure post is working in postman
-// app.post("/user_data", (req, res) => {
+// router.post("/user_data", (req, res) => {
 //   if (!req.user) {
 //     res.json({});
 //   } else {
-//     res.json({
-//       id: res.user.id,
-//       email: res.user.email,
-//       name: res.user.name,
-//       soberSince: res.user.soberSince,
-//       stars: res.user.stars,
-//       nextBadge: res.user.nextBadge
-//     });
+//     res.json({ id: result });
 //   }
 // });
 

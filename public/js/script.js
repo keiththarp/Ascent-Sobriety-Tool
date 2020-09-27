@@ -1,11 +1,13 @@
-// these are routes that we will define in our router
-// user anchor tags with hrefs in the html instead
-$(".signIn").click(() => {
-  window.location.replace("login");
+const signIn = $('.signIn')
+const signUp = $('.signUp')
+const back = $('.back')
+
+$(".signIn").click(function(){
+    window.location.replace("signin.html");
 });
-$(".back").click(() => {
-  window.location.replace("");
+$(".back").click(function(){
+    window.location.replace("start.html");
 });
-$(".signUp").click(() => {
-  window.location.replace("register");
+$(".signUp").click(function(){
+    window.location.replace("register.html");
 });

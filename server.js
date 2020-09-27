@@ -7,7 +7,7 @@ const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const authenticatedRoutes = require("./routes/authenticated-html-routes");
-const apiRoutes = require("./routes/api-routes.js");
+const apiRoutes = require("./routes/api-routes");
 
 // const postRoute = require("./routes/post-routes");
 
@@ -27,20 +27,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Set Handlebars.
-const exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-// Requiring our routes
-app.use("./api", apiRoutes);
+// This is the authenticate router we built with Bobby
+app.use("/api", apiRoutes);
 
 require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
 
 app.use("/", authenticatedRoutes);
-// require("./routes/api-routes.js")(app);
+
 // require("./routes/post-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success

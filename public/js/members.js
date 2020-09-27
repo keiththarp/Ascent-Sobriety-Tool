@@ -61,24 +61,3 @@ $(document).ready(() => {
     }
   );
 });
-
-// Captures Mood Button Values on Click
-$(".mood").on("click", function() {
-  const userMood = $(this).val();
-  $("#mood").val(userMood);
-  console.log($("#mood").val());
-});
-
-// when i submit, i want to send userMood, soberYN, and textValue to checkIn object with key value pairs
-$(".submit").on("click", () => {
-  let soberYN = false;
-  if ($("#soberYN").is(":checked")) {
-    soberYN = true;
-  }
-  checkIn = {
-    // date:
-    feeling: $("#mood").val(),
-    body: $("#checkInText").val(),
-    hiccup: soberYN
-  };
-});
