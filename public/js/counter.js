@@ -1,4 +1,3 @@
-// const moment = require("moment");
 
 // $(document).ready(() => {
 const today = moment();
@@ -85,7 +84,7 @@ const chart = new ApexCharts(
   options
 );
 
-chart.render();
+chart.render().catch(err => console.log(err));
 
 //Can also render a blank chart initially and fetch data w/ ajax
 // https://apexcharts.com/docs/update-charts-from-json-api-ajax/
