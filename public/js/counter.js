@@ -11,7 +11,7 @@ const quoteAuthor = $("p.quote-author");
 
 const displayDaysSober = () => {
   $.get("/api/user_data").then(response => {
-    console.log(response);
+    console.log("response is: ", response);
     const soberDate = moment(response.soberSince);
     // need to calculate difference between datetime in mysql(soberSince) and today's date.
     const daysSober = today - soberDate;
