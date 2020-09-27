@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -55,6 +55,34 @@ module.exports = function (app) {
         stars: req.user.stars,
         nextBadge: req.user.nextBadge
       });
+    }
+  });
+
+  // Route for getting some data about our user to be used client side
+  app.get("/api/user_data/:id", (req, res) => {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      db.User.findOne({
+        where: {
+          id: req.params.id
+        }
+      })
+        .then(data => {
+          res.json({
+            // adding user data from DB structure
+            id: data.id,
+            email: data.email,
+            name: data.name,
+            soberSince: data.soberSince,
+            stars: data.stars,
+            nextBadge: data.nextBadge
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   });
 
