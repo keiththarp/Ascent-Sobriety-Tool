@@ -119,7 +119,7 @@ h4.date {
 
 /* back arrow */
 
-.fa-arrow-circle-left {
+i.fa-arrow-circle-left {
   font-size: 25px;
   float: left;
   color: #3A5772;
@@ -131,7 +131,7 @@ img.signin-logo {
   margin-bottom: 30px;
 }
 
-.back {
+button.back {
   width: 25px;
   height: 25px;
   background-color: transparent;
@@ -265,14 +265,6 @@ input[type=checkbox] {
 
 h2.resources-title {
   margin-bottom: 0px;
-}
-
-/* article icon */
-
-i.fa-book-open {
-  font-size: 8rem;
-  color: white;
-  margin: 1rem;
 }
 
 article {
