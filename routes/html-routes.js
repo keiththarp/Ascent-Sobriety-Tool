@@ -29,12 +29,12 @@ module.exports = function(app) {
     res.render("register");
   });
 
-  app.get("/check-in", (req, res) => {
+  app.get("/daily", (req, res) => {
     // If the user already has an account send them to the members page
     // if (!req.user) {
     //   res.redirect("/register");
     // }
-    res.render("checkin");
+    res.render("daily");
   });
 
   app.get("/post", (req, res) => {
