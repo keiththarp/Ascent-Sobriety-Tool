@@ -4,11 +4,11 @@
 
 // Requiring our custom middleware for checking if a user is logged in
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/daily");
     }
     res.render("start");
   });
@@ -16,7 +16,7 @@ module.exports = function(app) {
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/daily");
     }
     res.render("login");
   });
@@ -24,24 +24,23 @@ module.exports = function(app) {
   app.get("/register", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/daily");
     }
     res.render("register");
   });
 
-  app.get("/check-in", (req, res) => {
+  app.get("/daily", (req, res) => {
     // If the user already has an account send them to the members page
     // if (!req.user) {
     //   res.redirect("/register");
     // }
-    res.render("checkin");
+    res.render("daily");
   });
 
-  app.get("/post", (req, res) => {
-    // If the user already has an account send them to the members page
+  app.get("/resources", (req, res) => {
     if (req.user) {
-      res.redirect("/post");
+      res.render("/resources");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.redirect("/start");
   });
 };

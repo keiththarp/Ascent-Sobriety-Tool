@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const CheckIn = sequelize.define("CheckIn", {
     id: {
       type: DataTypes.INTEGER,
@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  CheckIn.associate = function (models) {
+  CheckIn.associate = function(models) {
     CheckIn.belongsTo(models.User, {
       targetKey: "id"
     });
