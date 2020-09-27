@@ -1,18 +1,17 @@
 $(document).ready(() => {
+  const nameInput = $("#name");
+  const soberDate = $("#soberDate");
+  const emailInput = $("#email");
+  const passwordInput = $("#password");
+
   // When the signup button is clicked, we validate the email and password are not blank
   $("#signUpBtn").on("click", event => {
     event.preventDefault();
     const userData = {
-      name: $("#name")
-        .val()
-        .trim(),
-      email: $("#email")
-        .val()
-        .trim(),
-      password: $("#password")
-        .val()
-        .trim(),
-      soberSince: $("#soberDate").val()
+      name: nameInput.val().trim(),
+      email: emailInput.val().trim(),
+      password: passwordInput.val().trim(),
+      soberSince: soberDate.val()
     };
     console.log(userData);
     if (!userData.email || !userData.password) {
@@ -21,8 +20,10 @@ $(document).ready(() => {
     const { name, email, password, soberSince } = userData;
     // If we have an email and password, run the signUpUser function
     signUpUser(name, email, password, soberSince);
+    nameInput.val("");
     emailInput.val("");
     passwordInput.val("");
+    soberDate.val("");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
