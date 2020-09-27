@@ -27,22 +27,22 @@ module.exports = function(sequelize, DataTypes) {
 
     name: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
 
     soberSince: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: true
     },
 
     stars: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
 
     nextBadge: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: true
     }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
