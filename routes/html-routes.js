@@ -10,7 +10,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render("index");
+    res.render("start");
   });
 
   app.get("/login", (req, res) => {
@@ -21,17 +21,27 @@ module.exports = function(app) {
     res.render("login");
   });
 
+  app.get("/register", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("register");
+  });
+
+  app.get("/check-in", (req, res) => {
+    // If the user already has an account send them to the members page
+    // if (!req.user) {
+    //   res.redirect("/register");
+    // }
+    res.render("checkin");
+  });
+
   app.get("/post", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/post");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
-  });
-
-  // Route for logging user out
-  app.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
   });
 };

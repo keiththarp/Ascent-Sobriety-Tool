@@ -1,24 +1,23 @@
 <div class="main-content">
-    <div class="box login-container animate__animated animate__fadeIn animate__delay-0.5s">
+    <div class="signupJumbo box animate__animated animate__fadeIn animate__delay-0.5s">
         <button class="back" href="/"><i class="fas fa-arrow-circle-left"></i></button>
-        <div class="container">
+        <div class="container singupContain">
             <img SRC="img/logo.png" alt="mountain logo"
                 class="signin-logo animate__animated animate__fadeIn animate__delay-0.5s">
-            <h2 class="login-title animate__animated animate__fadeIn animate__delay-0.5s">ASCENT</h2>
+            <h2 class="signupLogo animate__animated animate__fadeIn animate__delay-0.5s">ASCENT</h2>
             <form class="animate__animated animate__fadeIn animate__delay-2s">
+                <h4 class="date">SELECT SOBRIETY DATE</h4>
+                <input type="date" name="html5date" id="soberDate">
+                <input type="text" placeholder="name" id="name">
                 <input type="text" placeholder="email" id="email">
                 <input type="password" placeholder="password" id="password">
-                <div class="remember">
-                    <input type="checkbox" value="lsRemember"> <label for="remember">Remember me</label>
-                </div>
-                <button class="btn btn-default login-btn" type="button" id="signInBtn">Sign in</button>
+                <button class="btn btn-default login-btn" id="signUpBtn" type="button">Sign Up</button>
             </form>
         </div>
     </div>
 </div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/login.js"></script>
+<script src="js/signup.js"></script>
