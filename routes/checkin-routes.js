@@ -1,20 +1,41 @@
-const router = require("express").Router();
 const db = require("../models");
 
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 // router.use("/", isAuthenticated);
 
-// get method to retrieve past journal entries in the server
-router.get("/check-in", (req, res) => {
-  console.log("made it here!");
-  if (!req.user) {
-    res.json({});
-  } else {
-    // turned result to string just for testing
-    res.json({ id: "result" });
-  }
-});
+module.exports = function (app) {
+  // get method to retrieve past journal entries in the server
+  app.get("/api/check-in/:id", (req, res) => {
+    thisId = req.params.id;
+    db.CheckIn.findAll({
+      where: {
+        authorId: thisId
+      }
+    }).then(checkIn => {
+      res.json(checkIn);
+    });
+  });
 
+  // Posting a check-in
+  app.post("/api/check-in", (req, res) => {
+    console.log(req.body);
+    db.CheckIn.create({
+      authorId: req.body.authorId,
+      body: req.body.body,
+      feeling: req.body.feeling,
+      hiccup: req.body.hiccup
+    })
+      .then(() => {
+        res.json({});
+        res.redirect(307, "/journal");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+};
+
+/*
 router.post("/check-in", (req, res) => {
   if (!req.user) {
     res.json({});
@@ -48,18 +69,6 @@ router.get("/check-in/all", (req, res) => {
   });
 });
 
-// POSTS CHECKIN
-
-// app.post("/api/check-in", (req, res) => {
-//   if (!req.user) {
-//     res.json({});
-//   } else {
-//     res.json({ id: result });
-//   }
-// });
-
-//RETRIEVES ALL POSTS BY SINGLE USER ID
-
 // RETRIEVES ALL HICCUP POSTS
 
 // router.get("/hiccups", (req, res) => {
@@ -77,5 +86,4 @@ router.get("/hiccup/all", (req, res) => {
     res.json(dbCheckIn);
   });
 });
-
-module.exports = router;
+*/
