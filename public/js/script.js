@@ -1,7 +1,7 @@
-$(".signIn").on("click", event => {
+$(".signIn").on("click", () => {
   window.location.replace("/login");
 });
 
-$(".signUp").on("click", event => {
+$(".signUp").on("click", () => {
   window.location.replace("/register");
 });
