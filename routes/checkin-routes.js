@@ -5,14 +5,15 @@ const db = require("../models");
 
 module.exports = function (app) {
   // get method to retrieve past journal entries in the server
-  app.get("/api/check-in", (req, res) => {
-    console.log("made it here!");
-    if (!req.user) {
-      res.json({});
-    } else {
-      // turned result to string just for testing
-      res.json({ id: "result" });
-    }
+  app.get("/api/check-in/:id", (req, res) => {
+    thisId = req.params.id;
+    db.CheckIn.findAll({
+      where: {
+        authorId: thisId
+      }
+    }).then(checkIn => {
+      res.json(checkIn);
+    });
   });
 
   // Posting a check-in
@@ -67,18 +68,6 @@ router.get("/check-in/all", (req, res) => {
     res.json(dbCheckIn);
   });
 });
-
-// POSTS CHECKIN
-
-// app.post("/api/check-in", (req, res) => {
-//   if (!req.user) {
-//     res.json({});
-//   } else {
-//     res.json({ id: result });
-//   }
-// });
-
-//RETRIEVES ALL POSTS BY SINGLE USER ID
 
 // RETRIEVES ALL HICCUP POSTS
 

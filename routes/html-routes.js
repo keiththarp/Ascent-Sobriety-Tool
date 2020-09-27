@@ -37,12 +37,11 @@ module.exports = function (app) {
     res.render("daily");
   });
 
-  app.get("/post", (req, res) => {
-    // If the user already has an account send them to the members page
+  app.get("/resources", (req, res) => {
     if (req.user) {
-      res.redirect("/post");
+      res.render("/resources");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.redirect("/start");
   });
 
   // Does this need to be in authenticated html routes??
