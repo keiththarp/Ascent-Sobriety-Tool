@@ -1,93 +1,121 @@
 // const moment = require("moment");
 
-// $(document).ready(() => {
-const today = moment().format();
-console.log(today);
-// variables for DOM elements
-const daysSoberContainer = $("p.days-sober");
-const timeLeft = $("span#time-left");
-const quote = $("p.quote");
-const quoteAuthor = $("p.quote-author");
+$(document).ready(() => {
+  const today = moment();
+  console.log(today);
+  // variables for DOM elements
+  const daysSoberContainer = $("p.days-sober");
+  const timeLeft = $("span#time-left");
+  const quote = $("p.quote");
+  const quoteAuthor = $("p.quote-author");
 
-const displayDaysSober = () => {
-  $.get("/api/user_data").then(response => {
-    console.log(response);
-    const soberDate = moment(response.soberSince);
-    // need to calculate difference between datetime in mysql(soberSince) and today's date.
-    const daysSober = today - soberDate;
-    daysSoberContainer.text(daysSober);
-  });
-};
+  // To diplay days sober in the counter
+  const displayDaysSober = () => {
+    $.get("/api/user_data").then(response => {
+      console.log("response is: ", response);
+      const soberDate = moment(response.soberSince);
+      console.log("soberdate: ", soberDate);
+      // calculate difference between datetime in mysql(soberSince) and today's date.
+      const daysSober = today.diff(soberDate, "days");
+      console.log("daysSober: ", daysSober);
+      daysSoberContainer.text(daysSober);
+    });
+  };
 
-displayDaysSober();
-// });
+  // to display inspirational quotes
+  // https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373/15
+  const displayRandomQuote = () => {
+    // Settings for the api
+    const settings = {
+      async: true,
+      crossDomain: true,
+      url: "https://type.fit/api/quotes",
+      method: "GET"
+    };
 
-// ********** FOR COUNTER/Chart ****************
-// How many sections in the chart; how many days/hours user has chosen for timeframe
-const seriesLength = 24;
+    //Ajax call, there are 1643 total quotes available
+    $.ajax(settings).done(response => {
+      const data = JSON.parse(response);
+      //to get a random quote:
+      const randomNum = Math.floor(Math.random() * (1643 - 1) + 1);
+      console.log("ranom num: ", randomNum);
+      const { text, author } = data[randomNum];
+      console.log("text, author:", text, author);
+      quote.text(text);
+      quoteAuthor.text(author);
+    });
+  };
 
-const currentTimePoints = 15;
+  displayDaysSober();
+  displayRandomQuote();
 
-const seriesArray = [];
+  // ********** FOR COUNTER/Chart ****************
+  // How many sections in the chart; how many days/hours user has chosen for timeframe
+  const seriesLength = 24;
 
-// Creates an array of pieces for the donut chart
-for (let i = 0; i < seriesLength; i++) {
-  seriesArray.push(1);
-}
+  const currentTimePoints = 15;
 
-// Right now, just blue romance and grey(nepal); could add more colors to use
-const colors = ["#BFF0CF", "#87A2BB"];
+  const seriesArray = [];
 
-// For the chart use blue romance for the current points, grey for those left to go
-const chartColors = [];
-
-for (let i = 0; i < seriesLength; i++) {
-  if (i < currentTimePoints) {
-    chartColors.push(colors[0]);
-  } else {
-    chartColors.push(colors[1]);
+  // Creates an array of pieces for the donut chart
+  for (let i = 0; i < seriesLength; i++) {
+    seriesArray.push(1);
   }
-}
 
-// Chart options
-const options = {
-  chart: {
-    type: "donut",
-    width: "100%"
-  },
-  series: seriesArray, //length of array would come from the db
-  //labels would also depend on the timeframe the user was working with
-  labels: ["day 1", "day 2", "day 3", "day 4", "day 5", "day 6", "day 7"], //note sure if we need labels
+  // Right now, just blue romance and grey(nepal); could add more colors to use
+  const colors = ["#BFF0CF", "#87A2BB"];
 
-  dataLabels: {
-    enabled: false
-  },
+  // For the chart use blue romance for the current points, grey for those left to go
+  const chartColors = [];
 
-  fill: {
-    type: "gradient"
-  },
-
-  legend: {
-    show: false
-  },
-
-  colors: chartColors,
-
-  plotOptions: {
-    pie: {
-      donut: {
-        size: "85%"
-      }
+  for (let i = 0; i < seriesLength; i++) {
+    if (i < currentTimePoints) {
+      chartColors.push(colors[0]);
+    } else {
+      chartColors.push(colors[1]);
     }
   }
-};
 
-const chart = new ApexCharts(
-  document.querySelector("#responsive-chart"),
-  options
-);
+  // Chart options
+  const options = {
+    chart: {
+      type: "donut",
+      width: "100%"
+    },
+    series: seriesArray, //length of array would come from the db
+    //labels would also depend on the timeframe the user was working with
+    labels: ["day 1", "day 2", "day 3", "day 4", "day 5", "day 6", "day 7"], //note sure if we need labels
 
-chart.render();
+    dataLabels: {
+      enabled: false
+    },
+
+    fill: {
+      type: "gradient"
+    },
+
+    legend: {
+      show: false
+    },
+
+    colors: chartColors,
+
+    plotOptions: {
+      pie: {
+        donut: {
+          size: "85%"
+        }
+      }
+    }
+  };
+
+  const chart = new ApexCharts(
+    document.querySelector("#responsive-chart"),
+    options
+  );
+
+  chart.render();
+});
 
 //Can also render a blank chart initially and fetch data w/ ajax
 // https://apexcharts.com/docs/update-charts-from-json-api-ajax/
