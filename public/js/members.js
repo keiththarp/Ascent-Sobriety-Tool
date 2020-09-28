@@ -16,8 +16,8 @@ $(document).ready(() => {
   });
 
   $("#mood1").hover(
-    () => {
-      $this.html("<i class='fas fa-sad-cry'></i>");
+    function() {
+      $(this).html("<i class='fas fa-sad-cry'></i>");
     },
     function() {
       $(this).html("1");
