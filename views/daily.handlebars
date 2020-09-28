@@ -15,20 +15,20 @@
     <ul class="navbar-nav my-2 my-lg-0">
       <!-- resources -->
       <li class="nav-item">
-        <a class="nav-link" href="resources.html">
+        <a class="nav-link" href="/resources">
           resources
         </a>
       </li>
       <!-- journal -->
-      <li class="nav-item active">
-        <a class="nav-link" href="journal.html">
+      <li class="nav-item">
+        <a class="nav-link" href="/journal">
           journal
         </a>
       </li>
       <!-- logout button -->
-      <button type="button" class="btn btn-outline-light nav-link">
+      <a href="/logout"><button type="button" class="btn btn-outline-light nav-link">
         logout
-      </button>
+      </button></a>
     </ul>
   </div>
 </nav>
@@ -38,7 +38,7 @@
 
   <!-- Welcome Header -->
   <header>
-    <h2 class="welcome-title">Hi there, {{name}}!</h2>
+    <h2 class="welcome-title">Hi there, <span class="member-name"></span>!</h2>
   </header>
 
   <!-- Mood Emoji Box -->
@@ -46,7 +46,7 @@
     <h4 class="mood-title">How are you feeling today?</h4>
     <div class="mood-buttons">
       <div class="mood-label">
-        <button type="button" class="btn mood active" data-mood="1" id="mood1" aria-pressed="true"
+        <button type="button" class="btn mood" data-mood="1" id="mood1" aria-pressed="true"
           aria-label="really-sad"><span>1</span></button>
         <p>low</p>
       </div>
