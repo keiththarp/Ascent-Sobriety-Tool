@@ -34,7 +34,11 @@ module.exports = function(app) {
     // if (!req.user) {
     //   res.redirect("/register");
     // }
-    res.render("daily");
+    const hbsobj = {
+      user: req.user
+    };
+
+    res.render("daily", hbsobj);
   });
 
   app.get("/resources", (req, res) => {
