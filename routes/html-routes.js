@@ -29,18 +29,37 @@ module.exports = function(app) {
   });
 
   app.get("/daily", (req, res) => {
-    // If the user already has an account send them to the members page
-    // if (!req.user) {
-    //   res.redirect("/register");
-    // }
+    // If the user isn't logged in, send them to the login page
+    if (!req.user) {
+      res.redirect("/login");
+    }
 
     res.render("daily");
   });
 
+  app.get("/counter", (req, res) => {
+    // If the user already has an account send them to the members page
+    // if (!req.user) {
+    //   res.redirect("/login");
+    // }
+
+    res.render("counter");
+  });
+
+  app.get("/journal", (req, res) => {
+    // If the user already has an account send them to the members page
+    // if (!req.user) {
+    //   res.redirect("/login");
+    // }
+
+    res.render("journal");
+  });
+
   app.get("/resources", (req, res) => {
-    if (req.user) {
-      res.render("/resources");
-    }
-    res.redirect("/start");
+    // if (req.user) {
+    //   res.render("resources");
+    // }
+    // res.redirect("/login");
+    res.render("resources");
   });
 };
