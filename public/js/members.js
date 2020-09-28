@@ -5,56 +5,56 @@ $(document).ready(() => {
   });
 
   $("#mood1").hover(
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.data("defaultText", $this.text());
       $this.html("<i class='fas fa-sad-cry'></i>");
     },
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.text($this.data("defaultText"));
     }
   );
   $("#mood2").hover(
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.data("defaultText", $this.text());
       $this.html("<i class='fas fa-grimace'></i>");
     },
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.text($this.data("defaultText"));
     }
   );
   $("#mood3").hover(
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.data("defaultText", $this.text());
       $this.html("<i class='fas fa-meh'></i>");
     },
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.text($this.data("defaultText"));
     }
   );
   $("#mood4").hover(
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.data("defaultText", $this.text());
       $this.html("<i class='fas fa-smile'></i>");
     },
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.text($this.data("defaultText"));
     }
   );
   $("#mood5").hover(
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.data("defaultText", $this.text());
       $this.html("<i class='fas fa-laugh-beam'></i>");
     },
-    function () {
+    function() {
       const $this = $(this); // caching $(this)
       $this.text($this.data("defaultText"));
     }
@@ -63,7 +63,7 @@ $(document).ready(() => {
 
 // Captures Mood Button Values on Click
 let userMood = 0;
-$(".mood").on("click", function () {
+$(".mood").on("click", function() {
   userMood = $(this).attr("data-mood");
   console.log(userMood);
 });
@@ -88,6 +88,7 @@ function sendCheckIn(userMood, soberYN, checkInText) {
     hiccup: soberYN
   })
     .then(() => {
+      localStorage.setItem("journalCat", userMood);
       // Commenting the below line out because the /resources route is not currently working from here.
       window.location.replace("/counter");
     })

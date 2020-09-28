@@ -79,11 +79,12 @@ module.exports = function(app) {
     }
   });
 
-  router.get("/api/resources", (req, res) => {
+  app.get("/api/resources/", (req, res) => {
+    const journalCat = JSON.parse(localStorage.getItem("journalCat"));
     db.resources
       .findAll({
         where: {
-          category: 5
+          category: journalCat
         }
       })
       .then(dbPost => {
