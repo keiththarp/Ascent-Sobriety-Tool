@@ -23,7 +23,10 @@ module.exports = function(app) {
       password: req.body.password,
       name: req.body.name,
       soberSince: req.body.soberSince,
-      stars: 0
+      stars: req.body.stars,
+      weekBadge: 0,
+      monthBadge: 0,
+      yearBadge: 0
     })
       .then(() => {
         res.redirect(307, "/api/login");
