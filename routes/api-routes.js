@@ -78,4 +78,16 @@ module.exports = function(app) {
       });
     }
   });
+
+  router.get("/api/resources", (req, res) => {
+    db.resources
+      .findAll({
+        where: {
+          category: 5
+        }
+      })
+      .then(dbPost => {
+        res.json(dbPost);
+      });
+  });
 };
