@@ -89,7 +89,7 @@ function sendCheckIn(userMood, soberYN, checkInText) {
   })
     .then(() => {
       // Commenting the below line out because the /resources route is not currently working from here.
-      window.location.replace("/daily");
+      window.location.replace("/counter");
     })
     .catch(console.error());
 }
