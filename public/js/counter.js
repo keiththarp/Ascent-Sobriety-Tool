@@ -23,6 +23,7 @@ $(document).ready(() => {
   };
 
   // to display inspirational quotes
+  // https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373/15
   const displayRandomQuote = () => {
     // Settings for the api
     const settings = {
