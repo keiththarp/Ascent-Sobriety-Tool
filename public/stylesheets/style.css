@@ -1,6 +1,19 @@
+/* font stylings */
+
 @font-face {
   src: url(../font/Aspal.ttf);
   font-family: 'aspal';
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h2 {
+  font-weight: bold;
+  color: #BFF0CF;
+  font-family: 'aspal';
+  font-size: 45px;
 }
 
 /* Background Image */
@@ -12,15 +25,6 @@ body {
   background-size: auto;
   width: 100%;
   height: 100%;
-}
-
-/* heading */
-
-h2 {
-  font-weight: bold;
-  color: #BFF0CF;
-  font-family: 'aspal';
-  font-size: 45px;
 }
 
 /* Navigation */
@@ -60,7 +64,7 @@ span.navbar-toggler-icon {
   text-align: right;
 }
 
-.nav-link {
+a.nav-link {
   color: white;
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
@@ -73,7 +77,7 @@ a.nav-link:hover {
 
 /* End Navigation */
 
-.main-content {
+div.main-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,7 +85,9 @@ a.nav-link:hover {
 }
 
 /* ----- general btn stylings ----- */
-.sober-btn, .login-btn, .article-btn {
+button.sober-btn, 
+button.login-btn, 
+button.article-btn {
   border-radius: 3px;
   height: 60px;
   background-color: #87A2BB;
@@ -97,12 +103,6 @@ h4.startPage {
   font-size: 30px;
   margin-bottom: 40px;
 }
-
-/* div.start-btns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-} */
 
 .start-btn {
   width: 80%;
@@ -142,7 +142,8 @@ h2.login-title {
   margin-bottom: 48px;
 }
 
-.login-btn:hover {
+button.login-btn:hover,
+img.icon {
   background-color: #3A5772;
   color: white;
 }
@@ -159,7 +160,7 @@ h2.user-name {
 
 /* Containers */
 
-.box {
+div.box {
   background-color: rgba(58, 87, 114, 0.4);
   text-align: center;
   width: 90vw;
@@ -173,19 +174,25 @@ h2.user-name {
 
 /* ---- Check in ---- */
 
-h2.welcome-title, h2.resources-title {
+h2.welcome-title, 
+h2.resources-title, 
+span.member-name {
   font-family: 'Quicksand', sans-serif;
   margin: 2rem;
   color: #3A5772;
 }
 
-.member-name {
-  color: #BFF0CF;
+h2.welcome-title {
+  color: #87A2BB;
 }
 
-.mood-box {
-  margin-top: 0rem;
+span.member-name {
+  margin: 0;
 }
+
+/* div.mood-box {
+  margin-top: 0rem;
+} */
 
 /* mood title */
 
@@ -196,7 +203,7 @@ h4 {
 
 /* mood button styling */
 
-.mood-buttons {
+div.mood-buttons {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -208,7 +215,7 @@ p {
   color: #3A5772;
 }
 
-.mood {
+button.mood {
   width: 3rem;
   border: 3px solid white;
   border-radius: 100px;
@@ -221,18 +228,24 @@ p {
   align-items: center;
 }
 
-.mood:hover, .sober-btn:hover, .article-btn:hover, .btn:focus, .active {
+button.mood:hover, 
+button.sober-btn:hover, 
+button.article-btn:hover, 
+button.btn:focus, 
+button.active {
   background-color: #BFF0CF;
   border: 3px solid #3A5772;
   color: #3A5772;
 }
 
-.mood:hover {
+button.mood:hover {
   font-size: 35px;
   height: 3rem;
 }
 
-span:hover {
+/* member name styling  */
+
+span.member-name {
   margin: 0;
   padding: 0;
 }
@@ -259,7 +272,7 @@ input[type=checkbox] {
   width: 15px;
 }
 
-/****Resources*****/
+/* ---- Resources ---- */
 
 .resource-box, .journal-box {
   max-width: 800px;
@@ -289,6 +302,166 @@ p {
 
 .article-btn {
   margin-top: 5px;
+}
+
+/* ---- Counter Stylings ---- */
+
+/* Top of the page */
+div.mtn-logo-top {
+  height: 8vw;
+}
+
+img.mtn-logo {
+  margin-top: 5px;;
+  height: 100%;
+}
+
+/* The counter with chart */
+#counter {
+  max-width: 450px;
+  margin: 35px auto;
+  opacity: 0.9;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+}
+
+#responsive-chart, div.chart-inner{
+  grid-column: 2/span 10;
+  grid-row: 1;
+  z-index: 2;
+}
+
+#mtn-img  {
+  grid-column: 4/span 6;
+  grid-row: 1;
+  width: 100%;
+  z-index: 1;
+}
+
+/* For the overlay behind the mtn image */
+div.chart-inner {
+  grid-column: 3/span 8;
+  grid-row: 1;
+  background-color: #3a5772;
+  height: 90%;
+  z-index: 0;
+  margin: 15px;
+}
+
+/* for the days sober */
+p.days-sober {
+  grid-column: 6/span 2;
+  grid-row: 1;
+  z-index: 3;
+  margin-top: 250%;
+  font-size: calc(12px + 1vw);
+  color: yellow;
+}
+
+/*  For days/etc until next badge */
+div.days-until {
+  background-color: #3a57729c;
+  width: 65%;
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+div.days-until p {
+  color: white;
+  margin: .25rem 0;
+  font-size: 3vw;
+  width: 100%;
+}
+
+span#time-left {
+  color: #BFF0CF;
+}
+
+span.star {
+  color: yellow;
+  font-size: 5vw;
+  margin-left: 10px;
+}
+
+/* Quote box */
+div.quote-container {
+  color: white;
+  background-color: #bff0cf9c;
+  width: 65%;
+  border-radius: 10px;
+}
+
+div.quote-container > p {
+  color: white;
+  font-size: 3.5vw;
+}
+
+p.quote {
+  font-style: italic;
+}
+
+footer {
+  background-color: #87A2BB;
+}
+
+footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: white;
+}
+
+/* Footer icons */
+img.icon {
+  max-width: 40px;
+  width: 5vw;
+}
+
+img.icon-connect {
+  max-width: 50px;
+  width: 7vw;
+}
+
+/* media queries */
+@media screen and (min-width: 400px) {
+  div.days-until {
+      margin-top: 30px;
+      margin-bottom: 30px;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  div.mtn-logo-top {
+      height: 4vw;
+  }
+
+  div.days-until > p {
+      font-size: 24px;
+  }
+
+  div.quote-container > p {
+      font-size: 2vw;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  div.mtn-logo-top {
+      height: 5vw;
+  }
+
+  div.days-until, div.quote-container {
+      width: 50%;
+  }
+
+  div.days-until p {
+      font-size: 2.5vw;
+  }
+
+  div.quote-container > p {
+      font-size: 3vw;
+  }
 }
 
 @media only screen and (min-device-width: 280px) and (max-device-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
