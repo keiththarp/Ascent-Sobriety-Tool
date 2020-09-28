@@ -51,4 +51,9 @@ module.exports = function(app) {
     // }
     // res.redirect("start");
   });
+
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  });
 };
