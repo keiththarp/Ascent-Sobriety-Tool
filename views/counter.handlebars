@@ -1,4 +1,4 @@
-<body class="d-flex flex-column h-100">
+<div class="d-flex flex-column h-100">
 
   <main role="main" class="flex-shrink-0">
     <!-- container for the counter -->
@@ -6,16 +6,18 @@
       <div class="row align-items-center justify-content-center" id="counter">
         <!-- Pie chart will be inserted into this div -->
         <div id="responsive-chart"></div>
+        {{!-- trasparent overlay and logo --}}
         <div class="rounded-circle chart-inner"></div>
         <img id="mtn-img" class="mx-auto" src="./img/logo-white.png" alt="mountain-logo">
+        <!-- how many days sober -->
+        <p class="days-sober mx-auto">{{daysSober}}</p>
       </div>
     </div>
 
     <!-- Container for Days Until Next Badge + badges -->
     <div class="container days-until text-center">
       <div class="row text-center">
-        <p class="align-middle"><span id="time-left">{{days}}</span> Days Until Next Badge <span class="star"><i
-              class="fas fa-star"></i></span></p>
+        <p class="align-middle"><span id="time-left">{{days}}</span> Days Until Next Badge <span class="star"><i class="fas fa-star"></i></span></p>
       </div>
     </div>
 
@@ -33,9 +35,26 @@
               <i class="fas fa-book-open"></i>
               <i class="far fa-comments"></i> -->
       <a href="/"><img class="icon" src="./img/icons/account.png" alt="account icon"></a>
-      <a href="/"><img class="icon" src="./img/icons/resources.png" alt="account icon"></a>
-      <a href="/"><img class="icon-connect" src="./img/icons/connect.png" alt="account icon"></a>
-      <a href="/"><img class="icon" src="./img/icons/notepad.png" alt="account icon"></a>
+      <a href="/resources"><img class="icon" src="./img/icons/resources.png" alt="resources icon"></a>
+      <a href="/"><img class="icon-connect" src="./img/icons/connect.png" alt="connect icon"></a>
+      <a href="/journal"><img class="icon" src="./img/icons/notepad.png" alt="notepad icon"></a>
     </div>
   </footer>
+
+
+  <!-- momentjs -->
+  <script src="https://cdnjs.cloudflare.com/ajafx/libs/moment.js/2.25.1/moment.min.js"></script>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+    </script>
+
+  <!-- Apex charts (can also do npm install) -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+  <script src="js/counter.js"></script>
 </body>
+
+</div>
+
