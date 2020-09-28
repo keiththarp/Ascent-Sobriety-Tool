@@ -3,6 +3,7 @@ $(document).ready(() => {
   const loginForm = $("#signInBtn");
   const emailInput = $("#email");
   const passwordInput = $("#password");
+  const backBtn = $("#backBtn");
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("click", event => {
@@ -38,4 +39,8 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+  backBtn.on("click", event => {
+    event.preventDefault();
+    window.location.replace("/");
+  });
 });

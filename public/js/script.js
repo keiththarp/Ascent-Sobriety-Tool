@@ -8,6 +8,6 @@ $(document).ready(() => {
   });
   register.on("click", event => {
     event.preventDefault();
-    window.location.replace("/signup");
+    window.location.replace("/register");
   });
 });
