@@ -3,6 +3,7 @@ $(document).ready(() => {
   const soberDate = $("#soberDate");
   const emailInput = $("#email");
   const passwordInput = $("#password");
+  const backBtn = $("#backBtn");
 
   // When the signup button is clicked, we validate the email and password are not blank
   $("#signUpBtn").on("click", event => {
@@ -56,4 +57,9 @@ $(document).ready(() => {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+
+  backBtn.on("click", event => {
+    event.preventDefault();
+    window.location.replace("/");
+  });
 });

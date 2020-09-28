@@ -81,9 +81,11 @@ $(document).ready(() => {
       body: checkInText,
       feeling: userMood,
       hiccup: soberYN
-
     })
       .then(() => {
+        const timeStamp = moment().format('L');
+        localStorage.setItem("timeStamp", timeStamp);
+        localStorage.setItem("journalCat", userMood);
         // Commenting the below line out because the /resources route is not currently working from here.
         window.location.replace("/counter");
       })

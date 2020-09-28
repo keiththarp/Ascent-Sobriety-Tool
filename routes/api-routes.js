@@ -18,17 +18,21 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-    db.User.create({
+    return db.User.create({
       email: req.body.email,
       password: req.body.password,
       name: req.body.name,
       soberSince: req.body.soberSince,
-      stars: req.body.stars
+      stars: req.body.stars,
+      weekBadge: 0,
+      monthBadge: 0,
+      yearBadge: 0
     })
       .then(() => {
         res.redirect(307, "/api/login");
       })
       .catch(err => {
+        console.log(req.body);
         res.status(401).json(err);
       });
   });
@@ -69,5 +73,18 @@ module.exports = function(app) {
       stars: req.user.stars,
       nextBadge: req.user.nextBadge
     });
+  });
+
+  app.get("/api/resources/", (req, res) => {
+    const journalCat = JSON.parse(localStorage.getItem("journalCat"));
+    db.resources
+      .findAll({
+        where: {
+          category: journalCat
+        }
+      })
+      .then(dbPost => {
+        res.json(dbPost);
+      });
   });
 };
