@@ -16,58 +16,43 @@ $(document).ready(() => {
   });
 
   $("#mood1").hover(
-    function() {
-      const $this = $(this); // caching $(this)
-      $this.data("defaultText", $this.text());
+    () => {
       $this.html("<i class='fas fa-sad-cry'></i>");
     },
     function() {
-      const $this = $(this); // caching $(this)
-      $this.text($this.data("defaultText"));
+      $(this).html("1");
     }
   );
   $("#mood2").hover(
     function() {
-      const $this = $(this); // caching $(this)
-      $this.data("defaultText", $this.text());
-      $this.html("<i class='fas fa-grimace'></i>");
+      $(this).html("<i class='fas fa-grimace'></i>");
     },
     function() {
-      const $this = $(this); // caching $(this)
-      $this.text($this.data("defaultText"));
+      $(this).html("2");
     }
   );
   $("#mood3").hover(
     function() {
-      const $this = $(this); // caching $(this)
-      $this.data("defaultText", $this.text());
-      $this.html("<i class='fas fa-meh'></i>");
+      $(this).html("<i class='fas fa-meh'></i>");
     },
     function() {
-      const $this = $(this); // caching $(this)
-      $this.text($this.data("defaultText"));
+      $(this).html("3");
     }
   );
   $("#mood4").hover(
     function() {
-      const $this = $(this); // caching $(this)
-      $this.data("defaultText", $this.text());
-      $this.html("<i class='fas fa-smile'></i>");
+      $(this).html("<i class='fas fa-smile'></i>");
     },
     function() {
-      const $this = $(this); // caching $(this)
-      $this.text($this.data("defaultText"));
+      $(this).html("4");
     }
   );
   $("#mood5").hover(
     function() {
-      const $this = $(this); // caching $(this)
-      $this.data("defaultText", $this.text());
-      $this.html("<i class='fas fa-laugh-beam'></i>");
+      $(this).html("<i class='fas fa-laugh-beam'></i>");
     },
     function() {
-      const $this = $(this); // caching $(this)
-      $this.text($this.data("defaultText"));
+      $(this).html("5");
     }
   );
 
@@ -99,7 +84,7 @@ $(document).ready(() => {
     })
       .then(() => {
         // Commenting the below line out because the /resources route is not currently working from here.
-        window.location.replace("/daily");
+        window.location.replace("/counter");
       })
       .catch(console.error());
   }
