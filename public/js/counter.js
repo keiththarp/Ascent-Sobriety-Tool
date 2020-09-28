@@ -1,5 +1,3 @@
-// const moment = require("moment");
-
 $(document).ready(() => {
   const today = moment();
   console.log(today);
