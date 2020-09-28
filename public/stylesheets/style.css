@@ -119,7 +119,7 @@ h4.date {
 
 /* back arrow */
 
-i.fa-arrow-circle-left {
+button.fa-arrow-circle-left {
   font-size: 25px;
   float: left;
   color: #3A5772;
@@ -177,6 +177,10 @@ h2.welcome-title, h2.resources-title {
   font-family: 'Quicksand', sans-serif;
   margin: 2rem;
   color: #3A5772;
+}
+
+.member-name {
+  color: #BFF0CF;
 }
 
 .mood-box {
