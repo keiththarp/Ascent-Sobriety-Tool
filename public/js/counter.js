@@ -37,7 +37,7 @@ $(document).ready(() => {
     $.ajax(settings).done(response => {
       const data = JSON.parse(response);
       //to get a random quote:
-      const randomNum = Math.floor(Math.random()*(1643 - 1) + 1);
+      const randomNum = Math.floor(Math.random() * (1643 - 1) + 1);
       console.log("ranom num: ", randomNum);
       const { text, author } = data[randomNum];
       console.log("text, author:", text, author);
