@@ -22,7 +22,8 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password,
       name: req.body.name,
-      soberSince: req.body.soberSince
+      soberSince: req.body.soberSince,
+      stars: req.body.stars
     })
       .then(() => {
         res.redirect(307, "/api/login");

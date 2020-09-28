@@ -27,7 +27,7 @@ module.exports = function (app) {
     })
       .then(() => {
         res.json({});
-        res.redirect(307, "/journal");
+        // res.redirect(307, "/counter");
       })
       .catch(err => {
         res.status(401).json(err);

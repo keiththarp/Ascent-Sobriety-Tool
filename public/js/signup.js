@@ -17,10 +17,19 @@ $(document).ready(() => {
     if (!userData.email || !userData.password) {
       return;
     }
+
     const { name, email, password, soberSince } = userData;
+
+    // calculating the total sober days to start
+
+    const start = moment(soberSince);
+    const today = moment();
+    const stars = today.diff(start, "days");
+
     // If we have an email and password, run the signUpUser function
-    signUpUser(name, email, password, soberSince);
-    nameInput.val("");
+
+    signUpUser(name, email, password, soberSince, stars);
+
     emailInput.val("");
     passwordInput.val("");
     soberDate.val("");
@@ -28,12 +37,13 @@ $(document).ready(() => {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(name, email, password, soberDate) {
+  function signUpUser(name, email, password, soberDate, stars) {
     $.post("/api/signup", {
       name: name,
       email: email,
       password: password,
-      soberSince: soberDate
+      soberSince: soberDate,
+      stars: stars
     })
       .then(() => {
         window.location.replace("/daily");

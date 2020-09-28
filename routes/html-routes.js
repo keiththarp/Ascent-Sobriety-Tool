@@ -62,4 +62,12 @@ module.exports = function(app) {
     // res.redirect("/login");
     res.render("resources");
   });
+
+  // This will need to be an authenticated route at some point
+  app.get("/counter", (req, res) => {
+    // if (req.user) {
+    res.render("counter");
+    // }
+    // res.redirect("start");
+  });
 };

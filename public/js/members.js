@@ -81,6 +81,7 @@ $(document).ready(() => {
       body: checkInText,
       feeling: userMood,
       hiccup: soberYN
+
     })
       .then(() => {
         // Commenting the below line out because the /resources route is not currently working from here.
