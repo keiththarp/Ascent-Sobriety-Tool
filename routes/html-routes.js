@@ -28,48 +28,52 @@ module.exports = function(app) {
     res.render("register");
   });
 
-  app.get("/daily", (req, res) => {
-    // If the user isn't logged in, send them to the login page
-    if (!req.user) {
-      res.redirect("/login");
-    }
+  // app.get waiting for get
+  // see if any mw cred to check first (do that)
+  // if pass mw will call next fx
+  // then handle response
+  // app.get("/daily", (req, res) => {
+  //   // If the user isn't logged in, send them to the login page
+  //   if (!req.user) {
+  //     res.redirect("/login");
+  //   }
 
-    res.render("daily");
-  });
+  //   res.render("daily");
+  // });
 
-  app.get("/counter", (req, res) => {
-    // If the user already has an account send them to the members page
-    // if (!req.user) {
-    //   res.redirect("/login");
-    // }
+  // app.get("/counter", (req, res) => {
+  //   // If the user already has an account send them to the members page
+  //   // if (!req.user) {
+  //   //   res.redirect("/login");
+  //   // }
 
-    res.render("counter");
-  });
+  //   res.render("counter");
+  // });
 
-  app.get("/journal", (req, res) => {
-    // If the user already has an account send them to the members page
-    // if (!req.user) {
-    //   res.redirect("/login");
-    // }
+  // app.get("/journal", (req, res) => {
+  //   // If the user already has an account send them to the members page
+  //   // if (!req.user) {
+  //   //   res.redirect("/login");
+  //   // }
 
-    res.render("journal");
-  });
+  //   res.render("journal");
+  // });
 
-  app.get("/resources", (req, res) => {
-    if (req.user) {
-      res.render("resources");
-    } else {
-      res.redirect("login");
-    }
-  });
+  // app.get("/resources", (req, res) => {
+  //   if (req.user) {
+  //     res.render("resources");
+  //   } else {
+  //     res.redirect("login");
+  //   }
+  // });
 
   // This will need to be an authenticated route at some point
-  app.get("/counter", (req, res) => {
-    // if (req.user) {
-    res.render("counter");
-    // }
-    // res.redirect("start");
-  });
+  // app.get("/counter", (req, res) => {
+  //   // if (req.user) {
+  //   res.render("counter");
+  //   // }
+  //   // res.redirect("start");
+  // });
 
   app.get("/logout", (req, res) => {
     req.logout();
