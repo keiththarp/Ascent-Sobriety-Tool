@@ -40,7 +40,7 @@ $(document).ready(() => {
       const randomNum = Math.floor(Math.random()*(1643 - 1) + 1);
       console.log("ranom num: ", randomNum);
       const { text, author } = data[randomNum];
-      console.log("text, author:", text, author)
+      console.log("text, author:", text, author);
       quote.text(text);
       quoteAuthor.text(author);
     });
@@ -115,8 +115,7 @@ $(document).ready(() => {
   );
 
   chart.render();
-
-})
+});
 
 //Can also render a blank chart initially and fetch data w/ ajax
 // https://apexcharts.com/docs/update-charts-from-json-api-ajax/
