@@ -4,7 +4,7 @@
 
 // Requiring our custom middleware for checking if a user is logged in
 
-module.exports = function (app) {
+module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -42,5 +42,13 @@ module.exports = function (app) {
       res.render("/resources");
     }
     res.redirect("/start");
+  });
+
+  // This will need to be an authenticated route at some point
+  app.get("/counter", (req, res) => {
+    // if (req.user) {
+    res.render("counter");
+    // }
+    // res.redirect("start");
   });
 };
