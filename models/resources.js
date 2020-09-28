@@ -13,6 +13,12 @@ module.exports = function (sequelize, DataTypes) {
       len: [1]
     },
 
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      len: [1]
+    },
+
     link: {
       type: DataTypes.TEXT,
       allowNull: false,

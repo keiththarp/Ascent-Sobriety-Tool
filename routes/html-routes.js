@@ -56,11 +56,11 @@ module.exports = function(app) {
   });
 
   app.get("/resources", (req, res) => {
-    // if (req.user) {
-    //   res.render("resources");
-    // }
-    // res.redirect("/login");
-    res.render("resources");
+    if (req.user) {
+      res.render("resources");
+    } else {
+      res.redirect("login");
+    }
   });
 
   // This will need to be an authenticated route at some point
@@ -69,5 +69,10 @@ module.exports = function(app) {
     res.render("counter");
     // }
     // res.redirect("start");
+  });
+
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
   });
 };
