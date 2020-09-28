@@ -26,7 +26,7 @@ module.exports = function (app) {
       hiccup: req.body.hiccup
     })
       .then(() => {
-        res.json({});
+        // res.json({});
         res.redirect(307, "/journal");
       })
       .catch(err => {
