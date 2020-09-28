@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
 
     name: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
 
     soberSince: {

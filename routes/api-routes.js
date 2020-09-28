@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -59,19 +59,15 @@ module.exports = function (app) {
     }
   });
 
-  // template for app.post to make sure post is working in postman
+  // user_data post request this would be specifically for register
   app.post("/api/user_data", (req, res) => {
-    if (!req.user) {
-      res.json({});
-    } else {
-      res.json({
-        id: res.user.id,
-        email: res.user.email,
-        name: res.user.name,
-        soberSince: res.user.soberSince,
-        stars: res.user.stars,
-        nextBadge: res.user.nextBadge
-      });
-    }
+    // if (!req.user) {
+    //   res.json({});
+    // } else {
+    res.json({
+      soberSince: req.user.soberSince,
+      stars: req.user.stars,
+      nextBadge: req.user.nextBadge
+    });
   });
 };
