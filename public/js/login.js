@@ -33,7 +33,16 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/daily");
+        const timeStamp = localStorage.getItem("timeStamp");
+        const current = moment().format("L");
+        console.log(timeStamp);
+        console.log(current);
+
+        if (timeStamp !== current) {
+          window.location.replace("/daily");
+        } else {
+          window.location.replace("/counter");
+        }
         // If there's an error, log the error
       })
       .catch(err => {

@@ -38,10 +38,11 @@ module.exports = function(app) {
   });
 
   app.get("/resources", (req, res) => {
-    
+    if (req.user) {
       res.render("resources");
-    
-  
+    } else {
+      res.redirect("login");
+    }
   });
 
   // This will need to be an authenticated route at some point
