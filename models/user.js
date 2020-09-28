@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     name: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
 
@@ -37,7 +37,26 @@ module.exports = function(sequelize, DataTypes) {
 
     stars: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false,
+      defaultValue: 0
+    },
+
+    weekBadge: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+
+    monthBadge: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+
+    yearBadge: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
     },
 
     nextBadge: {

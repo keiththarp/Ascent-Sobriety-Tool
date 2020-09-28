@@ -1,19 +1,18 @@
 $(document).ready(() => {
-  // Getting references to our form and input
-  const signUpForm = $("#signUpBtn");
   const nameInput = $("#name");
+  const soberDate = $("#soberDate");
   const emailInput = $("#email");
   const passwordInput = $("#password");
-  const soberDateInput = $("#soberDate");
+  const backBtn = $("#backBtn");
 
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("click", event => {
+  $("#signUpBtn").on("click", event => {
     event.preventDefault();
     const userData = {
       name: nameInput.val().trim(),
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
-      soberSince: soberDateInput.val()
+      soberSince: soberDate.val()
     };
     console.log(userData);
     if (!userData.email || !userData.password) {
@@ -29,9 +28,12 @@ $(document).ready(() => {
     const stars = today.diff(start, "days");
 
     // If we have an email and password, run the signUpUser function
+
     signUpUser(name, email, password, soberSince, stars);
+
     emailInput.val("");
     passwordInput.val("");
+    soberDate.val("");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
@@ -55,4 +57,9 @@ $(document).ready(() => {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+
+  backBtn.on("click", event => {
+    event.preventDefault();
+    window.location.replace("/");
+  });
 });

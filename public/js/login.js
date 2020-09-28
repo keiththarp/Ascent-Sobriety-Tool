@@ -4,6 +4,7 @@ $(document).ready(() => {
   const loginForm = $("#signInBtn");
   const emailInput = $("#email");
   const passwordInput = $("#password");
+  const backBtn = $("#backBtn");
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("click", event => {
@@ -32,11 +33,24 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/daily");
+        const timeStamp = localStorage.getItem("timeStamp");
+        const current = moment().format("L");
+        console.log(timeStamp);
+        console.log(current);
+
+        if (timeStamp !== current) {
+          window.location.replace("/daily");
+        } else {
+          window.location.replace("/counter");
+        }
         // If there's an error, log the error
       })
       .catch(err => {
         console.log(err);
       });
   }
+  backBtn.on("click", event => {
+    event.preventDefault();
+    window.location.replace("/");
+  });
 });

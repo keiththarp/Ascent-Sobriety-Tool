@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -18,17 +18,21 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-    db.User.create({
+    return db.User.create({
       email: req.body.email,
       password: req.body.password,
       name: req.body.name,
       soberSince: req.body.soberSince,
-      stars: req.body.stars
+      stars: req.body.stars,
+      weekBadge: 0,
+      monthBadge: 0,
+      yearBadge: 0
     })
       .then(() => {
         res.redirect(307, "/api/login");
       })
       .catch(err => {
+        console.log(req.body);
         res.status(401).json(err);
       });
   });
@@ -59,19 +63,28 @@ module.exports = function (app) {
     }
   });
 
-  // template for app.post to make sure post is working in postman
+  // user_data post request this would be specifically for register
   app.post("/api/user_data", (req, res) => {
-    if (!req.user) {
-      res.json({});
-    } else {
-      res.json({
-        id: res.user.id,
-        email: res.user.email,
-        name: res.user.name,
-        soberSince: res.user.soberSince,
-        stars: res.user.stars,
-        nextBadge: res.user.nextBadge
+    // if (!req.user) {
+    //   res.json({});
+    // } else {
+    res.json({
+      soberSince: req.user.soberSince,
+      stars: req.user.stars,
+      nextBadge: req.user.nextBadge
+    });
+  });
+
+  app.get("/api/resources/", (req, res) => {
+    const journalCat = JSON.parse(localStorage.getItem("journalCat"));
+    db.resources
+      .findAll({
+        where: {
+          category: journalCat
+        }
+      })
+      .then(dbPost => {
+        res.json(dbPost);
       });
-    }
   });
 };
