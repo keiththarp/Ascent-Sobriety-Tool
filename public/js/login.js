@@ -1,5 +1,6 @@
 $(document).ready(() => {
   // Getting references to our form and inputs
+
   const loginForm = $("#signInBtn");
   const emailInput = $("#email");
   const passwordInput = $("#password");
