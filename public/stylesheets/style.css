@@ -217,7 +217,7 @@ p {
   align-items: center;
 }
 
-.mood:hover, .sober-btn:hover, .article-btn:hover, .btn:focus {
+.mood:hover, .sober-btn:hover, .article-btn:hover, .btn:focus, .active {
   background-color: #BFF0CF;
   border: 3px solid #3A5772;
   color: #3A5772;
