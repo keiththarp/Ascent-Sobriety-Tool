@@ -10,7 +10,7 @@ $(document).ready(() => {
     $(".member-name").text(data.name);
   }
 
-  $("button").click(function(){
+  $("button").click(function() {
     $("button").removeClass("active");
     $(this).addClass("active");
   });
