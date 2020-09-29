@@ -33,8 +33,11 @@ module.exports = function(app) {
     if (!req.user) {
       res.redirect("/login");
     }
+    const hbsObj = {
+      user: req.user
+    };
 
-    res.render("daily");
+    res.render("daily", hbsObj);
   });
 
   app.get("/counter", (req, res) => {
