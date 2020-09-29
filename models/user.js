@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     name: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
 
@@ -37,7 +37,44 @@ module.exports = function(sequelize, DataTypes) {
 
     stars: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false,
+      defaultValue: 0
+    },
+
+    badgeOne: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+
+    badgeTwo: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+
+    badgeThree: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+
+    badgeFour: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+
+    badgeFive: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+
+    consDays: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
     },
 
     nextBadge: {

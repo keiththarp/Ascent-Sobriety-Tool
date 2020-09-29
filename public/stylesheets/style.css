@@ -1,6 +1,19 @@
+/* font stylings */
+
 @font-face {
   src: url(../font/Aspal.ttf);
   font-family: 'aspal';
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h2 {
+  font-weight: bold;
+  color: #BFF0CF;
+  font-family: 'aspal';
+  font-size: 45px;
 }
 
 /* Background Image */
@@ -12,15 +25,6 @@ body {
   background-size: auto;
   width: 100%;
   height: 100%;
-}
-
-/* heading */
-
-h2 {
-  font-weight: bold;
-  color: #BFF0CF;
-  font-family: 'aspal';
-  font-size: 45px;
 }
 
 /* Navigation */
@@ -60,7 +64,7 @@ span.navbar-toggler-icon {
   text-align: right;
 }
 
-.nav-link {
+a.nav-link {
   color: white;
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
@@ -69,6 +73,17 @@ span.navbar-toggler-icon {
 
 a.nav-link:hover {
   color: #BFF0CF;
+}
+
+/* footer nav */
+
+div.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+a.foot-icon {
+  font-size: 30px;
 }
 
 /* End Navigation */
@@ -81,7 +96,8 @@ a.nav-link:hover {
 }
 
 /* ----- general btn stylings ----- */
-.sober-btn, .login-btn, .article-btn {
+
+button.sober-btn, button.login-btn, button.article-btn {
   border-radius: 3px;
   height: 60px;
   background-color: #87A2BB;
@@ -98,28 +114,27 @@ h4.startPage {
   margin-bottom: 40px;
 }
 
-/* div.start-btns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-} */
-
 .start-btn {
   width: 80%;
 }
 
 /* ---- Register Stylings ---- */
 
-h4.date {
+h2.signupTitle {
+  margin-bottom: 1rem;
+}
+
+label.inputLabel {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin: 5px;
+  text-align: left;
 }
 
 /* ---- Login Stylings ---- */
 
 /* back arrow */
 
-.fa-arrow-circle-left {
+button.fa-arrow-circle-left {
   font-size: 25px;
   float: left;
   color: #3A5772;
@@ -131,7 +146,7 @@ img.signin-logo {
   margin-bottom: 30px;
 }
 
-.back {
+button.back {
   width: 25px;
   height: 25px;
   background-color: transparent;
@@ -142,12 +157,12 @@ h2.login-title {
   margin-bottom: 48px;
 }
 
-.login-btn:hover {
+button.login-btn:hover {
   background-color: #3A5772;
   color: white;
 }
 
-div.checkbox {
+label.checkbox {
   text-align: left;
 }
 
@@ -159,13 +174,15 @@ h2.user-name {
 
 /* Containers */
 
-.box {
+div.box {
   background-color: rgba(58, 87, 114, 0.4);
   text-align: center;
+  width: 500px;
   width: 90vw;
-  max-width: 500px;
-  border-radius: 8px;
   margin-top: 2rem;
+  max-width: 700px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -173,30 +190,36 @@ h2.user-name {
 
 /* ---- Check in ---- */
 
-h2.welcome-title, h2.resources-title {
+h2.welcome-title, h2.resources-title, span.member-name, h2.reflections-title {
   font-family: 'Quicksand', sans-serif;
-  margin: 2rem;
+  margin-top: 2rem;
   color: #3A5772;
+  text-align: center;
 }
 
-.mood-box {
-  margin-top: 0rem;
+span.member-name {
+  margin: 0;
 }
 
 /* mood title */
 
-h4 {
+h4, label.checkin-title, a.foot-icon, h5 {
   color: white;
   font-family: 'Quicksand', sans-serif;
 }
 
 /* mood button styling */
 
-.mood-buttons {
+div.mood-buttons, .mood-sober {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+}
+
+.mood-sober {
+  justify-content: space-around;
+  color: white;
 }
 
 p {
@@ -204,7 +227,7 @@ p {
   color: #3A5772;
 }
 
-.mood {
+button.mood {
   width: 3rem;
   border: 3px solid white;
   border-radius: 100px;
@@ -217,29 +240,33 @@ p {
   align-items: center;
 }
 
-.mood:hover, .sober-btn:hover, .article-btn:hover, .btn:focus {
+button.mood:hover, button.sober-btn:hover, button.article-btn:hover, button.btn:focus, button.active, .feelingNum {
   background-color: #BFF0CF;
   border: 3px solid #3A5772;
   color: #3A5772;
 }
 
-.mood:hover {
+button.mood:hover, .feelingNum {
   font-size: 35px;
   height: 3rem;
 }
 
-span:hover {
-  margin: 0;
-  padding: 0;
-}
-
-h4.checkin-title {
+label.checkin-title {
   text-align: left;
+  font-size: 22px;
 }
 
-input[type=text], input[type=password], input[type=date] {
+textarea {
+  font-size: 14px;
+}
+
+#check-in-text {
+  height: 4rem;
+}
+
+input[type=text], input[type=password], input[type=date], textarea {
   width: 100%;
-  margin-bottom: 22px;
+  margin-bottom: 14px;
   padding: 16px;
   background-color: #ecf2f4;
   border: none;
@@ -248,6 +275,7 @@ input[type=text], input[type=password], input[type=date] {
 
 label {
   color: #fff;
+  width: 100%;
 }
 
 input[type=checkbox] {
@@ -255,10 +283,18 @@ input[type=checkbox] {
   width: 15px;
 }
 
-/****Resources*****/
+/* ---- Resources & Journal ---- */
 
-.resource-box, .journal-box {
-  max-width: 800px;
+p.journal-entry {
+  margin-top: 1rem;
+}
+
+.resource-box, .journal-box  {
+  margin-top: 2rem;
+}
+
+article.resource-article, .journal-entry {
+  background-color: #3A5772;
 }
 
 /* title */
@@ -267,16 +303,8 @@ h2.resources-title {
   margin-bottom: 0px;
 }
 
-/* article icon */
-
-i.fa-book-open {
-  font-size: 8rem;
-  color: white;
-  margin: 1rem;
-}
-
 article {
-  border: 2px solid white;
+  /* border: 2px solid white; */
   border-radius: 10px;
   margin: 20px;
   padding: 10px;
@@ -284,7 +312,7 @@ article {
 
 /* article description */
 
-p {
+p, span.date {
   color: white;
   font-size: 15px;
 }
@@ -293,6 +321,179 @@ p {
 
 .article-btn {
   margin-top: 5px;
+}
+
+/* ---- Counter Stylings ---- */
+
+/* Top of the page */
+
+div.mtn-logo-top {
+  height: 8vw;
+}
+
+img.mtn-logo {
+  margin-top: 5px;
+  ;
+  height: 100%;
+}
+
+/* The counter with chart */
+
+#counter {
+  max-width: 450px;
+  margin: 35px auto;
+  opacity: 0.9;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+}
+
+#responsive-chart, div.chart-inner {
+  grid-column: 2/span 10;
+  grid-row: 1;
+  z-index: 2;
+}
+
+#mtn-img {
+  grid-column: 4/span 6;
+  grid-row: 1;
+  width: 100%;
+  z-index: 1;
+}
+
+/* For the overlay behind the mtn image */
+
+div.chart-inner {
+  grid-column: 3/span 8;
+  grid-row: 1;
+  background-color: #3a5772;
+  height: 90%;
+  z-index: 0;
+  margin: 15px;
+}
+
+/* for the days sober */
+
+p.days-sober {
+  grid-column: 6/span 2;
+  grid-row: 1;
+  z-index: 3;
+  margin-top: 250%;
+  font-size: calc(12px + 1vw);
+  color: yellow;
+}
+
+/*  For days/etc until next badge */
+
+div.days-until {
+  background-color: #3a57729c;
+  width: 65%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+div.days-until p {
+  color: white;
+  margin: .25rem 0;
+  font-size: 3vw;
+  width: 100%;
+}
+
+span#time-left {
+  color: #BFF0CF;
+}
+
+span.star {
+  color: yellow;
+  font-size: 5vw;
+  margin-left: 10px;
+}
+
+/* Quote box */
+
+div.quote-container {
+  color: white;
+  background-color: #bff0cf9c;
+  width: 65%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin-bottom: 5rem;
+}
+
+div.quote-container>p {
+  color: white;
+  font-size: 3.5vw;
+}
+
+p.quote {
+  font-style: italic;
+  margin: 1rem;
+
+}
+
+p.quote-author {
+  text-align: right;
+  margin-right: 10px;
+}
+
+footer {
+  background-color: #87A2BB;
+}
+
+footer>.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: white;
+}
+
+/* Footer icons */
+
+img.icon {
+  max-width: 40px;
+  width: 5vw;
+}
+
+img.icon-connect {
+  max-width: 50px;
+  width: 7vw;
+}
+
+/* media queries */
+
+@media screen and (min-width: 400px) {
+  div.days-until {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  div.mtn-logo-top {
+    height: 4vw;
+  }
+  div.days-until>p {
+    font-size: 24px;
+  }
+  div.quote-container>p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  div.mtn-logo-top {
+    height: 5vw;
+  }
+  div.days-until, div.quote-container {
+    width: 50%;
+  }
+  div.days-until p {
+    font-size: 2.5vw;
+  }
+  div.quote-container>p {
+    font-size: 3vw;
+  }
 }
 
 @media only screen and (min-device-width: 280px) and (max-device-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -311,5 +512,156 @@ p {
   .btn {
     height: 45px;
     font-size: 18px;
+  }
+}
+
+/* **** for the COUNTER page **** */
+
+p.days-sober, p.quote, p.quote-author {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* The counter with chart */
+
+#counter {
+  max-width: 450px;
+  margin: 35px auto;
+  opacity: 0.9;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+}
+
+#responsive-chart, div.chart-inner {
+  grid-column: 2/span 10;
+  grid-row: 1;
+  z-index: 2;
+}
+
+#mtn-img {
+  grid-column: 4/span 6;
+  grid-row: 1;
+  width: 100%;
+  z-index: 1;
+}
+
+/* For the overlay behind the mtn image */
+
+div.chart-inner {
+  grid-column: 3/span 8;
+  grid-row: 1;
+  background-color: #3a5772;
+  height: 90%;
+  z-index: 0;
+  margin: 15px;
+}
+
+/* for the days sober */
+
+p.days-sober {
+  grid-column: 6/span 2;
+  grid-row: 1;
+  z-index: 3;
+  margin-top: 250%;
+  font-size: calc(12px + .8vw);
+  color: yellow;
+}
+
+/*  For days/etc until next badge */
+
+div.days-until {
+  background-color: #3a57729c;
+  width: 65%;
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+div.days-until p {
+  margin: .25rem 0;
+  font-size: calc(14px + .7vw);
+  width: 100%;
+}
+
+span#time-left {
+  color: #BFF0CF;
+}
+
+span.star {
+  color: yellow;
+  font-size: calc(16px + .7vw);
+  margin-left: 10px;
+}
+
+/* Quote box */
+
+div.quote-container {
+  color: white;
+  background-color: #bff0cfab;
+  width: 65%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+div.quote-container>p {
+  color: white;
+  font-size: calc(14px + .6vw)
+}
+
+p.quote {
+  font-style: italic;
+}
+
+footer {
+  background-color: #87A2BB;
+}
+
+footer>.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: white;
+}
+
+/* Footer icons */
+
+img.icon {
+  max-width: 40px;
+  width: 5vw;
+}
+
+img.icon-connect {
+  max-width: 50px;
+  width: 7vw;
+}
+
+/* media queries */
+
+@media screen and (min-width: 400px) {
+  div.days-until {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  div.days-until, div.quote-container {
+    width: 50%;
+  }
+  footer {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-toggler, .navbar-collapse {
+    visibility: hidden;
+  }
+  nav.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.navbar-brand {
+    margin-right: 0;
   }
 }

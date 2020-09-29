@@ -1,11 +1,7 @@
-<article>
-    <div class="journal-header">
-        <h4 class="entry-date">Written: {{ date }}</h4>
-        <h4 class="entry-mood">Mood: {{ feeling }}</h4>
-    </div>
-    <p class="entry-content">{{ body }}</p>
-    <div class="entry-btns">
-        <button type="button" class="btn btn-outline-light">Edit</button>
-        <button type="button" class="btn btn-outline-light">Share</button>
-    </div>
+<article class="journal-entry">
+    <h5>{{ this.postDate }}</h5>
+    <p class="journal-entry"> {{ this.body }}</p>
+    <h5>Mood: {{ this.feeling }}</h5>
+    {{!-- <h5 class="entry-mood">Sober Day? {{ this.hiccup }}</h5> --}}
+
 </article>

@@ -12,6 +12,7 @@ const session = require("express-session");
 const passport = require("./config/passport");
 const authenticatedRoutes = require("./routes/authenticated-html-routes");
 // const postRoute = require("./routes/post-routes");
+const bodyParser = require("body-parser");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -36,13 +37,21 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // This is the authenticate router we built with Bobby
-app.use("/authenticated", authenticatedRoutes);
-// using post route based on Bobby's (not working)
-// app.use("/post", postRoute);
-// Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
-require("./routes/checkin-routes.js")(app);
+
+// all api routes
+const apiRoutes = require("./routes/api-routes");
+app.use("/api", apiRoutes);
+
+// all html routes
+const htmlRoutes = require("./routes/html-routes");
+app.use("", htmlRoutes);
+
+// all routes requiring authentication
+app.use("", authenticatedRoutes);
+//BODY PARSER
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {

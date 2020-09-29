@@ -1,51 +1,64 @@
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" role="navigation">
-        <!-- Logo -->
-        <div class="navbar-brand text-center">
-            <img SRC="img/logo-white.png" alt="mountain logo" class="logo">
-            <h1>ASCENT</h1>
-        </div>
-        <!-- toggle button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuList"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="menuList">
-            <ul class="navbar-nav my-2 my-lg-0">
-                <!-- home -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="members.html">
-                        home
-                    </a>
-                </li>
-                <!-- resources -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="resources.html">
-                        resources
-                    </a>
-                </li>
-                <!-- logout button -->
-                <button type="button" class="btn btn-outline-light nav-link">
-                    logout
-                </button>
-            </ul>
-        </div>
-    </nav>
-    
-    <div class="main-content">
-        <!-- Resource Title -->
-        <h2 class="resources-title">Your Daily Reflections</h2>
-
-
-        <div class="box journal-box">
-            {{#each check-in }}
-                {{> journal-entry}}
-            {{/each}}
-        </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" role="navigation">
+    <!-- Logo -->
+    <div class="navbar-brand text-center">
+        <img SRC="img/logo-white.png" alt="mountain logo" class="logo">
+        <h1>ASCENT</h1>
     </div>
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuList"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+    <div class="collapse navbar-collapse" id="menuList">
+        <ul class="navbar-nav my-2 my-lg-0">
+            <!-- home -->
+            <li class="nav-item">
+                <a class="nav-link" href="/counter">
+                    home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/resources">
+                    resources
+                </a>
+            </li>
+            <!-- logout button -->
+            <a href="/logout" class="nav-link"><button type="button" class="btn btn-outline-light">
+                    logout
+                </button></a>
+        </ul>
+    </div>
+</nav>
+
+<div class="main-content">
+    <!-- Resource Title -->
+    <h2 class="reflections-title">Your Daily Reflections</h2>
+
+
+    <div class="box journal-box">
+        {{#each posts }}
+        {{> journal-entry}}
+        {{/each}}
+    </div>
+</div>
+
+<!-- mobile menu -->
+<footer class="navbar fixed-bottom">
+    <div class="container footer">
+        <a href="/counter" class="foot-icon"><i class="fas fa-user-circle"></i></a>
+        <a href="/resources" class="foot-icon"><i class="fas fa-book-open"></i></a>
+        <a href="/journal" class="foot-icon"><i class="far fa-comments"></i></a>
+        <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+</footer>
+
+{{!-- jQuery --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{!-- BootstrapCDN --}}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+{{!-- Local Script --}}
+<script type="text/javascript" src="js/script.js"></script>

@@ -26,6 +26,12 @@ module.exports = function(sequelize, DataTypes) {
     hiccup: {
       type: DataTypes.BOOLEAN,
       allowNull: false
+    },
+
+    postDate: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      len: [1, 144]
     }
   });
 

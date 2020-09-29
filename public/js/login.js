@@ -1,18 +1,39 @@
 $(document).ready(() => {
   // Getting references to our form and inputs
+
   const loginForm = $("#signInBtn");
   const emailInput = $("#email");
   const passwordInput = $("#password");
+  const backBtn = $("#backBtn");
+  const rmCheck = document.getElementById("rememberMe");
+
+  if (localStorage.checkbox && localStorage.checkbox !== "") {
+    rmCheck.setAttribute("checked", "checked");
+    emailInput.value = localStorage.username;
+  } else {
+    rmCheck.removeAttribute("checked");
+    emailInput.value = "";
+  }
+
+  function isRememberMe() {
+    if (rmCheck.checked && emailInput.value !== "") {
+      localStorage.username = emailInput.value;
+      localStorage.checkbox = rmCheck.value;
+    } else {
+      localStorage.username = "";
+      localStorage.checkbox = "";
+    }
+  }
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("click", event => {
     event.preventDefault();
+    isRememberMe();
+
     const userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-
-    console.log(userData);
 
     if (!userData.email || !userData.password) {
       return;
@@ -31,11 +52,22 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/daily");
+        const timeStamp = localStorage.getItem("timeStamp");
+        const current = moment().format("L");
+
+        if (timeStamp !== current) {
+          window.location.replace("/daily");
+        } else {
+          window.location.replace("/counter");
+        }
         // If there's an error, log the error
       })
       .catch(err => {
         console.log(err);
       });
   }
+  backBtn.on("click", event => {
+    event.preventDefault();
+    window.location.replace("/");
+  });
 });

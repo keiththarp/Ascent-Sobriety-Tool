@@ -1,46 +1,21 @@
-// Requiring path to so we can use relative routes to our HTML files
-// const path = require("path");
-// var user = require("../models/user");
-
 // Requiring our custom middleware for checking if a user is logged in
+const router = require("express").Router();
 
-module.exports = function (app) {
-  app.get("/", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/daily");
-    }
-    res.render("start");
-  });
+router.get("/", (req, res) => {
+  res.render("start");
+});
 
-  app.get("/login", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/daily");
-    }
-    res.render("login");
-  });
+router.get("/login", (req, res) => {
+  res.render("login");
+});
 
-  app.get("/register", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/daily");
-    }
-    res.render("register");
-  });
+router.get("/register", (req, res) => {
+  res.render("register");
+});
 
-  app.get("/daily", (req, res) => {
-    // If the user already has an account send them to the members page
-    // if (!req.user) {
-    //   res.redirect("/register");
-    // }
-    res.render("daily");
-  });
+router.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
 
-  app.get("/resources", (req, res) => {
-    if (req.user) {
-      res.render("/resources");
-    }
-    res.redirect("/start");
-  });
-};
+module.exports = router;
