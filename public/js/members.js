@@ -60,7 +60,6 @@ $(document).ready(() => {
   let userMood = 0;
   $(".mood").on("click", function() {
     userMood = $(this).attr("data-mood");
-    console.log(userMood);
   });
 
   // when i submit, i want to send userMood, soberYN, and textValue to checkIn object with key value pairs

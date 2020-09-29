@@ -607,4 +607,13 @@ img.icon-connect {
   div.days-until, div.quote-container {
       width: 50%;
   }
+  footer {
+    visibility:hidden;
+    }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-toggler, .navbar-collapse {
+    visibility:hidden;
+    }
 }
