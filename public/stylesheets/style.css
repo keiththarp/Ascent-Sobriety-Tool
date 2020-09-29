@@ -178,6 +178,7 @@ div.box {
   background-color: rgba(58, 87, 114, 0.4);
   text-align: center;
   width: 90vw;
+  width: 500px;
   margin-top: 2rem;
   max-width: 700px;
   border-radius: 8px;
