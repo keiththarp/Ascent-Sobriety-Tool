@@ -85,8 +85,8 @@ div.main-content {
 }
 
 /* ----- general btn stylings ----- */
-button.sober-btn, 
-button.login-btn, 
+button.sober-btn,
+button.login-btn,
 button.article-btn {
   border-radius: 3px;
   height: 60px;
@@ -174,8 +174,8 @@ div.box {
 
 /* ---- Check in ---- */
 
-h2.welcome-title, 
-h2.resources-title, 
+h2.welcome-title,
+h2.resources-title,
 span.member-name {
   font-family: 'Quicksand', sans-serif;
   margin: 2rem;
@@ -228,10 +228,10 @@ button.mood {
   align-items: center;
 }
 
-button.mood:hover, 
-button.sober-btn:hover, 
-button.article-btn:hover, 
-button.btn:focus, 
+button.mood:hover,
+button.sober-btn:hover,
+button.article-btn:hover,
+button.btn:focus,
 button.active {
   background-color: #BFF0CF;
   border: 3px solid #3A5772;
@@ -526,8 +526,18 @@ p.days-sober {
   grid-column: 6/span 2;
   grid-row: 1;
   z-index: 3;
-  margin-top: 250%;
+  margin-top: 220%;
   font-size: calc(12px + .8vw);
+  color: yellow;
+  line-height: 0;
+}
+
+p.continuous-days {
+  grid-row: 1;
+  grid-column: 5/span 4;
+  z-index: 3;
+  margin-top: 135%;
+  font-size: calc(9px + .9vw);
   color: yellow;
 }
 

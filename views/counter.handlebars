@@ -9,8 +9,20 @@
         {{!-- trasparent overlay and logo --}}
         <div class="rounded-circle chart-inner"></div>
         <img id="mtn-img" class="mx-auto" src="./img/logo-white.png" alt="mountain-logo">
-        <!-- how many days sober -->
-        <p class="days-sober mx-auto">{{daysSober}}</p>
+        <!-- how many days consistently sober -->
+        <p class="days-sober mx-auto">{{continuousDays}}</p>
+        <p class="continuous-days mx-auto">Continuous Days</p>
+      </div>
+    </div>
+
+    {{!-- Container for badges --}}
+    <div class="container badges">
+      <div class="row">
+        {{#if}}
+        <div class="col">
+          
+        </div>
+        {{/if}}
       </div>
     </div>
 
