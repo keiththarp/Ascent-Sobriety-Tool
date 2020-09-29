@@ -29,7 +29,13 @@ router.post("/signup", (req, res) => {
     yearBadge: 0
   })
     .then(() => {
-      res.redirect(307, "/login");
+      if (error) {
+        res.redirect("/");
+      } else {
+        passport.authenticate("local")(req, res, () => {
+          res.redirect("/daily");
+        });
+      }
     })
     .catch(err => {
       console.log(req.body);
@@ -37,10 +43,16 @@ router.post("/signup", (req, res) => {
     });
 });
 
-// // Route for logging user out
-// router.get("/logout", (req, res) => {
-//   req.logout();
-//   res.redirect("/");
+// app.post('/sign', function(req, res){
+//   authProvider.saveUser(req.body, function(error, user){
+//       if(error){
+//           res.redirect('/');
+//       } else {
+//           passport.authenticate('local')(req, res, function () {
+//               res.redirect('/');
+//           })
+//       }
+//   });
 // });
 
 // Route for getting some data about our user to be used client side

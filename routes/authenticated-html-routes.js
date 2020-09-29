@@ -22,7 +22,10 @@ router.get("/resources", isAuthenticated, (req, res) => {
 });
 
 router.get("/journal", isAuthenticated, (req, res) => {
-  res.render("journal");
+  const hbsObj = {
+    body: req.user.body
+  };
+  res.render("journal", hbsObj);
 });
 
 module.exports = router;
