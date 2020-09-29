@@ -37,14 +37,20 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // This is the authenticate router we built with Bobby
-app.use("/authenticated", authenticatedRoutes);
+
+// all api routes
+const apiRoutes = require("./routes/api-routes");
+app.use("/api", apiRoutes);
+
 // using post route based on Bobby's (not working)
 // app.use("/post", postRoute);
 // Requiring our routes
+// restructure
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+// require("./routes/api-routes.js")(app);
 require("./routes/checkin-routes.js")(app);
 
+app.use("", authenticatedRoutes);
 //BODY PARSER
 
 app.use(bodyParser.urlencoded({ extended: true }));
