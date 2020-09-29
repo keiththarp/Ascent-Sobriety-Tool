@@ -2,7 +2,7 @@ const router = require("express").Router();
 // Here we've add our isAuthenticated middleware to this route.
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("../models");
-router.use("/", isAuthenticated);
+// router.use("/", isAuthenticated);
 
 // A user must be authenticated to access the below routes
 router.get("/daily", isAuthenticated, (req, res) => {
