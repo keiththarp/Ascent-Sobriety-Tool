@@ -26,9 +26,9 @@
         </a>
       </li>
       <!-- logout button -->
-      <a href="/logout"><button type="button" class="btn btn-outline-light nav-link">
-        logout
-      </button></a>
+      <a href="/logout" class="nav-link"><button type="button" class="btn btn-outline-light">
+          logout
+        </button></a>
     </ul>
   </div>
 </nav>
@@ -48,7 +48,7 @@
       <div class="mood-label">
         <button type="button" class="btn mood" data-mood="1" id="mood1" aria-pressed="true"
           aria-label="really-sad"><span>1</span></button>
-        <p>low</p>
+        <p>bad</p>
       </div>
       <button type="button" class="btn mood" data-mood="2" id="mood2" aria-pressed="true"
         aria-label="sad"><span>2</span></button>
@@ -59,22 +59,20 @@
       <div class="mood-label">
         <button type="button" class="btn mood" data-mood="5" id="mood5" aria-pressed="true"
           aria-label="really-happy"><span>5</span></button>
-        <p>high</p>
+        <p>good</p>
       </div>
     </div>
   </div>
 
-  <!-- Written Check In -->
   <div class="box">
-    <!-- Title -->
-    <h4 class="checkin-title">Check In:</h4>
+    <!-- Written Check In -->
     <form>
-      <!-- Text Input -->
-      <input id="check-in-text" type="text" placeholder="Today...">
+      <!-- Title -->
+      <label class="checkin-title">Check In:
+        <!-- Text Input -->
+        <textarea id="check-in-text" rows="3" cols="25" placeholder="Today..."></textarea></label>
       <!-- Sobriety Check -->
-      <div class="checkbox">
-        <input type="checkbox" id="soberYN"> <label for="soberYN">Didn't Drink</label>
-      </div>
+      <label for="soberYN"><input type="checkbox" id="soberYN"> Today was a sober day.</label>
       <!-- Submit Btn -->
       <button class="btn sober-btn">Submit</button>
     </form>
