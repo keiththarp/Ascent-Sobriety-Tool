@@ -45,7 +45,7 @@ $(document).ready(() => {
   // How many sections in the chart; how many days/hours user has chosen for timeframe
   const seriesLength = 24;
 
-  const currentTimePoints = moment().format("hh");
+  const currentTimePoints = moment().format("kk");
 
   const seriesArray = [];
 
