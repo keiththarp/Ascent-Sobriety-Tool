@@ -3,7 +3,7 @@ const db = require("../models");
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 // router.use("/", isAuthenticated);
 
-module.exports = function (app) {
+module.exports = function(app) {
   // get method to retrieve past journal entries in the server
   app.get("/api/check-in/:id", (req, res) => {
     thisId = req.params.id;
