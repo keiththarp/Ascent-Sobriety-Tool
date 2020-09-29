@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const { urlencoded } = require("express");
 const router = require("express").Router();
 // module.exports = function(router) {
 // Using the passport.authenticate middleware with our local strategy.
@@ -29,31 +30,12 @@ router.post("/signup", (req, res) => {
     yearBadge: 0
   })
     .then(() => {
-      if (error) {
-        res.redirect("/");
-      } else {
-        passport.authenticate("local")(req, res, () => {
-          res.redirect("/daily");
-        });
-      }
+      res.redirect(307, "/api/login");
     })
     .catch(err => {
-      console.log(req.body);
       res.status(401).json(err);
     });
 });
-
-// app.post('/sign', function(req, res){
-//   authProvider.saveUser(req.body, function(error, user){
-//       if(error){
-//           res.redirect('/');
-//       } else {
-//           passport.authenticate('local')(req, res, function () {
-//               res.redirect('/');
-//           })
-//       }
-//   });
-// });
 
 // Route for getting some data about our user to be used client side
 router.get("/user_data", (req, res) => {

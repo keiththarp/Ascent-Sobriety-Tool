@@ -46,7 +46,9 @@ app.use("/api", apiRoutes);
 // app.use("/post", postRoute);
 // Requiring our routes
 // restructure
-require("./routes/html-routes.js")(app);
+const htmlRoutes = require("./routes/html-routes");
+app.use("", htmlRoutes);
+// require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
 // require("./routes/checkin-routes.js")(app);
 

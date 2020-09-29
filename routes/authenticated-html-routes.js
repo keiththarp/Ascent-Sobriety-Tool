@@ -9,6 +9,12 @@ router.use("/", isAuthenticated);
 //   // res.sendFile(path.join(__dirname, "../public/members.html"));
 // });
 
+// router.get("/", isAuthenticated, (req, res) => {
+//   if (isAuthenticated) {
+//     res.redirect("/daily");
+//   }
+// });
+
 router.get("/daily", isAuthenticated, (req, res) => {
   const hbsObj = {
     user: req.user
