@@ -1,7 +1,3 @@
-/* **************
-Adding this to ensure that you are updating correctly at 6:50 pm 9/27/20 
-*************** */
-
 //Require environment variables
 require("dotenv").config();
 
