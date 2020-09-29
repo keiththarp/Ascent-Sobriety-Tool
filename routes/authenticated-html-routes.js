@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
 router.use("/", isAuthenticated);
 
 // Here we've add our isAuthenticated middleware to this route.
@@ -9,7 +10,10 @@ router.use("/", isAuthenticated);
 // });
 
 router.get("/daily", isAuthenticated, (req, res) => {
-  res.render("daily");
+  const hbsObj = {
+    user: req.user
+  };
+  res.render("daily", hbsObj);
   // should only show once
 });
 
@@ -21,11 +25,23 @@ router.get("/resources", isAuthenticated, (req, res) => {
   res.render("resources");
 });
 
-router.get("/journal", isAuthenticated, (req, res) => {
-  const hbsObj = {
-    body: req.user.body
-  };
-  res.render("journal", hbsObj);
+router.get("/journal", isAuthenticated, async (req, res) => {
+  try {
+    const checkin = await db.CheckIn.findAll({
+      where: {
+        authorId: req.user.id
+      },
+      raw: true
+    });
+    const hbsObj = {
+      posts: checkin
+    };
+    console.log(hbsObj);
+    res.render("journal", hbsObj);
+  } catch (err) {
+    console.log(err);
+    res.status(500).end();
+  }
 });
 
 module.exports = router;

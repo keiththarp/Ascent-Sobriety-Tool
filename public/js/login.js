@@ -5,10 +5,31 @@ $(document).ready(() => {
   const emailInput = $("#email");
   const passwordInput = $("#password");
   const backBtn = $("#backBtn");
+  const rmCheck = document.getElementById("rememberMe");
+
+  if (localStorage.checkbox && localStorage.checkbox !== "") {
+    rmCheck.setAttribute("checked", "checked");
+    emailInput.value = localStorage.username;
+  } else {
+    rmCheck.removeAttribute("checked");
+    emailInput.value = "";
+  }
+
+  function isRememberMe() {
+    if (rmCheck.checked && emailInput.value !== "") {
+      localStorage.username = emailInput.value;
+      localStorage.checkbox = rmCheck.value;
+    } else {
+      localStorage.username = "";
+      localStorage.checkbox = "";
+    }
+  }
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("click", event => {
     event.preventDefault();
+    isRememberMe();
+
     const userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()

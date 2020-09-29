@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const router = require("express").Router();
-// module.exports = function(app) {
+// module.exports = function(router) {
 // Using the passport.authenticate middleware with our local strategy.
 // If the user has valid login credentials, send them to the members page.
 // Otherwise the user will be sent an error
@@ -97,6 +97,36 @@ router.get("/resources/", (req, res) => {
     })
     .then(dbPost => {
       res.json(dbPost);
+    });
+});
+
+// get method to retrieve past journal entries in the server
+router.get("/check-in/:id", (req, res) => {
+  thisId = req.params.id;
+  db.CheckIn.findAll({
+    where: {
+      authorId: thisId
+    }
+  }).then(checkIn => {
+    res.json(checkIn);
+  });
+});
+
+// Posting a check-in
+router.post("/check-in", (req, res) => {
+  console.log(req.body);
+  db.CheckIn.create({
+    authorId: req.body.authorId,
+    body: req.body.body,
+    feeling: req.body.feeling,
+    hiccup: req.body.hiccup
+  })
+    .then(() => {
+      res.json({});
+      // res.redirect(307, "/counter");
+    })
+    .catch(err => {
+      res.status(401).json(err);
     });
 });
 // };
