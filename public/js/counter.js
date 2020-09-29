@@ -1,8 +1,8 @@
 $(document).ready(() => {
-  const today = moment();
+  //const today = moment();
   // variables for DOM elements
-  const daysSoberContainer = $("p.days-sober");
-  const timeLeft = $("span#time-left");
+  //const daysSoberContainer = $("p.days-sober");
+  //const timeLeft = $("span#time-left");
   const quote = $("p.quote");
   const quoteAuthor = $("p.quote-author");
 
@@ -26,14 +26,13 @@ $(document).ready(() => {
   // }
 
   //To display badges:
-  const displayBadges = () => {
-    // Take the consistent days
-    // figure out the higest badge, and do all the lower badges too.
+  //const displayBadges = () => {
+  // Take the consistent days
+  // figure out the higest badge, and do all the lower badges too.
 
-  }
 
   // to display inspirational quotes
-  // https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373/15
+  // https://forum.freecodecamp.org/t free-api-inspirational-quotes-json-with-code-examples/311373/15
   const displayRandomQuote = () => {
     // Settings for the api
     const settings = {
