@@ -39,12 +39,23 @@
 
 
         <div class="box journal-box">
-            {{#each check-in }}
+            {{#each posts }}
                 {{> journal-entry}}
             {{/each}}
         </div>
     </div>
-
+<!-- footer -->
+<footer class="navbar fixed-bottom">
+    <div class="container">
+        <!-- <i class="fas fa-user-circle"></i>
+          <i class="fas fa-book-open"></i>
+          <i class="far fa-comments"></i> -->
+        <a href="/"><img class="icon" src="./img/icons/account.png" alt="account icon"></a>
+        <a href="/"><img class="icon" src="./img/icons/resources.png" alt="account icon"></a>
+        <a href="/"><img class="icon-connect" src="./img/icons/connect.png" alt="account icon"></a>
+        <a href="/"><img class="icon" src="./img/icons/notepad.png" alt="account icon"></a>
+    </div>
+</footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"

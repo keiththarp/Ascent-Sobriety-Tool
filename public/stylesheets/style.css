@@ -110,9 +110,14 @@ h4.startPage {
 
 /* ---- Register Stylings ---- */
 
-h4.date {
+h2.signupTitle {
+  margin-bottom: 1rem;
+}
+
+label.inputLabel {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin: 5px;
+  text-align: left;
 }
 
 /* ---- Login Stylings ---- */
@@ -148,7 +153,7 @@ img.icon {
   color: white;
 }
 
-div.checkbox {
+label.checkbox{
   text-align: left;
 }
 
@@ -182,21 +187,13 @@ span.member-name {
   color: #3A5772;
 }
 
-h2.welcome-title {
-  color: #87A2BB;
-}
-
 span.member-name {
   margin: 0;
 }
 
-/* div.mood-box {
-  margin-top: 0rem;
-} */
-
 /* mood title */
 
-h4 {
+h4, label.checkin-title {
   color: white;
   font-family: 'Quicksand', sans-serif;
 }
@@ -243,20 +240,22 @@ button.mood:hover {
   height: 3rem;
 }
 
-/* member name styling  */
-
-span.member-name {
-  margin: 0;
-  padding: 0;
-}
-
-h4.checkin-title {
+label.checkin-title {
   text-align: left;
+  font-size: 22px;
 }
 
-input[type=text], input[type=password], input[type=date] {
+textarea {
+  font-size: 14px;
+}
+
+#check-in-text {
+  height: 4rem;
+}
+
+input[type=text], input[type=password], input[type=date], textarea {
   width: 100%;
-  margin-bottom: 22px;
+  margin-bottom: 14px;
   padding: 16px;
   background-color: #ecf2f4;
   border: none;
@@ -265,6 +264,7 @@ input[type=text], input[type=password], input[type=date] {
 
 label {
   color: #fff;
+  width: 100%;
 }
 
 input[type=checkbox] {
