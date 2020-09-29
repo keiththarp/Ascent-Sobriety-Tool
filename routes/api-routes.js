@@ -75,17 +75,15 @@ router.post("/user_data", (req, res) => {
   });
 });
 
-router.get("/resources/", (req, res) => {
-  const journalCat = JSON.parse(localStorage.getItem("journalCat"));
-  db.resources
-    .findAll({
-      where: {
-        category: journalCat
-      }
-    })
-    .then(dbPost => {
-      res.json(dbPost);
-    });
+router.get("/resources", (req, res) => {
+  // const journalCat = JSON.parse(localStorage.getItem("journalCat"));
+  db.Resource.findAll({
+    // where: {
+    //   category: journalCat
+    // }
+  }).then(dbPost => {
+    res.json(dbPost);
+  });
 });
 
 // get method to retrieve past journal entries in the server
@@ -107,7 +105,8 @@ router.post("/check-in", (req, res) => {
     authorId: req.body.authorId,
     body: req.body.body,
     feeling: req.body.feeling,
-    hiccup: req.body.hiccup
+    hiccup: req.body.hiccup,
+    postDate: req.body.postDate
   })
     .then(() => {
       res.json({});
