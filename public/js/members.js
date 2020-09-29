@@ -17,7 +17,7 @@ $(document).ready(() => {
 
   $("#mood1").hover(
     function() {
-      $(this).html("<i class='fas fa-sad-cry'></i>");
+      $(this).html("<i class='fas fa-tired'></i>");
     },
     function() {
       $(this).html("1");
@@ -25,7 +25,7 @@ $(document).ready(() => {
   );
   $("#mood2").hover(
     function() {
-      $(this).html("<i class='fas fa-grimace'></i>");
+      $(this).html("<i class='fas fa-frown'></i>");
     },
     function() {
       $(this).html("2");
@@ -83,7 +83,7 @@ $(document).ready(() => {
       hiccup: soberYN
     })
       .then(() => {
-        const timeStamp = moment().format('L');
+        const timeStamp = moment().format("L");
         localStorage.setItem("timeStamp", timeStamp);
         localStorage.setItem("journalCat", userMood);
         // Commenting the below line out because the /resources route is not currently working from here.
