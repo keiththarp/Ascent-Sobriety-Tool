@@ -38,7 +38,11 @@ module.exports = function(app) {
   //     res.redirect("/login");
   //   }
 
-  //   res.render("daily");
+  //   const hbsObj = {
+  //     user: req.user
+  //   };
+
+  //   res.render("daily", hbsObj);
   // });
 
   // app.get("/counter", (req, res) => {
@@ -56,7 +60,11 @@ module.exports = function(app) {
   //   //   res.redirect("/login");
   //   // }
 
-  //   res.render("journal");
+  //   const hbsObj = {
+  //     user: req.user
+  //   };
+
+  //   res.render("journal", hbsObj);
   // });
 
   // app.get("/resources", (req, res) => {
@@ -67,7 +75,7 @@ module.exports = function(app) {
   //   }
   // });
 
-  // This will need to be an authenticated route at some point
+  // // This will need to be an authenticated route at some point
   // app.get("/counter", (req, res) => {
   //   // if (req.user) {
   //   res.render("counter");

@@ -48,7 +48,7 @@ app.use("/api", apiRoutes);
 // restructure
 require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
-require("./routes/checkin-routes.js")(app);
+// require("./routes/checkin-routes.js")(app);
 
 app.use("", authenticatedRoutes);
 //BODY PARSER
