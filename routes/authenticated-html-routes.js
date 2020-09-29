@@ -1,20 +1,15 @@
 const router = require("express").Router();
+// Here we've add our isAuthenticated middleware to this route.
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("../models");
-router.use("/", isAuthenticated);
+// router.use("/", isAuthenticated);
 
-// Here we've add our isAuthenticated middleware to this route.
-// If a user who is not logged in tries to access this route they will be redirected to the signup page
-// router.get("/members", (req, res) => {
-//   // res.sendFile(path.join(__dirname, "../public/members.html"));
-// });
-
+// A user must be authenticated to access the below routes
 router.get("/daily", isAuthenticated, (req, res) => {
   const hbsObj = {
     user: req.user
   };
   res.render("daily", hbsObj);
-  // should only show once
 });
 
 router.get("/counter", isAuthenticated, (req, res) => {
@@ -23,11 +18,7 @@ router.get("/counter", isAuthenticated, (req, res) => {
 
 router.get("/resources", isAuthenticated, async (req, res) => {
   try {
-    // const journalCat = JSON.parse(localStorage.getItem("journalCat"));
     const resources = await db.Resource.findAll({
-      // where: {
-      //   category: journalCat
-      // },
       raw: true
     });
     const hbsObj = {
