@@ -22,7 +22,7 @@ const weekMilestones = parseInt(lessThanMonth / 7);
 const dayMilestones = parseInt(lessThanMonth % 7);
 
 // Now we just need to wire these variables up to icons.
-console.log(`Years: ${yearMilestones}
-Months: ${monthMilestones}
-Weeks: ${weekMilestones}
-Days: ${dayMilestones}`);
+//console.log(`Years: ${yearMilestones}
+//Months: ${monthMilestones}
+//Weeks: ${weekMilestones}
+//Days: ${dayMilestones}`);

@@ -14,7 +14,7 @@ $(document).ready(() => {
       password: passwordInput.val().trim(),
       soberSince: soberDate.val()
     };
-    console.log(userData);
+
     if (!userData.email || !userData.password) {
       return;
     }

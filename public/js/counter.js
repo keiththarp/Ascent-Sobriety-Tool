@@ -1,6 +1,5 @@
 $(document).ready(() => {
   const today = moment();
-  console.log(today);
   // variables for DOM elements
   const daysSoberContainer = $("p.days-sober");
   const timeLeft = $("span#time-left");
@@ -10,12 +9,9 @@ $(document).ready(() => {
   // To diplay days sober in the counter
   const displayDaysSober = () => {
     $.get("/api/user_data").then(response => {
-      console.log("response is: ", response);
       const soberDate = moment(response.soberSince);
-      console.log("soberdate: ", soberDate);
       // calculate difference between datetime in mysql(soberSince) and today's date.
       const daysSober = today.diff(soberDate, "days");
-      console.log("daysSober: ", daysSober);
       daysSoberContainer.text(daysSober);
     });
   };
@@ -36,9 +32,7 @@ $(document).ready(() => {
       const data = JSON.parse(response);
       //to get a random quote:
       const randomNum = Math.floor(Math.random() * (1643 - 1) + 1);
-      console.log("ranom num: ", randomNum);
       const { text, author } = data[randomNum];
-      console.log("text, author:", text, author);
       quote.text(text);
       quoteAuthor.text(author);
     });
