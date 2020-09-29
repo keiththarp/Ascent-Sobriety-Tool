@@ -1,8 +1,10 @@
 $(document).ready(() => {
   //const today = moment();
   // variables for DOM elements
+
   //const daysSoberContainer = $("p.days-sober");
   //const timeLeft = $("span#time-left");
+
   const quote = $("p.quote");
   const quoteAuthor = $("p.quote-author");
 
@@ -55,7 +57,9 @@ $(document).ready(() => {
       console.log("ranom num: ", randomNum);
       const { text, author } = data[randomNum];
       quote.text(text);
+
       quoteAuthor.text(`-- ${author}`);
+
     });
   };
 
@@ -66,7 +70,7 @@ $(document).ready(() => {
   // How many sections in the chart; how many days/hours user has chosen for timeframe
   const seriesLength = 24;
 
-  const currentTimePoints = 15;
+  const currentTimePoints = moment().format("kk");
 
   const seriesArray = [];
 
@@ -97,7 +101,33 @@ $(document).ready(() => {
     },
     series: seriesArray, //length of array would come from the db
     //labels would also depend on the timeframe the user was working with
-    labels: ["day 1", "day 2", "day 3", "day 4", "day 5", "day 6", "day 7"], //note sure if we need labels
+    labels: [
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour",
+      "hour"
+    ], //note sure if we need labels
 
     dataLabels: {
       enabled: false
