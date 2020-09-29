@@ -14,46 +14,45 @@
     <div class="collapse navbar-collapse" id="menuList">
         <ul class="navbar-nav my-2 my-lg-0">
             <!-- home -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/counter">
                     home
                 </a>
             </li>
             <!-- journal -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/journal">
                     journal
                 </a>
             </li>
             <!-- logout button -->
-            <a href="/logout"><button type="button" class="btn btn-outline-light nav-link" href="/logout">
+            <a href="/logout" class="nav-link"><button type="button" class="btn btn-outline-light" href="/logout">
                     logout
                 </button></a>
         </ul>
     </div>
 </nav>
+
 <main class="main-content">
     <!-- Resource Title -->
     <h2 class="resources-title">Popular Resources</h2>
 
     <div class="box resource-box">
 
-        {{#each Resource }}
+        {{#each resource }}
         {{> resource-block}}
         {{/each}}
 
     </div>
 
 </main>
-<!-- footer -->
+
+<!-- mobile menu -->
 <footer class="navbar fixed-bottom">
-    <div class="container">
-        <!-- <i class="fas fa-user-circle"></i>
-          <i class="fas fa-book-open"></i>
-          <i class="far fa-comments"></i> -->
-        <a href="/"><img class="icon" src="./img/icons/account.png" alt="account icon"></a>
-        <a href="/"><img class="icon" src="./img/icons/resources.png" alt="account icon"></a>
-        <a href="/"><img class="icon-connect" src="./img/icons/connect.png" alt="account icon"></a>
-        <a href="/"><img class="icon" src="./img/icons/notepad.png" alt="account icon"></a>
+    <div class="container footer">
+        <a href="/counter" class="foot-icon"><i class="fas fa-user-circle"></i></a>
+        <a href="/resources" class="foot-icon"><i class="fas fa-book-open"></i></a>
+        <a href="/journal" class="foot-icon"><i class="far fa-comments"></i></a>
+        <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
     </div>
 </footer>
