@@ -8,17 +8,30 @@ $(document).ready(() => {
   const quoteAuthor = $("p.quote-author");
 
   // To diplay days sober in the counter
-  const displayDaysSober = () => {
-    $.get("/api/user_data").then(response => {
-      console.log("response is: ", response);
-      const soberDate = moment(response.soberSince);
-      console.log("soberdate: ", soberDate);
-      // calculate difference between datetime in mysql(soberSince) and today's date.
-      const daysSober = today.diff(soberDate, "days");
-      console.log("daysSober: ", daysSober);
-      daysSoberContainer.text(daysSober);
-    });
-  };
+  // const displayDaysSober = () => {
+  //   $.get("/api/user_data").then(response => {
+  //     console.log("response is: ", response);
+  //     const soberDate = moment(response.soberSince);
+  //     console.log("soberdate: ", soberDate);
+  //     // calculate difference between datetime in mysql(soberSince) and today's date.
+  //     const daysSober = today.diff(soberDate, "days");
+  //     console.log("daysSober: ", daysSober);
+  //     daysSoberContainer.text(daysSober);
+  //   });
+  // };
+
+  // To display consistent days in the counter
+  //Use handleabrs instead - pass in user object to html route
+  // const consistentDays = () => {
+
+  // }
+
+  //To display badges:
+  const displayBadges = () => {
+    // Take the consistent days
+    // figure out the higest badge, and do all the lower badges too.
+
+  }
 
   // to display inspirational quotes
   // https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373/15
@@ -34,17 +47,22 @@ $(document).ready(() => {
     //Ajax call, there are 1643 total quotes available
     $.ajax(settings).done(response => {
       const data = JSON.parse(response);
+      console.log(data);
       //to get a random quote:
-      const randomNum = Math.floor(Math.random() * (1643 - 1) + 1);
+      let randomNum = 23;
+      // Avoid quote index 23 (Trump quote)
+      while (randomNum === 23) {
+        randomNum = Math.floor(Math.random() * (1643));
+      }
       console.log("ranom num: ", randomNum);
       const { text, author } = data[randomNum];
       console.log("text, author:", text, author);
       quote.text(text);
-      quoteAuthor.text(author);
+      quoteAuthor.text(`-- ${author}`);
     });
   };
 
-  displayDaysSober();
+  //displayDaysSober();
   displayRandomQuote();
 
   // ********** FOR COUNTER/Chart ****************
