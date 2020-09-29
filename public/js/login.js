@@ -14,8 +14,6 @@ $(document).ready(() => {
       password: passwordInput.val().trim()
     };
 
-    console.log(userData);
-
     if (!userData.email || !userData.password) {
       return;
     }
@@ -35,8 +33,6 @@ $(document).ready(() => {
       .then(() => {
         const timeStamp = localStorage.getItem("timeStamp");
         const current = moment().format("L");
-        console.log(timeStamp);
-        console.log(current);
 
         if (timeStamp !== current) {
           window.location.replace("/daily");

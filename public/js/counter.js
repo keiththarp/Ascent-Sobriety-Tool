@@ -1,6 +1,5 @@
 $(document).ready(() => {
   const today = moment();
-  console.log(today);
   // variables for DOM elements
   const daysSoberContainer = $("p.days-sober");
   const timeLeft = $("span#time-left");
@@ -52,11 +51,10 @@ $(document).ready(() => {
       let randomNum = 23;
       // Avoid quote index 23 (Trump quote)
       while (randomNum === 23) {
-        randomNum = Math.floor(Math.random() * (1643));
+        randomNum = Math.floor(Math.random() * 1643);
       }
       console.log("ranom num: ", randomNum);
       const { text, author } = data[randomNum];
-      console.log("text, author:", text, author);
       quote.text(text);
       quoteAuthor.text(`-- ${author}`);
     });
