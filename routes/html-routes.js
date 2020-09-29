@@ -40,7 +40,7 @@ module.exports = function(app) {
 
     const hbsObj = {
       user: req.user
-    }
+    };
 
     res.render("daily", hbsObj);
   });
