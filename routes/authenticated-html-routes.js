@@ -27,8 +27,24 @@ router.get("/counter", isAuthenticated, (req, res) => {
   res.render("counter");
 });
 
-router.get("/resources", isAuthenticated, (req, res) => {
-  res.render("resources");
+router.get("/resources", isAuthenticated, async (req, res) => {
+  try {
+    // const journalCat = JSON.parse(localStorage.getItem("journalCat"));
+    const resources = await db.Resource.findAll({
+      // where: {
+      //   category: journalCat
+      // },
+      raw: true
+    });
+    const hbsObj = {
+      resource: resources
+    };
+    console.log(hbsObj);
+    res.render("resources", hbsObj);
+  } catch (err) {
+    console.log(err);
+    res.status(500).end();
+  }
 });
 
 router.get("/journal", isAuthenticated, async (req, res) => {

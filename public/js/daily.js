@@ -71,15 +71,17 @@ $(document).ready(() => {
     }
     const checkInBox = $("#check-in-text");
     checkInText = checkInBox.val().trim();
-    sendCheckIn(userMood, soberYN, checkInText);
+    const today = moment().format("LLLL");
+    sendCheckIn(userMood, soberYN, checkInText, today);
   });
 
-  function sendCheckIn(userMood, soberYN, checkInText) {
+  function sendCheckIn(userMood, soberYN, checkInText, today) {
     $.post("/api/check-in", {
       authorId: id,
       body: checkInText,
       feeling: userMood,
-      hiccup: soberYN
+      hiccup: soberYN,
+      postDate: today
     })
       .then(() => {
         const timeStamp = moment().format("L");
