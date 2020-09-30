@@ -47,7 +47,44 @@
       <div class="rounded-circle chart-inner"></div>
       <img id="mtn-img" class="mx-auto" src="./img/sober-icon.png" alt="mountain-logo">
       <!-- how many days sober -->
-      <p class="days-sober mx-auto">{{daysSober}}</p>
+      <p class="days-sober mx-auto">{{user.consDays}}</p>
+    </div>
+  </div>
+
+  {{!-- Container for badges --}}
+  <div class="container badges">
+    <div class="row badges-row">
+      {{!-- one day badge --}}
+      {{#if user.badgeOne}}
+      <div class="col badges-col">
+        <img class="earned-badge" src="./img/badges/oneDay.png" alt="One Day Badge">
+      </div>
+      {{/if}}
+      {{!-- 5 days badge --}}
+      {{#if user.badgeTwo}}
+      <div class="col badges-col">
+        <img class="earned-badge" src="./img/badges/fiveDay.png" alt="5 Day Badge">
+      </div>
+      {{/if}}
+      {{!-- 10 days badge --}}
+      {{#if user.badgeThree}}
+      <div class="col badges-col">
+        <img class="earned-badge" src="./img/badges/tenDay.png" alt="15 Day Badge">
+      </div>
+      {{/if}}
+      {{!-- 1 month badge --}}
+      {{#if user.badgeFour}}
+      <div class="col badges-col">
+        <img class="earned-badge" src="./img/badges/oneMonth.png" alt="One Month Badge">
+      </div>
+      {{/if}}
+      {{!-- 1 year badge --}}
+      {{#if user.badgeFive}}
+      <div class="col badges-col">
+        <img class="earned-badge" src="./img/badges/oneYear.png" alt="One Year Badge">
+      </div>
+      {{/if}}
+
     </div>
   </div>
 

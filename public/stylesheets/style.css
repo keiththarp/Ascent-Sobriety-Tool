@@ -77,7 +77,14 @@ a.nav-link:hover {
 
 /* footer nav */
 
+footer {
+  background-color: #87A2BB;
+}
+
 div.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -327,200 +334,6 @@ p, span.date {
 
 /* Top of the page */
 
-div.mtn-logo-top {
-  height: 8vw;
-}
-
-img.mtn-logo {
-  margin-top: 5px;
-  ;
-  height: 100%;
-}
-
-/* The counter with chart */
-
-#counter {
-  max-width: 450px;
-  margin: 35px auto;
-  opacity: 0.9;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  position: relative;
-}
-
-#responsive-chart, div.chart-inner {
-  grid-column: 2/span 10;
-  grid-row: 1;
-  z-index: 2;
-}
-
-#mtn-img {
-  grid-column: 4/span 6;
-  grid-row: 1;
-  width: 100%;
-  z-index: 1;
-}
-
-/* For the overlay behind the mtn image */
-
-div.chart-inner {
-  grid-column: 3/span 8;
-  grid-row: 1;
-  background-color: #3a5772;
-  height: 90%;
-  z-index: 0;
-  margin: 15px;
-}
-
-/* for the days sober */
-
-p.days-sober {
-  grid-column: 6/span 2;
-  grid-row: 1;
-  z-index: 3;
-  margin-top: 250%;
-  font-size: calc(12px + 1vw);
-  color: yellow;
-}
-
-/*  For days/etc until next badge */
-
-div.days-until {
-  background-color: #3a57729c;
-  width: 65%;
-  max-width: 500px;
-  border-radius: 10px;
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-div.days-until p {
-  color: white;
-  margin: .25rem 0;
-  font-size: 3vw;
-  width: 100%;
-}
-
-span#time-left {
-  color: #BFF0CF;
-}
-
-span.star {
-  color: yellow;
-  font-size: 5vw;
-  margin-left: 10px;
-}
-
-/* Quote box */
-
-div.quote-container {
-  color: white;
-  background-color: #bff0cf9c;
-  width: 65%;
-  max-width: 500px;
-  border-radius: 10px;
-  margin-bottom: 5rem;
-}
-
-div.quote-container>p {
-  color: white;
-  font-size: 3.5vw;
-}
-
-p.quote {
-  font-style: italic;
-  margin: 1rem;
-
-}
-
-p.quote-author {
-  text-align: right;
-  margin-right: 10px;
-}
-
-footer {
-  background-color: #87A2BB;
-}
-
-footer>.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  color: white;
-}
-
-/* Footer icons */
-
-img.icon {
-  max-width: 40px;
-  width: 5vw;
-}
-
-img.icon-connect {
-  max-width: 50px;
-  width: 7vw;
-}
-
-/* media queries */
-
-@media screen and (min-width: 400px) {
-  div.days-until {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  div.mtn-logo-top {
-    height: 4vw;
-  }
-  div.days-until>p {
-    font-size: 24px;
-  }
-  div.quote-container>p {
-    font-size: 2vw;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  div.mtn-logo-top {
-    height: 5vw;
-  }
-  div.days-until, div.quote-container {
-    width: 50%;
-  }
-  div.days-until p {
-    font-size: 2.5vw;
-  }
-  div.quote-container>p {
-    font-size: 3vw;
-  }
-}
-
-@media only screen and (min-device-width: 280px) and (max-device-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
-  h2 {
-    margin-top: 10px;
-    font-size: 10vw;
-  }
-  .box {
-    width: 90vw;
-  }
-  input[type=text] {
-    margin-bottom: 10px;
-    font-size: 14px;
-    padding-bottom: 20px;
-  }
-  .btn {
-    height: 45px;
-    font-size: 18px;
-  }
-}
-
-/* **** for the COUNTER page **** */
-
-p.days-sober, p.quote, p.quote-author {
-  font-family: 'Quicksand', sans-serif;
-}
-
 /* The counter with chart */
 
 #counter {
@@ -567,26 +380,45 @@ p.days-sober {
   color: yellow;
 }
 
+/* For the Badges (1 day, 5 day, etc) */
+
+div.badges-col {
+  display: flex;
+  justify-content: center;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+img.earned-badge {
+  display: flex;
+  max-width: calc(35px + 4.2vw);
+}
+
 /*  For days/etc until next badge */
 
 div.days-until {
   background-color: #3a57729c;
   width: 65%;
+  max-width: 500px;
   border-radius: 10px;
   margin-top: 60px;
   margin-bottom: 60px;
 }
 
+/* May not end up needing this */
 div.days-until p {
+  /* color: white; */
   margin: .25rem 0;
   font-size: calc(14px + .7vw);
   width: 100%;
 }
 
+/* May not end up needing this */
 span#time-left {
   color: #BFF0CF;
 }
 
+/* May not need this */
 span.star {
   color: yellow;
   font-size: calc(16px + .7vw);
@@ -597,42 +429,29 @@ span.star {
 
 div.quote-container {
   color: white;
-  background-color: #bff0cfab;
+  background-color: #bff0cf9c;
   width: 65%;
+  max-width: 500px;
   border-radius: 10px;
-  padding: 10px;
+  margin-bottom: 5rem;
 }
 
 div.quote-container>p {
   color: white;
-  font-size: calc(14px + .6vw)
+  font-size: calc(14px + .6vw);
 }
 
 p.quote {
   font-style: italic;
+  margin: 1rem;
+
 }
 
-footer {
-  background-color: #87A2BB;
+p.quote-author {
+  text-align: right;
+  margin-right: 10px;
 }
 
-footer>.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  color: white;
-}
-
-/* Footer icons */
-
-img.icon {
-  max-width: 40px;
-  width: 5vw;
-}
-
-img.icon-connect {
-  max-width: 50px;
-  width: 7vw;
-}
 
 /* media queries */
 
@@ -663,5 +482,24 @@ img.icon-connect {
   }
   div.navbar-brand {
     margin-right: 0;
+  }
+}
+
+@media only screen and (min-device-width: 280px) and (max-device-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
+  h2 {
+    margin-top: 10px;
+    font-size: 10vw;
+  }
+  .box {
+    width: 90vw;
+  }
+  input[type=text] {
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+  .btn {
+    height: 45px;
+    font-size: 18px;
   }
 }
