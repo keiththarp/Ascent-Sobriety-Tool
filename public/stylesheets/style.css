@@ -266,6 +266,11 @@ textarea {
   font-size: 14px;
 }
 
+div.checkin-box {
+  margin-top: 0rem;
+  margin-bottom: 5rem;
+}
+
 #check-in-text {
   height: 4rem;
 }
