@@ -24,6 +24,8 @@
 
 This was a joint project between the following developers listed below along with their respective github accounts.
   
+> Rachel Campbell: [@relizabet](https://github.com/relizabet)
+
 > Molly Kizer: [@LivesInRoom29](https://github.com/LivesInRoom29)
 
 > Marc Langlois: [@mlanglois333](https://github.com/mlanglois333)
@@ -62,7 +64,7 @@ Every day the member checks into the app, they are met with our check in page.
 - Passport
 - Express Handlebars
 - Moment
-- ChartJs
+- Apex Charts
 - Bootstrap
 - Canva
 
