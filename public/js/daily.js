@@ -71,7 +71,7 @@ $(document).ready(() => {
     }
     const checkInBox = $("#check-in-text");
     checkInText = checkInBox.val().trim();
-    const today = moment().format("LLLL");
+    const today = moment().format("ddd, MM/DD/YY h:mm A");
     sendCheckIn(userMood, soberYN, checkInText, today);
   });
 

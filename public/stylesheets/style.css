@@ -89,6 +89,7 @@ div.footer {
   flex-direction: row;
   justify-content: space-evenly;
 }
+
 a.foot-icon {
   font-size: 30px;
 }
@@ -143,7 +144,7 @@ label.inputLabel {
 
 button.fa-arrow-circle-left {
   font-size: 25px;
-  float: left;
+  text-align: left;
   color: #3A5772;
 }
 
@@ -195,6 +196,10 @@ div.box {
   flex-direction: column;
 }
 
+div.login-container, div.signupJumbo {
+  width: 500px;
+}
+
 /* ---- Check in ---- */
 
 h2.welcome-title, h2.resources-title, span.member-name, h2.reflections-title {
@@ -217,14 +222,15 @@ h4, label.checkin-title, a.foot-icon, h5 {
 
 /* mood button styling */
 
-div.mood-buttons, .mood-sober {
+div.mood-buttons {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .mood-sober {
+  align-items: center;
   justify-content: space-around;
   color: white;
 }
@@ -267,6 +273,11 @@ textarea {
   font-size: 14px;
 }
 
+div.checkin-box {
+  margin-top: 0rem;
+  margin-bottom: 5rem;
+}
+
 #check-in-text {
   height: 4rem;
 }
@@ -292,16 +303,40 @@ input[type=checkbox] {
 
 /* ---- Resources & Journal ---- */
 
+div.journal-box, div.resource-box {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+article.journal-entry, article.resource-article {
+  width: 375px;
+  min-height: 200px;
+  background-color: rgb(58, 87, 114, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article.resource-article {
+  width: 300px;
+  align-items: center;
+}
+
+h4.article-title {
+  min-height: 3rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid whitesmoke;
+}
+
 p.journal-entry {
   margin-top: 1rem;
 }
 
-.resource-box, .journal-box  {
+.resource-box, .journal-box {
   margin-top: 2rem;
-}
-
-article.resource-article, .journal-entry {
-  background-color: #3A5772;
 }
 
 /* title */
@@ -377,7 +412,7 @@ p.days-sober {
   z-index: 3;
   margin-top: 250%;
   font-size: calc(12px + .8vw);
-  color: yellow;
+  color: #f2e165;
 }
 
 /* For the Badges (1 day, 5 day, etc) */
@@ -397,12 +432,49 @@ img.earned-badge {
 /*  For days/etc until next badge */
 
 div.days-until {
-  background-color: #3a57729c;
+  background-color: #3a5772c0;
+  /* background-color: #3a57729c; */
   width: 65%;
   max-width: 500px;
   border-radius: 10px;
   margin-top: 60px;
   margin-bottom: 60px;
+}
+
+div.outer-stars {
+  padding: 5px 10px;
+}
+div.stars-container {
+  font-size: 20px;
+  /* text-shadow:
+    -1px -1px 0 #D5CCC0,
+    1px -1px 0 #D5CCC0,
+    -1px 1px 0 #D5CCC0,
+    1px 1px 0 #D5CCC0; */
+}
+p.total-Days-label {
+  text-align: left;
+}
+
+.year-star {
+  padding: 2px;
+  color: #cc7272;
+}
+
+.month-star {
+  padding: 2px;
+  color: #fff;
+}
+
+.week-star {
+  padding: 2px;
+  color: #BFF0CF;
+  /* color: #89d6a1; */
+}
+
+.day-star {
+  padding: 2px;
+  color: #f2e165;
 }
 
 /* May not end up needing this */
