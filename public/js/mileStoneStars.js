@@ -1,5 +1,8 @@
 // Setting a variable for testing
 $(document).ready(() => {
+  //Set variable for milestones container
+  const starsContainer = $(".stars-container");
+
   // Get the total sober days
   const stars = () => {
     $.get("/api/user_data").then(data => {
@@ -54,11 +57,16 @@ $(document).ready(() => {
           css: "fas fa-sun day-star"
         }
       ];
+      //Labeling the total number of sober days
+      starsContainer.append(`<p class="total-Days-label"><b>${days}</b> total sober days!</p>`);
+      //Loop to create the milestones
       milestonesArray.forEach(element => {
         const { icon, css } = element;
 
         for (let i = 0; i < icon; i++) {
-          $(".stars-container").append(`<i class="${css}"></i>`).attr("title", icon);
+          $(".stars-container")
+            .append(`<i class="${css}"></i>`)
+            .attr("title", `${days} total sober days!"`);
         }
       });
     });
