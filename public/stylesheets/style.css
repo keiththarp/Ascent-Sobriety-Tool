@@ -377,7 +377,7 @@ p.days-sober {
   z-index: 3;
   margin-top: 250%;
   font-size: calc(12px + .8vw);
-  color: yellow;
+  color: #f2e165;
 }
 
 /* For the Badges (1 day, 5 day, etc) */
@@ -406,10 +406,10 @@ div.days-until {
   margin-bottom: 60px;
 }
 
-.outer-stars {
+div.outer-stars {
   padding: 5px 10px;
 }
-.stars-container {
+div.stars-container {
   font-size: 20px;
   /* text-shadow:
     -1px -1px 0 #D5CCC0,
@@ -417,25 +417,28 @@ div.days-until {
     -1px 1px 0 #D5CCC0,
     1px 1px 0 #D5CCC0; */
 }
+p.total-Days-label {
+  text-align: left;
+}
 
 .year-star {
-  padding: 1px;
+  padding: 2px;
   color: #cc7272;
 }
 
 .month-star {
-  padding: 1px;
+  padding: 2px;
   color: #fff;
 }
 
 .week-star {
-  padding: 1px;
+  padding: 2px;
   color: #BFF0CF;
   /* color: #89d6a1; */
 }
 
 .day-star {
-  padding: 1px;
+  padding: 2px;
   color: #f2e165;
 }
 
