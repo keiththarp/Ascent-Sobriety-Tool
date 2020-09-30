@@ -382,6 +382,10 @@ p.days-sober {
 
 /* For the Badges (1 day, 5 day, etc) */
 
+div.badges {
+  max-width: 450px;
+}
+
 div.badges-col {
   display: flex;
   justify-content: center;
@@ -390,7 +394,7 @@ div.badges-col {
 }
 
 img.earned-badge {
-  display: flex;
+  /* display: flex; */
   max-width: calc(35px + 4.2vw);
 }
 

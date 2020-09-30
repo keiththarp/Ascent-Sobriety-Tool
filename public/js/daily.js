@@ -1,6 +1,7 @@
 $(document).ready(() => {
   // This function just does a GET request to figure out which user is logged in
   $.get("/api/user_data").then(data => {
+    console.log("This is the user data");
     console.log(data);
     displayName(data);
     return ({ id, email, name } = data);
@@ -10,55 +11,55 @@ $(document).ready(() => {
     $(".member-name").text(data.name);
   }
 
-  $("button").click(function() {
+  $("button").click(function () {
     $("button").removeClass("active");
     $(this).addClass("active");
   });
 
   $("#mood1").hover(
-    function() {
+    function () {
       $(this).html("<i class='fas fa-tired'></i>");
     },
-    function() {
+    function () {
       $(this).html("1");
     }
   );
   $("#mood2").hover(
-    function() {
+    function () {
       $(this).html("<i class='fas fa-frown'></i>");
     },
-    function() {
+    function () {
       $(this).html("2");
     }
   );
   $("#mood3").hover(
-    function() {
+    function () {
       $(this).html("<i class='fas fa-meh'></i>");
     },
-    function() {
+    function () {
       $(this).html("3");
     }
   );
   $("#mood4").hover(
-    function() {
+    function () {
       $(this).html("<i class='fas fa-smile'></i>");
     },
-    function() {
+    function () {
       $(this).html("4");
     }
   );
   $("#mood5").hover(
-    function() {
+    function () {
       $(this).html("<i class='fas fa-laugh-beam'></i>");
     },
-    function() {
+    function () {
       $(this).html("5");
     }
   );
 
   // Captures Mood Button Values on Click
   let userMood = 0;
-  $(".mood").on("click", function() {
+  $(".mood").on("click", function () {
     userMood = $(this).attr("data-mood");
   });
 
