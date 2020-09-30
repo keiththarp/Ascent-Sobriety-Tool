@@ -380,18 +380,52 @@ p.days-sober {
   z-index: 3;
   margin-top: 250%;
   font-size: calc(12px + 1vw);
-  color: yellow;
+  color: #f2e165;
 }
 
-/*  For days/etc until next badge */
+/*  For stars/milestone section */
 
 div.days-until {
-  background-color: #3a57729c;
+  background-color: #3a5772c0;
+  /* background-color: #3a57729c; */
   width: 65%;
   max-width: 500px;
   border-radius: 10px;
   margin-top: 60px;
   margin-bottom: 60px;
+}
+
+.outer-stars {
+  padding: 5px 10px;
+}
+.stars-container {
+  font-size: 20px;
+  /* text-shadow:
+    -1px -1px 0 #D5CCC0,
+    1px -1px 0 #D5CCC0,
+    -1px 1px 0 #D5CCC0,
+    1px 1px 0 #D5CCC0; */
+}
+
+.year-star {
+  padding: 1px;
+  color: #cc7272;
+}
+
+.month-star {
+  padding: 1px;
+  color: #fff;
+}
+
+.week-star {
+  padding: 1px;
+  color: #BFF0CF;
+  /* color: #89d6a1; */
+}
+
+.day-star {
+  padding: 1px;
+  color: #f2e165;
 }
 
 div.days-until p {
@@ -570,7 +604,6 @@ p.days-sober {
 /*  For days/etc until next badge */
 
 div.days-until {
-  background-color: #3a57729c;
   width: 65%;
   border-radius: 10px;
   margin-top: 60px;

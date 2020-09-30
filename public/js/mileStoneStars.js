@@ -58,7 +58,7 @@ $(document).ready(() => {
         const { icon, css } = element;
 
         for (let i = 0; i < icon; i++) {
-          $(".stars-container").append(`<i class="${css}"></i>`);
+          $(".stars-container").append(`<i class="${css}"></i>`).attr("title", icon);
         }
       });
     });
