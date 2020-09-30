@@ -7,14 +7,14 @@ $(document).ready(() => {
   const quoteAuthor = $("p.quote-author");
 
   // To diplay days sober in the counter
-  const displayDaysSober = () => {
-    $.get("/api/user_data").then(response => {
-      const soberDate = moment(response.soberSince);
-      // calculate difference between datetime in mysql(soberSince) and today's date.
-      const daysSober = today.diff(soberDate, "days");
-      daysSoberContainer.text(daysSober);
-    });
-  };
+  // const displayDaysSober = () => {
+  //   $.get("/api/user_data").then(response => {
+  //     const soberDate = moment(response.soberSince);
+  //     // calculate difference between datetime in mysql(soberSince) and today's date.
+  //     const daysSober = today.diff(soberDate, "days");
+  //     daysSoberContainer.text(daysSober);
+  //   });
+  // };
 
   // to display inspirational quotes
   // https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373/15
@@ -38,7 +38,7 @@ $(document).ready(() => {
     });
   };
 
-  displayDaysSober();
+  // displayDaysSober();
   displayRandomQuote();
 
   // ********** FOR COUNTER/Chart ****************
