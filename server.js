@@ -1,7 +1,3 @@
-/* **************
-Adding this to ensure that you are updating correctly at 6:50 pm 9/27/20 
-*************** */
-
 //Require environment variables
 require("dotenv").config();
 
@@ -42,14 +38,11 @@ app.set("view engine", "handlebars");
 const apiRoutes = require("./routes/api-routes");
 app.use("/api", apiRoutes);
 
-// using post route based on Bobby's (not working)
-// app.use("/post", postRoute);
-// Requiring our routes
-// restructure
-require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
-// require("./routes/checkin-routes.js")(app);
+// all html routes
+const htmlRoutes = require("./routes/html-routes");
+app.use("", htmlRoutes);
 
+// all routes requiring authentication
 app.use("", authenticatedRoutes);
 //BODY PARSER
 
