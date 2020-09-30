@@ -13,7 +13,10 @@ router.get("/daily", isAuthenticated, (req, res) => {
 });
 
 router.get("/counter", isAuthenticated, (req, res) => {
-  res.render("counter");
+  const hbsObj = {
+    user: req.user
+  };
+  res.render("counter", hbsObj);
 });
 
 router.get("/resources", isAuthenticated, async (req, res) => {
