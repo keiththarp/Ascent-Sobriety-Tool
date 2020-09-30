@@ -378,6 +378,8 @@ p, span.date {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 #responsive-chart, div.chart-inner {
@@ -417,6 +419,14 @@ p.days-sober {
 
 /* For the Badges (1 day, 5 day, etc) */
 
+div.outer-stars {
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
 div.badges-col {
   display: flex;
   justify-content: center;
@@ -441,11 +451,10 @@ div.days-until {
   margin-bottom: 60px;
 }
 
-div.outer-stars {
-  padding: 5px 10px;
-}
+
 div.stars-container {
   font-size: 20px;
+  text-align: center;
   /* text-shadow:
     -1px -1px 0 #D5CCC0,
     1px -1px 0 #D5CCC0,
