@@ -29,8 +29,10 @@ body {
 
 /* Navigation */
 
-nav {
+nav, ul.navbar-nav {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   background-color: #3A5772;
 }
@@ -62,6 +64,10 @@ span.navbar-toggler-icon {
 #menuList {
   justify-content: flex-end;
   text-align: right;
+}
+
+a.info-link {
+  padding: 1rem;
 }
 
 a.nav-link {
@@ -141,10 +147,26 @@ a.about-tag:hover {
   color: #BFF0CF;
 }
 
-/* ---- About Us ----- */
+/* ---- About Us & info ----- */
 
 p.about-info {
   text-align: left;
+}
+
+i.info {
+  font-size: 30px;
+  padding: 5px;
+}
+
+label.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+img.info {
+  width: 10vw;
+  margin: .5rem;
 }
 
 /* ---- Register Stylings ---- */
