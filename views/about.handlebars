@@ -1,13 +1,20 @@
+{{!-- centering content --}}
 <div class="main-content">
+    {{!-- container for content with animatecss styling --}}
     <div class="login-container box animate__animated animate__fadeIn animate__delay-0.5s">
+        {{!-- back button --}}
         <button type="button" class="back fas fa-arrow-circle-left" value="Go back!" onclick="history.back()">
         </button>
         <div class="container">
+            {{!-- logo --}}
             <img class="signin-logo" src="img/logos/logo.png" alt="mountain logo">
+            {{!-- app name --}}
             <h2 class="startPage">ASCENT</h2>
+            {{!-- subtitle --}}
             <h4>About Us</h4>
             <hr />
             <div classs="container">
+                {{!-- Description --}}
                 <p class="about-info">Ascent is a sobriety tool built by people in recovery for people in recovery. This
                     application will not only help you track your daily mood and thoughts, but also help you track your
                     continuous and discontinuous time in sobriety.</p>
@@ -16,6 +23,7 @@
                     milestone of continuous sobriety, members are able to collect stars, tokens and more! Sign up today
                     to join in the fun.</p>
                 <hr />
+                {{!-- Stars Container --}}
                 <div class="container outer-stars">
                     <img class="earned-badge about" src="./img/badges/oneDay.png" alt="One Day Badge">
                     <img class="earned-badge about" src="./img/badges/fiveDay.png" alt="5 Day Badge">
@@ -28,6 +36,7 @@
     </div>
 </div>
 </div>
+{{!-- Script Tags --}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
