@@ -449,6 +449,10 @@ div.outer-stars {
   justify-content: center;
 }
 
+div.badges {
+  max-width: 450px;
+}
+
 div.badges-col {
   display: flex;
   justify-content: center;
@@ -457,7 +461,7 @@ div.badges-col {
 }
 
 img.earned-badge {
-  display: flex;
+  /* display: flex; */
   max-width: calc(35px + 4.2vw);
 }
 
@@ -478,7 +482,6 @@ div.days-until {
   margin-bottom: 60px;
 }
 
-
 div.stars-container {
   font-size: 20px;
   text-align: center;
@@ -488,6 +491,7 @@ div.stars-container {
     -1px 1px 0 #D5CCC0,
     1px 1px 0 #D5CCC0; */
 }
+
 p.total-Days-label {
   text-align: left;
 }
@@ -514,6 +518,7 @@ p.total-Days-label {
 }
 
 /* May not end up needing this */
+
 div.days-until p {
   /* color: white; */
   margin: .25rem 0;
@@ -522,11 +527,13 @@ div.days-until p {
 }
 
 /* May not end up needing this */
+
 span#time-left {
   color: #BFF0CF;
 }
 
 /* May not need this */
+
 span.star {
   color: yellow;
   font-size: calc(16px + .7vw);
@@ -552,13 +559,11 @@ div.quote-container>p {
 
 p.quote {
   font-style: italic;
-
 }
 
 p.quote-author {
   text-align: right;
 }
-
 
 /* media queries */
 
@@ -573,12 +578,15 @@ p.quote-author {
   div.days-until, div.quote-container {
     width: 50%;
   }
+}
+
+@media screen and (min-width: 1000px) {
   footer {
     visibility: hidden;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .navbar-toggler, .navbar-collapse {
     visibility: hidden;
   }
