@@ -332,7 +332,7 @@ div.journal-box, div.resource-box {
   max-width: 800px;
 }
 
-article.journal-entry, div.resource-article {
+div.journal-entry, div.resource-article {
   width: 375px;
   min-height: 200px;
   background-color: rgb(58, 87, 114, 0.5);
@@ -346,15 +346,15 @@ div.resource-article {
   align-items: center;
 }
 
-h4.article-title {
+.article-title {
   min-height: 3rem;
-  padding-top: 5px;
+  padding-top: 20px;
   padding-bottom: 5px;
   border-bottom: 2px solid whitesmoke;
 }
 
 p.journal-entry {
-  margin-top: 1rem;
+  margin: 1rem;
 }
 
 .resource-box, .journal-box {
