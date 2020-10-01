@@ -2,6 +2,9 @@ $(document).ready(() => {
   $("#submit-quote-btn").on("click", e => {
     e.preventDefault();
     const quoteData = {
+      email: $("#submit-email")
+        .val()
+        .trim(),
       quote: $("#submit-quote")
         .val()
         .trim(),
@@ -16,7 +19,9 @@ $(document).ready(() => {
         .trim()
     };
 
-    const { quote, author, source, category } = quoteData;
+    const { email, quote, author, source, category } = quoteData;
+
+    sendEmail(email);
 
     submitQuote(quote, author, source, category);
   });
@@ -39,7 +44,25 @@ $(document).ready(() => {
 
     $.ajax(settings).done(res => {
       console.log(res);
-      window.location.reload();
+      // window.location.reload();
     });
+  };
+
+  const sendEmail = email => {
+    const settings = {
+      url: "http://localhost:8080/email",
+      method: "POST",
+      timeout: 0,
+      headers: {
+        "Content-Type": "text/plain"
+      },
+      // eslint-disable-next-line prettier/prettier
+      data: email
+    };
+
+    $.ajax(settings).done(response => {
+      console.log(response);
+    });
+    console.log(`Send email from ${email}`);
   };
 });
