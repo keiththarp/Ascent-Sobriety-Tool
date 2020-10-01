@@ -66,7 +66,7 @@ span.navbar-toggler-icon {
   text-align: right;
 }
 
-a.info-link {
+li.nav-item>a.info-link {
   padding: 1rem;
 }
 
