@@ -75,7 +75,7 @@ $(document).ready(() => {
       width: "100%"
     },
     series: seriesArray, //length of array would come from the db
-    //labels would also depend on the timeframe the user was working with
+    //labels would also depend on the time-frame the user was working with
     labels: [
       "hour",
       "hour",
