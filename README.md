@@ -1,8 +1,7 @@
 # Ascent 
 [![License: GPL v3.0](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
 
-![Image of start page of application](./public/img/md/front-page.png)
-
+<img src="./public/img/md/front-page.png" alt="Image of start page of application" width="50%"><img src="./public/img/md/counter-page.png" alt="Image of counter page of application" width="50%">
     
 <!-- #### Deployed Link: [check us out on heroku!](link to come!) -->
 
@@ -11,8 +10,6 @@
 #### Table of Contents
 - [Our Team](#our)
 - [Description](#description)
-- [Time Tracking](#time)
-- [Daily Check In](#daily)
 - [Technologies Used](#technologies)
 - [License](#license)
 - [Contributing](#contributing)
@@ -44,16 +41,6 @@ For many, sobriety is nonlinear, and to think of it as such, can be detrimental 
 
 By tracking continuous AND discontinuous time, Ascent opens the door to anyone seeking to live a sober lifestyle. For members, this can also mean the difference between a hiccup and an overdose. We could all use a little grace right now and with Ascent, we get that. 
 
-
-
-### Time Tracking 
-<!-- ***Talk about counter, badges and such here*** -->
-
-### Daily Check In
-
-![Gif of Daily Check in Page](./public/img/md/daily.gif)
-
-Every day the member checks into the app, they are met with our check in page.
 
 ### Demo 
 ***Demo to come!***
