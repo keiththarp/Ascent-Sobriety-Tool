@@ -100,6 +100,10 @@ a.foot-icon {
   font-size: 30px;
 }
 
+footer {
+  margin-top: 1rem;
+}
+
 /* End Navigation */
 
 .main-content {
@@ -107,6 +111,7 @@ a.foot-icon {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 3rem;
 }
 
 /* ----- general btn stylings ----- */
@@ -379,10 +384,6 @@ p.journal-entry {
   margin: 1rem;
 }
 
-.resource-box, .journal-box {
-  margin-top: 2rem;
-}
-
 /* title */
 
 h2.resources-title {
@@ -483,8 +484,13 @@ div.badges-col {
 }
 
 img.earned-badge {
-  /* display: flex; */
   max-width: calc(35px + 4.2vw);
+}
+
+label.infoBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 img.about {
