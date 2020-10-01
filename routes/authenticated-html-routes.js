@@ -20,6 +20,13 @@ router.get("/counter", isAuthenticated, (req, res) => {
   res.render("counter", hbsObj);
 });
 
+router.get("/submit", isAuthenticated, (req, res) => {
+  const hbsObj = {
+    user: req.user
+  };
+  res.render("submit", hbsObj);
+});
+
 router.get("/resources", isAuthenticated, async (req, res) => {
   try {
     const resources = await db.Resource.findAll({

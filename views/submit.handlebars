@@ -43,25 +43,35 @@
 
   <!-- Welcome Header -->
   <header>
-    <h2 class="welcome-title">Hi there, {{user.name}}!</h2>
+    <h2 class="welcome-title p-1">Submit A New Quote</h2>
   </header>
 
   <!-- Mood Emoji Box -->
-  <div class="box mood-box">
-    <h4 class="mood-title">Would you like to submit a quote?</h4>
-    <div class="checkin-box box">
-        <!-- Written Check In -->
-        <form id="check-in-form">
-        <!-- Title -->
-        <label class="checkin-title">Submit a quote and our team will manually review it to be added to our Sobriety Quotes API:
-            <!-- Text Input -->
-            <textarea id="check-in-text" rows="3" cols="25" placeholder="Today..."></textarea></label>
-        <!-- Sobriety Check -->
-        <label for="soberYN"><input type="checkbox" id="soberYN"> Today was a sober day.</label>
-        <!-- Submit Btn -->
-        <button class="btn sober-btn">Submit</button>
-        </form>
-    </div>
+  <div class="box submit-box">
+    <h4 class="submit-title pt-4">Submit a quote and our team will manually review it to be added to our Sobriety Quotes API.</h4>
+        <form class="submit-form pt-5">
+            <div class="form-group">
+                <label for="submit-email">Email Address<span class="submit-optional-span"> Optional</span></label>
+                <input type="email" class="form-control" id="submit-email" aria-describedby="emailHelp" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="quote">Quote</label>
+                <input type="text" class="form-control" id="submit-quote" placeholder="Quote Text" maxlength="300">
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" class="form-control" id="submit-author" placeholder="Quote Author" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="source">Source<span class="submit-optional-span"> Optional</span></label>
+                <input type="text" class="form-control" id="submit-source" placeholder="Quote Source" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="submit-category" placeholder="Sobriety, Inspirational, Motivational, etc..." maxlength="100">
+            </div>
+            <button type="submit" class="btn btn-outline-light mt-4 mb-2">Submit</button>
+            </form>
     </div>
   </div>
 
@@ -84,4 +94,4 @@
 {{!-- Moment --}}
 <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
 {{!-- Local Script --}}
-<script type="text/javascript" src="js/daily.js"></script>
+<script type="text/javascript" src="js/submit.js"></script>
