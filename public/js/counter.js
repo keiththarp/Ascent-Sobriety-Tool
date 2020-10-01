@@ -1,7 +1,7 @@
 $(document).ready(() => {
-  const today = moment();
+  // const today = moment();
   // variables for DOM elements
-  const daysSoberContainer = $("p.days-sober");
+  // const daysSoberContainer = $("p.days-sober");
   // const timeLeft = $("span#time-left");
   const quote = $("p.quote");
   const quoteAuthor = $("p.quote-author");
