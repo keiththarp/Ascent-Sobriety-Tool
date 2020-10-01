@@ -605,6 +605,32 @@ p.quote-author {
   text-align: right;
 }
 
+a.submit-link {
+  color: #a6c7b1;
+  font-family: 'Quicksand', sans-serif;
+}
+
+a.submit-link:hover {
+  text-decoration: none;
+  font-weight: 500;
+  color: #bce6c9;
+}
+
+/* -------------------------------------- */
+/* API Submit Quote Page */
+
+div.submit-box {
+  max-width: 500px;
+}
+
+label > span.submit-optional-span {
+  color: #c1c1c1;
+  font-size: smaller;
+}
+
+/* end API Submit Quote Page */
+/* -------------------------------------- */
+
 /* media queries */
 
 @media screen and (min-width: 400px) {
