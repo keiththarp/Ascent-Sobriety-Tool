@@ -321,6 +321,10 @@ input[type=checkbox] {
 
 /* ---- Resources & Journal ---- */
 
+div.card {
+  margin: 2rem;
+}
+
 div.journal-box, div.resource-box {
   display: flex;
   flex-direction: row-reverse;
@@ -328,7 +332,7 @@ div.journal-box, div.resource-box {
   max-width: 800px;
 }
 
-article.journal-entry, article.resource-article {
+article.journal-entry, div.resource-article {
   width: 375px;
   min-height: 200px;
   background-color: rgb(58, 87, 114, 0.5);
@@ -337,7 +341,7 @@ article.journal-entry, article.resource-article {
   align-items: center;
 }
 
-article.resource-article {
+div.resource-article {
   width: 300px;
   align-items: center;
 }
