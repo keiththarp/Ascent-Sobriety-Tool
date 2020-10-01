@@ -119,11 +119,32 @@ button.sober-btn, button.login-btn, button.article-btn {
 
 h4.startPage {
   font-size: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .start-btn {
   width: 80%;
+}
+
+.start-btns {
+  margin-bottom: 1rem;
+}
+
+a.about-tag {
+  color: white;
+  font-size: 24px;
+  font-weight: 600px;
+  padding-top: 2rem;
+}
+
+a.about-tag:hover {
+  color: #BFF0CF;
+}
+
+/* ---- About Us ----- */
+
+p.about-info {
+  text-align: left;
 }
 
 /* ---- Register Stylings ---- */
@@ -142,23 +163,20 @@ label.inputLabel {
 
 /* back arrow */
 
-button.fa-arrow-circle-left {
+button.back {
   font-size: 25px;
   text-align: left;
   color: #3A5772;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: transparent;
 }
 
 img.signin-logo {
   text-align: center;
   width: 200px;
   margin-bottom: 30px;
-}
-
-button.back {
-  width: 25px;
-  height: 25px;
-  background-color: transparent;
-  border: transparent;
 }
 
 h2.login-title {
@@ -439,6 +457,11 @@ img.earned-badge {
   max-width: calc(35px + 4.2vw);
 }
 
+img.about {
+  display: flex;
+  max-width: calc(5vw);
+}
+
 /*  For days/etc until next badge */
 
 div.days-until {
@@ -515,6 +538,7 @@ div.quote-container {
   max-width: 500px;
   border-radius: 10px;
   margin-bottom: 5rem;
+  padding: 1rem;
 }
 
 div.quote-container>p {
@@ -524,13 +548,11 @@ div.quote-container>p {
 
 p.quote {
   font-style: italic;
-  margin: 1rem;
 
 }
 
 p.quote-author {
   text-align: right;
-  margin-right: 10px;
 }
 
 
