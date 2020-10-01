@@ -538,12 +538,15 @@ p.quote-author {
   div.days-until, div.quote-container {
     width: 50%;
   }
+}
+
+@media screen and (min-width: 1000px) {
   footer {
     visibility: hidden;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .navbar-toggler, .navbar-collapse {
     visibility: hidden;
   }
