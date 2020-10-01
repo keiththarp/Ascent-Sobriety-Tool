@@ -1,7 +1,9 @@
-<article class="journal-entry">
-    <h5 class="text-center">{{ this.postDate }}</h5>
+{{!-- Journal Card --}}
+<div class="journal-entry card">
+    {{!-- Date Entered --}}
+    <h5 class="article-title">{{ this.postDate }}</h5>
+    {{!-- Check In Content --}}
     <p class="journal-entry"> {{ this.body }}</p>
-    <h5 class="text-center">Mood: {{ this.feeling }}</h5>
-    {{!-- <h5 class="entry-mood">Sober Day? {{ this.hiccup }}</h5> --}}
-
-</article>
+    {{!-- Mood of the Day --}}
+    <h5>Mood: {{ this.feeling }}</h5>
+</div>

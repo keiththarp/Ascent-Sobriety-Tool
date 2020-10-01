@@ -24,6 +24,8 @@
 
 This was a joint project between the following developers listed below along with their respective github accounts.
   
+> Rachel Campbell: [@relizabet](https://github.com/relizabet)
+
 > Molly Kizer: [@LivesInRoom29](https://github.com/LivesInRoom29)
 
 > Marc Langlois: [@mlanglois333](https://github.com/mlanglois333)
@@ -38,9 +40,10 @@ This was a joint project between the following developers listed below along wit
 
 **Ascent is a sobriety tool** that helps members track their daily mood & thoughts as well as various lengths of sobriety. In a time where more and more people are living sober lifestyles, this app caters to those who are seeking to track continuous time as well as discontinuous time.
 
-For many, sobriety is nonlinear, and to think of it as such, can be detrimental to long-term growth. With Ascent, members are able to check in with themselves daily and track, not only their length of continuous and discontinuous sobriety, but also their daily thoughts and mood.
+For many, sobriety is nonlinear, and to think of it as such, can be detrimental to long-term growth. By facilitating daily reflection, Ascent is creating space for each member to process and reflect on thier emotions rather than turning to substance misuse to mask or bury feelings. 
 
-By being able to reflect on daily thoughts, moods, and sobriety, Ascent seeks to provide support to each member as they navigate their sobriety during a time of limited socialization.
+By tracking continuous AND discontinuous time, Ascent opens the door to anyone seeking to live a sober lifestyle. For members, this can also mean the difference between a hiccup and an overdose. We could all use a little grace right now and with Ascent, we get that. 
+
 
 
 ### Time Tracking 
@@ -62,9 +65,10 @@ Every day the member checks into the app, they are met with our check in page.
 - Passport
 - Express Handlebars
 - Moment
-- ChartJs
+- Apex Charts
 - Bootstrap
 - Canva
+- Frontify
 
 ### Contributing
 If you'd like to contribute to this application, feel free to submit a pull request.

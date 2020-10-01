@@ -1,0 +1,93 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" role="navigation">
+    <!-- Logo -->
+    <div class="navbar-brand text-center">
+        <img src="img/logos/logo-white.png" alt="mountain logo" class="logo">
+        <h1>ASCENT</h1>
+    </div>
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuList"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menuList">
+        <ul class="navbar-nav my-2 my-lg-0">
+            <!-- home -->
+            <li class="nav-item">
+                <a class="nav-link" href="/counter">
+                    home
+                </a>
+            </li>
+            <!-- journal -->
+            <li class="nav-item">
+                <a class="nav-link" href="/journal">
+                    journal
+                </a>
+            </li>
+            <!-- logout button -->
+            <a href="/logout" class="nav-link"><button type="button" class="btn btn-outline-light" href="/logout">
+                    logout
+                </button></a>
+        </ul>
+    </div>
+</nav>
+
+<main class="main-content">
+    {{!-- container for content with animatecss styling --}}
+    <div class="box animate__animated animate__fadeIn animate__delay-0.5s">
+        <div class="container">
+            {{!-- subtitle --}}
+            <h4>About Us</h4>
+            <hr />
+            <div classs="container">
+                {{!-- Description --}}
+                <p class="about-info">Ascent is a sobriety tool built by people in recovery for people in recovery. This
+                    application will not only help you track your daily mood and thoughts, but also help you track your
+                    continuous and discontinuous time in sobriety.</p>
+                <p class="about-info"> By facilitating daily reflection, Ascent creates space for each member to process
+                    and reflect on emotions rather than turning to substance misuse to mask or bury feelings. For each
+                    milestone of continuous sobriety, members are able to collect stars, tokens and more!</p>
+                <hr />
+            </div>
+            <h4>Time Tracking</h4>
+            <hr />
+            <div classs="container">
+                {{!-- Description --}}
+                <p class="about-info">The smaller icons found on the home page represent your total sober time,
+                    discontinuous or otherwise. See below for a guide on what they all reprsent!</p>
+                <div class="small-icons outer-stars">
+                    <label class="info"><i class="fas fa-medal year-star info"></i> One Year</label>
+                    <label class="info"><i class="fas fa-star month-star info"></i> One Month</label>
+                    <label class="info"><i class="far fa-sun week-star info"></i> One Week</label>
+                    <label class="info"><i class="fas fa-sun day-star info"></i> One Day</label>
+                </div>
+                <p class="about-info">The larger icons on the home page reflect your continuous time! See below for a guide
+                    on what they all mean.</p>
+                {{!-- Stars Container --}}
+                <div class="container outer-stars">
+                    <label class="infoBadge"><img class="earned-badge info" src="./img/badges/oneDay.png" alt="One Day Badge"> One
+                        Day</label>
+                    <label class="infoBadge"><img class="earned-badge info" src="./img/badges/fiveDay.png" alt="5 Day Badge"> Five
+                        Days</label>
+                    <label class="infoBadge"><img class="earned-badge info" src="./img/badges/tenDay.png" alt="15 Day Badge"> Ten
+                        Days</label>
+                    <label class="infoBadge"><img class="earned-badge info" src="./img/badges/oneMonth.png" alt="One Month Badge"> One
+                        Month</label>
+                    <label class="infoBadge"><img class="earned-badge info" src="./img/badges/oneYear.png" alt="One Year Badge"> One
+                        Year</label>
+                </div>
+            </div>
+        </div>
+
+</main>
+
+<!-- mobile menu -->
+<footer class="navbar fixed-bottom">
+    <div class="container footer">
+        <a href="/counter" class="foot-icon"><i class="fas fa-house-user"></i></a>
+        <a href="/resources" class="foot-icon"><i class="fas fa-hands-helping"></i></i></a>
+        <a href="/journal" class="foot-icon"><i class="fas fa-book"></i></a>
+        <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+</footer>

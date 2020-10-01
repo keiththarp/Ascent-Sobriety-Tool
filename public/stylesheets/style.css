@@ -29,8 +29,10 @@ body {
 
 /* Navigation */
 
-nav {
+nav, ul.navbar-nav {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   background-color: #3A5772;
 }
@@ -64,6 +66,10 @@ span.navbar-toggler-icon {
   text-align: right;
 }
 
+a.info-link {
+  padding: 1rem;
+}
+
 a.nav-link {
   color: white;
   font-family: 'Quicksand', sans-serif;
@@ -94,6 +100,10 @@ a.foot-icon {
   font-size: 30px;
 }
 
+footer {
+  margin-top: 1rem;
+}
+
 /* End Navigation */
 
 .main-content {
@@ -101,6 +111,7 @@ a.foot-icon {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 3rem;
 }
 
 /* ----- general btn stylings ----- */
@@ -119,11 +130,48 @@ button.sober-btn, button.login-btn, button.article-btn {
 
 h4.startPage {
   font-size: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .start-btn {
   width: 80%;
+}
+
+.start-btns {
+  margin-bottom: 1rem;
+}
+
+a.about-tag {
+  color: white;
+  font-size: 24px;
+  font-weight: 600px;
+  padding-top: 2rem;
+}
+
+a.about-tag:hover {
+  color: #BFF0CF;
+}
+
+/* ---- About Us & info ----- */
+
+p.about-info {
+  text-align: left;
+}
+
+i.info {
+  font-size: 30px;
+  padding: 5px;
+}
+
+label.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+img.info {
+  width: 10vw;
+  margin: .5rem;
 }
 
 /* ---- Register Stylings ---- */
@@ -142,23 +190,20 @@ label.inputLabel {
 
 /* back arrow */
 
-button.fa-arrow-circle-left {
+button.back {
   font-size: 25px;
   text-align: left;
   color: #3A5772;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: transparent;
 }
 
 img.signin-logo {
   text-align: center;
   width: 200px;
   margin-bottom: 30px;
-}
-
-button.back {
-  width: 25px;
-  height: 25px;
-  background-color: transparent;
-  border: transparent;
 }
 
 h2.login-title {
@@ -303,6 +348,10 @@ input[type=checkbox] {
 
 /* ---- Resources & Journal ---- */
 
+div.card {
+  margin: 2rem;
+}
+
 div.journal-box, div.resource-box {
   display: flex;
   flex-direction: row-reverse;
@@ -310,7 +359,7 @@ div.journal-box, div.resource-box {
   max-width: 800px;
 }
 
-article.journal-entry, article.resource-article {
+div.journal-entry, div.resource-article {
   width: 375px;
   min-height: 200px;
   background-color: rgb(58, 87, 114, 0.5);
@@ -319,24 +368,20 @@ article.journal-entry, article.resource-article {
   align-items: center;
 }
 
-article.resource-article {
+div.resource-article {
   width: 300px;
   align-items: center;
 }
 
-h4.article-title {
+.article-title {
   min-height: 3rem;
-  padding-top: 5px;
+  padding-top: 20px;
   padding-bottom: 5px;
   border-bottom: 2px solid whitesmoke;
 }
 
 p.journal-entry {
-  margin-top: 1rem;
-}
-
-.resource-box, .journal-box {
-  margin-top: 2rem;
+  margin: 1rem;
 }
 
 /* title */
@@ -378,6 +423,8 @@ p, span.date {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 #responsive-chart, div.chart-inner {
@@ -417,6 +464,14 @@ p.days-sober {
 
 /* For the Badges (1 day, 5 day, etc) */
 
+div.outer-stars {
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
 div.badges {
   max-width: 450px;
 }
@@ -429,8 +484,18 @@ div.badges-col {
 }
 
 img.earned-badge {
-  /* display: flex; */
   max-width: calc(35px + 4.2vw);
+}
+
+label.infoBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.about {
+  display: flex;
+  max-width: calc(5vw);
 }
 
 /*  For days/etc until next badge */
@@ -445,17 +510,16 @@ div.days-until {
   margin-bottom: 60px;
 }
 
-div.outer-stars {
-  padding: 5px 10px;
-}
 div.stars-container {
   font-size: 20px;
+  text-align: center;
   /* text-shadow:
     -1px -1px 0 #D5CCC0,
     1px -1px 0 #D5CCC0,
     -1px 1px 0 #D5CCC0,
     1px 1px 0 #D5CCC0; */
 }
+
 p.total-Days-label {
   text-align: left;
 }
@@ -482,6 +546,7 @@ p.total-Days-label {
 }
 
 /* May not end up needing this */
+
 div.days-until p {
   /* color: white; */
   margin: .25rem 0;
@@ -490,11 +555,13 @@ div.days-until p {
 }
 
 /* May not end up needing this */
+
 span#time-left {
   color: #BFF0CF;
 }
 
 /* May not need this */
+
 span.star {
   color: yellow;
   font-size: calc(16px + .7vw);
@@ -510,6 +577,7 @@ div.quote-container {
   max-width: 500px;
   border-radius: 10px;
   margin-bottom: 5rem;
+  padding: 1rem;
 }
 
 div.quote-container>p {
@@ -519,13 +587,10 @@ div.quote-container>p {
 
 p.quote {
   font-style: italic;
-  margin: 1rem;
-
 }
 
 p.quote-author {
   text-align: right;
-  margin-right: 10px;
 }
 
 a.submit-link {
