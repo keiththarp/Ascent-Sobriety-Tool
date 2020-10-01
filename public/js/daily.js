@@ -1,11 +1,48 @@
+/* eslint-disable prettier/prettier */
 $(document).ready(() => {
+  let user = {};
   // This function just does a GET request to figure out which user is logged in
   $.get("/api/user_data").then(data => {
     console.log("This is the user data");
     console.log(data);
     displayName(data);
-    return ({ id, email, name } = data);
+    user = data;
   });
+
+  function sendSoberData(id, consDays, stars, badgeOne, badgeTwo, badgeThree, badgeFour, badgeFive) {
+    return $.ajax({
+      url: "/api/soberDaysUpdate",
+      type: "PUT",
+      data: {
+        id: id,
+        consDays: consDays,
+        stars: stars,
+        badgeOne: badgeOne,
+        badgeTwo: badgeTwo,
+        badgeThree: badgeThree,
+        badgeFour: badgeFour,
+        badgeFive: badgeFive
+      }
+    });
+  }
+
+  function sendCheckIn(id, userMood, soberYN, checkInText, today) {
+    $.post("/api/check-in", {
+      authorId: id,
+      body: checkInText,
+      feeling: userMood,
+      hiccup: soberYN,
+      postDate: today
+    })
+      .then(() => {
+        const timeStamp = moment().format("L");
+        localStorage.setItem("timeStamp", timeStamp);
+        localStorage.setItem("journalCat", userMood);
+
+        window.location.replace("/counter");
+      })
+      .catch(console.error());
+  }
 
   function displayName(data) {
     $(".member-name").text(data.name);
@@ -64,33 +101,41 @@ $(document).ready(() => {
   });
 
   // when i submit, i want to send userMood, soberYN, and textValue to checkIn object with key value pairs
-  $(".sober-btn").on("click", event => {
+  $("#check-in-form").on("submit", event => {
     event.preventDefault();
     let soberYN = 0;
     if ($("#soberYN").is(":checked")) {
       soberYN = 1;
+      user.consDays++;
+      user.stars++;
+    } else {
+      user.consDays = 0;
     }
+    switch (user.consDays) {
+      case 1:
+        user.badgeOne = 1;
+        break;
+      case 5:
+        user.badgeTwo = 1;
+        break;
+      case 10:
+        user.badgeThree = 1;
+        break;
+      case 30:
+        user.badgeFour = 1;
+        break;
+      case 365:
+        user.badgeFive = 1;
+        // eslint-disable-next-line prettier/prettier
+        break;
+    }
+
     const checkInBox = $("#check-in-text");
     checkInText = checkInBox.val().trim();
     const today = moment().format("ddd, MM/DD/YY h:mm A");
-    sendCheckIn(userMood, soberYN, checkInText, today);
+    sendSoberData(user.id, user.consDays, user.stars, user.badgeOne, user.badgeTwo, user.badgeThree, user.badgeFour, user.badgeFive).then(() => {
+      sendCheckIn(user.id, userMood, soberYN, checkInText, today);
+    });
   });
 
-  function sendCheckIn(userMood, soberYN, checkInText, today) {
-    $.post("/api/check-in", {
-      authorId: id,
-      body: checkInText,
-      feeling: userMood,
-      hiccup: soberYN,
-      postDate: today
-    })
-      .then(() => {
-        const timeStamp = moment().format("L");
-        localStorage.setItem("timeStamp", timeStamp);
-        localStorage.setItem("journalCat", userMood);
-        // Commenting the below line out because the /resources route is not currently working from here.
-        window.location.replace("/counter");
-      })
-      .catch(console.error());
-  }
 });
