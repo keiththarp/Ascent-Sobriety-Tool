@@ -1,0 +1,87 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" role="navigation">
+  <!-- Logo -->
+  <div class="navbar-brand text-center">
+    <img SRC="img/logo-white.png" alt="mountain logo" class="logo">
+    <h1>ASCENT</h1>
+  </div>
+  <!-- toggle icon -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuList"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- menu list -->
+  <div class="collapse navbar-collapse" id="menuList">
+    <ul class="navbar-nav my-2 my-lg-0">
+      <!-- resources -->
+      <li class="nav-item">
+        <a class="nav-link" href="/counter">
+          home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/resources">
+          resources
+        </a>
+      </li>
+      <!-- journal -->
+      <li class="nav-item">
+        <a class="nav-link" href="/journal">
+          journal
+        </a>
+      </li>
+      <!-- logout button -->
+      <a href="/logout" class="nav-link"><button type="button" class="btn btn-outline-light">
+          logout
+        </button></a>
+    </ul>
+  </div>
+</nav>
+
+<!-- Members Main Content -->
+<div class="main-content">
+
+  <!-- Welcome Header -->
+  <header>
+    <h2 class="welcome-title">Hi there, {{user.name}}!</h2>
+  </header>
+
+  <!-- Mood Emoji Box -->
+  <div class="box mood-box">
+    <h4 class="mood-title">Would you like to submit a quote?</h4>
+    <div class="checkin-box box">
+        <!-- Written Check In -->
+        <form id="check-in-form">
+        <!-- Title -->
+        <label class="checkin-title">Submit a quote and our team will manually review it to be added to our Sobriety Quotes API:
+            <!-- Text Input -->
+            <textarea id="check-in-text" rows="3" cols="25" placeholder="Today..."></textarea></label>
+        <!-- Sobriety Check -->
+        <label for="soberYN"><input type="checkbox" id="soberYN"> Today was a sober day.</label>
+        <!-- Submit Btn -->
+        <button class="btn sober-btn">Submit</button>
+        </form>
+    </div>
+    </div>
+  </div>
+
+
+<!-- mobile menu -->
+<footer class="navbar fixed-bottom">
+  <div class="container footer">
+    <a href="/counter" class="foot-icon"><i class="fas fa-user-circle"></i></a>
+    <a href="/resources" class="foot-icon"><i class="fas fa-book-open"></i></a>
+    <a href="/journal" class="foot-icon"><i class="far fa-comments"></i></a>
+    <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
+  </div>
+</footer>
+
+{{!-- jQuery --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{!-- Bootstrap CDN --}}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+{{!-- Moment --}}
+<script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+{{!-- Local Script --}}
+<script type="text/javascript" src="js/daily.js"></script>
