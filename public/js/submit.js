@@ -1,5 +1,27 @@
 $(document).ready(() => {
-  const submitQuote = () => {
+  $("#submit-quote-btn").on("click", e => {
+    e.preventDefault();
+    const quoteData = {
+      quote: $("#submit-quote")
+        .val()
+        .trim(),
+      author: $("#submit-author")
+        .val()
+        .trim(),
+      source: $("#submit-source")
+        .val()
+        .trim(),
+      category: $("#submit-category")
+        .val()
+        .trim()
+    };
+
+    const { quote, author, source, category } = quoteData;
+
+    submitQuote(quote, author, source, category);
+  });
+
+  const submitQuote = (quote, author, source, category) => {
     const settings = {
       url: "https://desolate-caverns-92812.herokuapp.com/api/add-quote",
       method: "POST",
@@ -8,17 +30,16 @@ $(document).ready(() => {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       data: {
-        quote: "test quote",
-        author: "author",
-        source: "test source",
-        category: "this category"
+        quote: quote,
+        author: author,
+        source: source,
+        category: category
       }
     };
 
     $.ajax(settings).done(res => {
       console.log(res);
+      window.location.reload();
     });
   };
-
-  submitQuote();
 });
