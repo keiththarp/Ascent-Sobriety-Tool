@@ -20,6 +20,13 @@ router.get("/counter", isAuthenticated, (req, res) => {
   res.render("counter", hbsObj);
 });
 
+router.get("/submit", isAuthenticated, (req, res) => {
+  const hbsObj = {
+    user: req.user
+  };
+  res.render("submit", hbsObj);
+});
+
 router.get("/info", isAuthenticated, (req, res) => {
   res.render("info");
 });
