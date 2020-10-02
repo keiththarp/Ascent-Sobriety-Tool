@@ -66,7 +66,7 @@ Below that the total sober days is displayed with both the number and symbols fo
 * <i class="fas fa-star" style="color: #fff; background: #3a5772c0; font-size: 25px"></i> for one month
 * <i class="fas fa-medal" style="color: #cc7272; font-size: 25px"></i> for one year.
 
-The display of both continuous and discontinuous data honors the members' sobriety journey whether they have hiccups along the way or not. Non-sober days impact the continuous days, but they don't restart one's entire journey.
+The display of both continuous and discontinuous data honors the member's sobriety journey whether they have hiccups along the way or not. Non-sober days impact the continuous days, but they don't restart one's entire journey.
 
 The last element on the home page is an inspirational quote and an option to submit a quote (for review) to add to the Sobriety Quotes API.
 
@@ -80,16 +80,16 @@ Every day the member checks into the app, they are met with our check in page.
 ***Demo to come!***
 
 ### Technologies Used
-- Express
-- Sequelize
-- MySQL
-- Passport
-- Express Handlebars
-- Moment
-- Apex Charts
-- Bootstrap
-- Canva
-- Frontify
+- [Express](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
+- [MySQL](https://www.mysql.com/)
+- [Passport](http://www.passportjs.org/)
+- [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
+- [Moment](https://momentjs.com/)
+- [ApexCharts](https://apexcharts.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Canva](https://www.canva.com/)
+- [Frontify](https://www.frontify.com/en/)
 
 ### Contributing
 If you'd like to contribute to this application, feel free to submit a pull request.
