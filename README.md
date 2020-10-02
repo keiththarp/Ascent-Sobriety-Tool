@@ -3,18 +3,17 @@
 # Ascent
 [![License: GPL v3.0](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
 
-![Image of start page of application](./public/img/md/front-page.png)
-
-
-<!-- #### Deployed Link: [check us out on heroku!](link to come!) -->
+<img src="./public/img/md/front-page.png" alt="Image of start page of application" width="50%"><img src="./public/img/md/counter-page.png" alt="Image of counter page of application" width="50%">
+    
+#### Deployed Link: [check us out on heroku!](https://ascent-sobriety.herokuapp.com/)
 
 ---
 
 #### Table of Contents
 - [Our Team](#our)
 - [Description](#description)
-- [Time Tracking](#time)
 - [Daily Check In](#daily)
+- [Time Tracking](#time)
 - [Technologies Used](#technologies)
 - [License](#license)
 - [Contributing](#contributing)
@@ -46,11 +45,15 @@ For many, sobriety is nonlinear, and to think of it as such, can be detrimental 
 
 By tracking continuous AND discontinuous time, Ascent opens the door to anyone seeking to live a sober lifestyle. For members, this can also mean the difference between a hiccup and an overdose. We could all use a little grace right now and with Ascent, we get that.
 
+### Daily Check In
+
+![Gif of Daily Check in Page](./public/img/md/daily.gif)
+
+Every day the member checks into the app, they are met with our check in page. Here they can choose their mood on a scale of 1 to 5, write a blurb about their day and check off whether the day was a sober day. Afterwards, they are redirected to the home page showing their time in various lengths.
 
 ### Time Tracking
 
 ![Home Page with Counter](./public/img/md/counterPage.jpg)
-<!-- ***Talk about counter, badges and such here*** -->
 On the homepage, a counter displays how many hours are left in the day in the form of a donut chart with the number of continuous days sober in the inside of the counter.
 
 Below the counter are badges earned. Badges can be earned for continuous sobriety for:
@@ -70,14 +73,9 @@ The display of both continuous and discontinuous data honors the member's sobrie
 
 The last element on the home page is an inspirational quote and an option to submit a quote (for review) to add to the Sobriety Quotes API.
 
-### Daily Check In
-
-![Gif of Daily Check in Page](./public/img/md/daily.gif)
-
-Every day the member checks into the app, they are met with our check in page.
-
 ### Demo
-***Demo to come!***
+![Run through of all of the pages in the app](./public/img/md/full-demo.gif)
+> Want to see more? [Explore for yourself!](https://ascent-sobriety.herokuapp.com/)
 
 ### Technologies Used
 - [Express](https://expressjs.com/)
