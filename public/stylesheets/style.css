@@ -83,11 +83,8 @@ a.nav-link:hover {
 
 /* footer nav */
 
-footer {
-  background-color: #87A2BB;
-}
-
 div.footer {
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   color: white;
@@ -96,8 +93,16 @@ div.footer {
   justify-content: space-evenly;
 }
 
-a.foot-icon {
+footer {
+  width: 100%;
+  background-color: #87A2BB;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+i.foot-icon {
   font-size: 30px;
+  color: white;
 }
 
 footer {
@@ -106,12 +111,13 @@ footer {
 
 /* End Navigation */
 
-.main-content {
+.main-content, .start-content {
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 
 /* ----- general btn stylings ----- */
@@ -258,6 +264,11 @@ span.member-name {
   margin: 0;
 }
 
+#soberYN {
+  width: 20px;
+  height: 20px;
+}
+
 /* mood title */
 
 h4, label.checkin-title, a.foot-icon, h5 {
@@ -368,7 +379,7 @@ div.journal-box {
 }
 
 div.journal-entry, div.resource-article {
-  width: 375px;
+  max-width: 375px;
   min-height: 225px;
   background-color: rgb(58, 87, 114, 0.5);
   display: flex;
@@ -617,32 +628,48 @@ a.submit-link:hover {
 }
 
 /* -------------------------------------- */
+
 /* API Submit Quote Page */
 
 div.submit-box {
   max-width: 500px;
 }
 
-label > span.submit-optional-span {
+label>span.submit-optional-span {
   color: #c1c1c1;
   font-size: smaller;
 }
 
 /* end API Submit Quote Page */
+
 /* -------------------------------------- */
 
 /* media queries */
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 300px) and (max-width: 700px) {
   div.days-until {
     margin-top: 30px;
     margin-bottom: 30px;
+  }
+  div.box {
+    width: 100%;
+    margin: 0;
+    border-radius: 0px;
+  }
+  img.signin-logo {
+    width: 40vw;
+  }
+  .start-content {
+    padding-bottom: 0rem;
   }
 }
 
 @media screen and (min-width: 600px) {
   div.days-until, div.quote-container {
     width: 50%;
+  }
+  div.info-box {
+    margin-top: 2rem;
   }
 }
 
@@ -657,6 +684,7 @@ label > span.submit-optional-span {
     visibility: hidden;
   }
   nav.navbar {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -668,11 +696,11 @@ label > span.submit-optional-span {
 
 @media only screen and (min-device-width: 280px) and (max-device-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
   h2 {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-size: 10vw;
   }
   .box {
-    width: 90vw;
+    width: 100%;
   }
   input[type=text] {
     margin-bottom: 10px;
