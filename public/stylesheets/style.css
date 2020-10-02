@@ -593,8 +593,11 @@ p.quote-author {
   text-align: right;
 }
 
+/* -------------------------------------- */
+/* API Submit Quote Page */
+
 a.submit-link {
-  color: #a6c7b1;
+  color: #617b92;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -603,9 +606,6 @@ a.submit-link:hover {
   font-weight: 500;
   color: #bce6c9;
 }
-
-/* -------------------------------------- */
-/* API Submit Quote Page */
 
 div.submit-box {
   max-width: 500px;

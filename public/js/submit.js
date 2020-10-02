@@ -21,12 +21,11 @@ $(document).ready(() => {
 
     const { email, quote, author, source, category } = quoteData;
 
-    sendEmail(email);
-
-    submitQuote(quote, author, source, category);
+    submitQuote(email, quote, author, source, category);
+    sendEmail(email, quote, author, category);
   });
 
-  const submitQuote = (quote, author, source, category) => {
+  const submitQuote = (email, quote, author, source, category) => {
     const settings = {
       url: "https://desolate-caverns-92812.herokuapp.com/api/add-quote",
       method: "POST",
@@ -35,6 +34,7 @@ $(document).ready(() => {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       data: {
+        email: email,
         quote: quote,
         author: author,
         source: source,
@@ -44,11 +44,15 @@ $(document).ready(() => {
 
     $.ajax(settings).done(res => {
       console.log(res);
-      // window.location.reload();
+      window.location.reload();
     });
   };
 
-  const sendEmail = email => {
+  const sendEmail = (email, quote, author, category) => {
+    if (!quote || !author || !category) {
+      return;
+    }
+
     const settings = {
       url: "http://localhost:8080/email",
       method: "POST",

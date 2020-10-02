@@ -1,49 +1,27 @@
-$(document).ready(() => {
-  // const today = moment();
-  // variables for DOM elements
-  // const daysSoberContainer = $("p.days-sober");
-  // const timeLeft = $("span#time-left");
-  const quote = $("p.quote");
-  const quoteAuthor = $("p.quote-author");
+// request outside of $(document).ready to resolve latency issue
+const quote = $("p.quote");
+const quoteAuthor = $("p.quote-author");
 
-  // To diplay days sober in the counter
-  // const displayDaysSober = () => {
-  //   $.get("/api/user_data").then(response => {
-  //     const soberDate = moment(response.soberSince);
-  //     // calculate difference between datetime in mysql(soberSince) and today's date.
-  //     const daysSober = today.diff(soberDate, "days");
-  //     daysSoberContainer.text(daysSober);
-  //   });
-  // };
-
-  // to display inspirational quotes
-  // https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373/15
-  const displayRandomQuote = () => {
-    // Settings for the api
-    const settings = {
-      async: true,
-      crossDomain: true,
-      url: "https://desolate-caverns-92812.herokuapp.com/api/random",
-      method: "GET"
-    };
-
-    //Ajax call, there are 1643 total quotes available
-    $.ajax(settings).done(res => {
-      // const data = res;
-      //to get a random quote:
-      // const randomNum = Math.floor(Math.random() * (1643 - 1) + 1);
-      // const { quote, author } = data[randomNum];
-      // quote.quote(quote);
-      // quoteAuthor.quote("- " + res.author);
-      quote.text(res.quote);
-      quoteAuthor.text("- " + res.author);
-      console.log(`${res.quote} -${res.author}`);
-    });
+const displayRandomQuote = () => {
+  // Settings for the api
+  const settings = {
+    async: true,
+    crossDomain: true,
+    url: "https://desolate-caverns-92812.herokuapp.com/api/random",
+    method: "GET"
   };
 
-  // displayDaysSober();
-  displayRandomQuote();
+  //Ajax call to sobriety api
+  $.ajax(settings).done(res => {
+    quote.text(res.quote);
+    quoteAuthor.text("- " + res.author);
+    console.log(`${res.quote} -${res.author}`);
+  });
+};
 
+displayRandomQuote();
+
+$(document).ready(() => {
   // ********** FOR COUNTER/Chart ****************
   // How many sections in the chart; how many days/hours user has chosen for timeframe
   const seriesLength = 24;
