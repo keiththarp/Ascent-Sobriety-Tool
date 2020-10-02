@@ -73,8 +73,8 @@ router.post("/email", isAuthenticated, async (req, res) => {
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: helena.trantow9@ethereal.email, // generated ethereal user
-      pass: FVQb6pmzHxAkB5j7zC // generated ethereal password
+      user: process.env.EM_USER, // generated ethereal user
+      pass: process.env.EM_PASS // generated ethereal password
     }
   });
 
