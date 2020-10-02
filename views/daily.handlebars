@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg" role="navigation">
   <!-- Logo -->
   <div class="navbar-brand text-center">
-    <img SRC="img/logo-white.png" alt="mountain logo" class="logo">
+    <img SRC="img/logos/logo-white.png" alt="mountain logo" class="logo">
     <h1>ASCENT</h1>
   </div>
   <!-- toggle icon -->
@@ -34,6 +34,10 @@
       <a href="/logout" class="nav-link"><button type="button" class="btn btn-outline-light">
           logout
         </button></a>
+      {{!-- information link --}}
+      <li class="nav-item">
+        <a class="about-tag info-link" href="/info"><i class="fas fa-info-circle"></i> </a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -64,14 +68,14 @@
       <div class="mood-label">
         <button type="button" class="btn mood" data-mood="5" id="mood5" aria-pressed="true"
           aria-label="really-happy"><span>5</span></button>
-        <p>good</p>
+        <p>great</p>
       </div>
     </div>
   </div>
 
-  <div class="box">
+  <div class="checkin-box box">
     <!-- Written Check In -->
-    <form>
+    <form id="check-in-form">
       <!-- Title -->
       <label class="checkin-title">Check In:
         <!-- Text Input -->
@@ -87,9 +91,10 @@
 <!-- mobile menu -->
 <footer class="navbar fixed-bottom">
   <div class="container footer">
-    <a href="/counter" class="foot-icon"><i class="fas fa-user-circle"></i></a>
-    <a href="/resources" class="foot-icon"><i class="fas fa-book-open"></i></a>
-    <a href="/journal" class="foot-icon"><i class="far fa-comments"></i></a>
+    <a href="/counter" class="foot-icon"><i class="fas fa-house-user"></i></a>
+    <a href="/resources" class="foot-icon"><i class="fas fa-hands-helping"></i></i></a>
+    <a href="/journal" class="foot-icon"><i class="fas fa-book"></i></a>
+    <a href="/info" class="foot-icon info-link"><i class="fas fa-info-circle"></i> </a>
     <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
   </div>
 </footer>

@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg" role="navigation">
   <!-- Logo -->
   <div class="navbar-brand text-center">
-    <img SRC="img/logo-white.png" alt="mountain logo" class="logo">
+    <img SRC="img/logos/logo-white.png" alt="mountain logo" class="logo">
     <h1>ASCENT</h1>
   </div>
   <!-- toggle icon -->
@@ -33,19 +33,23 @@
           </button>
         </a>
       </li>
+      {{!-- information link --}}
+      <li class="nav-item">
+        <a class="about-tag info-link" href="/info"><i class="fas fa-info-circle"></i> </a>
+      </li>
     </ul>
   </div>
 </nav>
 
-<main role="main" class="flex-shrink-0">
+<main role="main" class="flex-shrink-0 main-content">
   <!-- container for the counter -->
   <div class="container">
-    <div class="row align-items-center justify-content-center" id="counter">
+    <div class="row" id="counter">
       <!-- Pie chart will be inserted into this div -->
       <div id="responsive-chart"></div>
       {{!-- trasparent overlay and logo --}}
       <div class="rounded-circle chart-inner"></div>
-      <img id="mtn-img" class="mx-auto" src="./img/sober-icon.png" alt="mountain-logo">
+      <img id="mtn-img" class="mx-auto" src="./img/logos/sober-icon.png" alt="mountain-logo">
       <!-- how many days sober -->
       <p class="days-sober mx-auto">{{user.consDays}}</p>
     </div>
@@ -88,11 +92,11 @@
     </div>
   </div>
 
-  <!-- Container for Days Until Next Badge + badges -->
+  <!-- Container total sober days -->
   <div class="container days-until text-center">
-    <div class="row text-center">
-      <p class="align-middle"><span id="time-left">{{days}}</span> Days Until Next Badge <span class="star"><i
-            class="fas fa-star"></i></span></p>
+    <div class="row text-center outer-stars">
+      <div class="stars-container">
+      </div>
     </div>
   </div>
 
@@ -100,15 +104,18 @@
   <div class="quote-container container">
     <p class="quote">{{quote}}</p>
     <p class="quote-author">- {{author}}</p>
+    <div class="text-center">
+      <a class="submit-link" href="/submit">Submit A New Quote</a>
+    </div>
   </div>
 </main>
 
 <!-- mobile menu -->
 <footer class="navbar fixed-bottom">
   <div class="container footer">
-    <a href="/counter" class="foot-icon"><i class="fas fa-user-circle"></i></a>
-    <a href="/resources" class="foot-icon"><i class="fas fa-book-open"></i></a>
-    <a href="/journal" class="foot-icon"><i class="far fa-comments"></i></a>
+    <a href="/journal" class="foot-icon"><i class="fas fa-book"></i></a>
+    <a href="/resources" class="foot-icon"><i class="fas fa-hands-helping"></i></i></a>
+    <a href="/info" class="foot-icon info-link"><i class="fas fa-info-circle"></i> </a>
     <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
   </div>
 </footer>
@@ -127,3 +134,4 @@
 
 {{!-- Local Script File --}}
 <script src="js/counter.js"></script>
+<script src="js/mileStoneStars.js"></script>

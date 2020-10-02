@@ -12,11 +12,23 @@ router.get("/daily", isAuthenticated, (req, res) => {
   res.render("daily", hbsObj);
 });
 
+//Because req.user is loaded on login the data is not being updated on page load.
 router.get("/counter", isAuthenticated, (req, res) => {
   const hbsObj = {
     user: req.user
   };
   res.render("counter", hbsObj);
+});
+
+router.get("/submit", isAuthenticated, (req, res) => {
+  const hbsObj = {
+    user: req.user
+  };
+  res.render("submit", hbsObj);
+});
+
+router.get("/info", isAuthenticated, (req, res) => {
+  res.render("info");
 });
 
 router.get("/resources", isAuthenticated, async (req, res) => {

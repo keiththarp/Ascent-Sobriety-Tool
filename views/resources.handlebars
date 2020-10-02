@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg" role="navigation">
     <!-- Logo -->
     <div class="navbar-brand text-center">
-        <img src="img/logo-white.png" alt="mountain logo" class="logo">
+        <img src="img/logos/logo-white.png" alt="mountain logo" class="logo">
         <h1>ASCENT</h1>
     </div>
     <!-- toggle button -->
@@ -29,6 +29,10 @@
             <a href="/logout" class="nav-link"><button type="button" class="btn btn-outline-light" href="/logout">
                     logout
                 </button></a>
+            {{!-- information link --}}
+            <li class="nav-item">
+                <a class="about-tag info-link" href="/info"><i class="fas fa-info-circle"></i> </a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -37,7 +41,7 @@
     <!-- Resource Title -->
     <h2 class="resources-title">Popular Resources</h2>
 
-    <div class="box resource-box">
+    <div class="main-content resource-box">
 
         {{#each resource }}
         {{> resource-block}}
@@ -50,9 +54,9 @@
 <!-- mobile menu -->
 <footer class="navbar fixed-bottom">
     <div class="container footer">
-        <a href="/counter" class="foot-icon"><i class="fas fa-user-circle"></i></a>
-        <a href="/resources" class="foot-icon"><i class="fas fa-book-open"></i></a>
-        <a href="/journal" class="foot-icon"><i class="far fa-comments"></i></a>
+        <a href="/counter" class="foot-icon"><i class="fas fa-house-user"></i></a>
+        <a href="/journal" class="foot-icon"><i class="fas fa-book"></i></a>
+        <a href="/info" class="foot-icon info-link"><i class="fas fa-info-circle"></i> </a>
         <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
     </div>
 </footer>

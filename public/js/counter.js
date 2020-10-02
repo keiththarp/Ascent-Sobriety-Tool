@@ -1,7 +1,7 @@
 $(document).ready(() => {
-  const today = moment();
+  // const today = moment();
   // variables for DOM elements
-  const daysSoberContainer = $("p.days-sober");
+  // const daysSoberContainer = $("p.days-sober");
   // const timeLeft = $("span#time-left");
   const quote = $("p.quote");
   const quoteAuthor = $("p.quote-author");
@@ -23,18 +23,21 @@ $(document).ready(() => {
     const settings = {
       async: true,
       crossDomain: true,
-      url: "https://type.fit/api/quotes",
+      url: "https://desolate-caverns-92812.herokuapp.com/api/random",
       method: "GET"
     };
 
     //Ajax call, there are 1643 total quotes available
-    $.ajax(settings).done(response => {
-      const data = JSON.parse(response);
+    $.ajax(settings).done(res => {
+      // const data = res;
       //to get a random quote:
-      const randomNum = Math.floor(Math.random() * (1643 - 1) + 1);
-      const { text, author } = data[randomNum];
-      quote.text(text);
-      quoteAuthor.text("- " + author);
+      // const randomNum = Math.floor(Math.random() * (1643 - 1) + 1);
+      // const { quote, author } = data[randomNum];
+      // quote.quote(quote);
+      // quoteAuthor.quote("- " + res.author);
+      quote.text(res.quote);
+      quoteAuthor.text("- " + res.author);
+      console.log(`${res.quote} -${res.author}`);
     });
   };
 
@@ -75,7 +78,7 @@ $(document).ready(() => {
       width: "100%"
     },
     series: seriesArray, //length of array would come from the db
-    //labels would also depend on the timeframe the user was working with
+    //labels would also depend on the time-frame the user was working with
     labels: [
       "hour",
       "hour",
