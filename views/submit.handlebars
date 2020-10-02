@@ -1,0 +1,97 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" role="navigation">
+  <!-- Logo -->
+  <div class="navbar-brand text-center">
+    <img SRC="img/logos/logo-white.png" alt="mountain logo" class="logo">
+    <h1>ASCENT</h1>
+  </div>
+  <!-- toggle icon -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuList"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- menu list -->
+  <div class="collapse navbar-collapse" id="menuList">
+    <ul class="navbar-nav my-2 my-lg-0">
+      <!-- resources -->
+      <li class="nav-item">
+        <a class="nav-link" href="/counter">
+          home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/resources">
+          resources
+        </a>
+      </li>
+      <!-- journal -->
+      <li class="nav-item">
+        <a class="nav-link" href="/journal">
+          journal
+        </a>
+      </li>
+      <!-- logout button -->
+      <a href="/logout" class="nav-link"><button type="button" class="btn btn-outline-light">
+          logout
+        </button></a>
+    </ul>
+  </div>
+</nav>
+
+<!-- Members Main Content -->
+<div class="main-content">
+
+  <!-- Welcome Header -->
+  <header>
+    <h2 class="welcome-title p-1">Submit A New Quote</h2>
+  </header>
+
+  <!-- Mood Emoji Box -->
+  <div class="box submit-box">
+    <h4 class="submit-title pt-4">Submit a quote and our team will manually review it to be added to our Sobriety Quotes API.</h4>
+        <form class="submit-form pt-5">
+            <div class="form-group">
+                <label for="submit-email">Email Address<span class="submit-optional-span"> Optional</span></label>
+                <input type="email" class="form-control" id="submit-email" aria-describedby="emailHelp" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="quote">Quote</label>
+                <input type="text" class="form-control" id="submit-quote" placeholder="Quote Text" maxlength="300">
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" class="form-control" id="submit-author" placeholder="Quote Author" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="source">Source<span class="submit-optional-span"> Optional</span></label>
+                <input type="text" class="form-control" id="submit-source" placeholder="Quote Source" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="submit-category" placeholder="Sobriety, Inspirational, Motivational, etc..." maxlength="100">
+            </div>
+            <button id="submit-quote-btn" type="submit" class="btn btn-outline-light mt-4 mb-2">Submit</button>
+            </form>
+    </div>
+  </div>
+
+
+<!-- mobile menu -->
+<footer class="navbar fixed-bottom">
+  <div class="container footer">
+    <a href="/counter" class="foot-icon"><i class="fas fa-user-circle"></i></a>
+    <a href="/resources" class="foot-icon"><i class="fas fa-book-open"></i></a>
+    <a href="/journal" class="foot-icon"><i class="far fa-comments"></i></a>
+    <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
+  </div>
+</footer>
+
+{{!-- jQuery --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{!-- Bootstrap CDN --}}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+{{!-- Moment --}}
+<script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+{{!-- Local Script --}}
+<script type="text/javascript" src="js/submit.js"></script>

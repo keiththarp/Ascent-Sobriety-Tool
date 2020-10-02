@@ -41,8 +41,6 @@ router.get("/user_data", (req, res) => {
     // The user is not logged in, send back an empty object
     res.json({});
   } else {
-    // Otherwise send back the user's email and id
-    // Sending back a password, even a hashed password, isn't a good idea
     res.send({
       // adding user data from DB structure
       id: req.user.id,
@@ -50,6 +48,12 @@ router.get("/user_data", (req, res) => {
       name: req.user.name,
       soberSince: req.user.soberSince,
       stars: req.user.stars,
+      badgeOne: req.user.badgeOne,
+      badgeTwo: req.user.badgeTwo,
+      badgeThree: req.user.badgeThree,
+      badgeFour: req.user.badgeFour,
+      badgeFive: req.user.badgeFive,
+      consDays: req.user.consDays,
       nextBadge: req.user.nextBadge
     });
   }
@@ -74,6 +78,27 @@ router.get("/check-in/:id", (req, res) => {
   }).then(checkIn => {
     res.json(checkIn);
   });
+});
+
+router.put("/soberDaysUpdate", (req, res) => {
+  db.User.update(
+    {
+      consDays: req.body.consDays,
+      stars: req.body.stars,
+      badgeOne: req.body.badgeOne,
+      badgeTwo: req.body.badgeTwo,
+      badgeThree: req.body.badgeThree,
+      badgeFour: req.body.badgeFour,
+      badgeFive: req.body.badgeFive
+    },
+    {
+      where: {
+        id: req.body.id
+      }
+    })
+    .then(dbUser => {
+      res.json(dbUser);
+    });
 });
 
 // Posting a check-in
