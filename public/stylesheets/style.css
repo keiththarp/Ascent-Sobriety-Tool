@@ -464,7 +464,7 @@ p.days-sober {
 
 /* For the Badges (1 day, 5 day, etc) */
 
-div.outer-stars {
+div.outer-stars, div.badges {
   padding: 5px 10px;
   display: flex;
   flex-direction: row;
@@ -472,8 +472,11 @@ div.outer-stars {
   justify-content: center;
 }
 
+/* Outer container for the row of badges */
 div.badges {
-  max-width: 450px;
+  padding: 0;
+  max-width: 65%;
+  justify-content: space-around;
 }
 
 div.badges-col {
@@ -629,7 +632,7 @@ label > span.submit-optional-span {
 }
 
 @media screen and (min-width: 600px) {
-  div.days-until, div.quote-container {
+  div.days-until, div.quote-container, div.badges{
     width: 50%;
   }
 }

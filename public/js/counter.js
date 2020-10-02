@@ -24,13 +24,14 @@ displayRandomQuote();
 $(document).ready(() => {
   // ********** FOR COUNTER/Chart ****************
   // How many sections in the chart; how many days/hours user has chosen for timeframe
+  // hardcoded for 24 hours for now
   const seriesLength = 24;
 
   const currentTimePoints = moment().format("kk");
 
   const seriesArray = [];
 
-  // Creates an array of pieces for the donut chart
+  // Creates an array of pieces for the donut chart based on the series length
   for (let i = 0; i < seriesLength; i++) {
     seriesArray.push(1);
   }
@@ -38,7 +39,7 @@ $(document).ready(() => {
   // Right now, just blue romance and grey(nepal); could add more colors to use
   const colors = ["#BFF0CF", "#87A2BB"];
 
-  // For the chart use blue romance for the current points, grey for those left to go
+  // For the chart use blue romance for the current points(hours past in the day), grey for those left to go
   const chartColors = [];
 
   for (let i = 0; i < seriesLength; i++) {
@@ -55,8 +56,8 @@ $(document).ready(() => {
       type: "donut",
       width: "100%"
     },
-    series: seriesArray, //length of array would come from the db
-    //labels would also depend on the time-frame the user was working with
+    series: seriesArray,
+    //labels for each section of the donut chart
     labels: [
       "hour",
       "hour",
@@ -83,7 +84,7 @@ $(document).ready(() => {
       "hour",
       "hour",
       "hour"
-    ], //note sure if we need labels
+    ],
 
     dataLabels: {
       enabled: false
@@ -102,6 +103,7 @@ $(document).ready(() => {
     plotOptions: {
       pie: {
         donut: {
+          // determines the size of the inner circle of the donut chart (the empty part)
           size: "85%"
         }
       }
@@ -115,6 +117,3 @@ $(document).ready(() => {
 
   chart.render();
 });
-
-//Can also render a blank chart initially and fetch data w/ ajax
-// https://apexcharts.com/docs/update-charts-from-json-api-ajax/
