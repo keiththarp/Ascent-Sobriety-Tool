@@ -14,6 +14,7 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
 
+
 // Creating express app and configuring middleware needed for authentication
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -44,8 +45,8 @@ app.use("", htmlRoutes);
 
 // all routes requiring authentication
 app.use("", authenticatedRoutes);
-//BODY PARSER
 
+//BODY PARSER
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

@@ -1,29 +1,27 @@
-$(document).ready(() => {
-  // references to the DOM elements that will be affected
-  const quote = $("p.quote");
-  const quoteAuthor = $("p.quote-author");
+// request outside of $(document).ready to resolve latency issue
+const quote = $("p.quote");
+const quoteAuthor = $("p.quote-author");
 
-  // to display inspirational quotes
-  const displayRandomQuote = () => {
-    // Settings for the api
-    const settings = {
-      async: true,
-      crossDomain: true,
-      url: "https://desolate-caverns-92812.herokuapp.com/api/random",
-      method: "GET"
-    };
-
-    //Ajax call
-    $.ajax(settings).done(res => {
-      quote.text(res.quote);
-      quoteAuthor.text("- " + res.author);
-      console.log(`${res.quote} -${res.author}`);
-    });
+const displayRandomQuote = () => {
+  // Settings for the api
+  const settings = {
+    async: true,
+    crossDomain: true,
+    url: "https://desolate-caverns-92812.herokuapp.com/api/random",
+    method: "GET"
   };
 
-  // displayDaysSober();
-  displayRandomQuote();
+  //Ajax call to sobriety api
+  $.ajax(settings).done(res => {
+    quote.text(res.quote);
+    quoteAuthor.text("- " + res.author);
+    console.log(`${res.quote} -${res.author}`);
+  });
+};
 
+displayRandomQuote();
+
+$(document).ready(() => {
   // ********** FOR COUNTER/Chart ****************
   // How many sections in the chart; how many days/hours user has chosen for timeframe
   // hardcoded for 24 hours for now
