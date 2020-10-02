@@ -523,6 +523,7 @@ div.outer-stars, div.badges {
 div.badges {
   padding: 0;
   max-width: 65%;
+  height: auto;
   justify-content: space-around;
 }
 
