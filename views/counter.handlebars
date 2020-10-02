@@ -57,39 +57,38 @@
 
   {{!-- Container for badges --}}
   <div class="container badges">
-    <div class="row badges-row">
-      {{!-- one day badge --}}
-      {{#if user.badgeOne}}
-      <div class="col badges-col">
-        <img class="earned-badge" src="./img/badges/oneDay.png" alt="One Day Badge">
-      </div>
-      {{/if}}
-      {{!-- 5 days badge --}}
-      {{#if user.badgeTwo}}
-      <div class="col badges-col">
-        <img class="earned-badge" src="./img/badges/fiveDay.png" alt="5 Day Badge">
-      </div>
-      {{/if}}
-      {{!-- 10 days badge --}}
-      {{#if user.badgeThree}}
-      <div class="col badges-col">
-        <img class="earned-badge" src="./img/badges/tenDay.png" alt="15 Day Badge">
-      </div>
-      {{/if}}
-      {{!-- 1 month badge --}}
-      {{#if user.badgeFour}}
-      <div class="col badges-col">
-        <img class="earned-badge" src="./img/badges/oneMonth.png" alt="One Month Badge">
-      </div>
-      {{/if}}
-      {{!-- 1 year badge --}}
-      {{#if user.badgeFive}}
-      <div class="col badges-col">
-        <img class="earned-badge" src="./img/badges/oneYear.png" alt="One Year Badge">
-      </div>
-      {{/if}}
-
-    </div>
+    {{!-- <div class="row badges-row"> --}}
+    {{!-- one day badge --}}
+    {{#if user.badgeOne}}
+    {{!-- <div class="badges-col"> --}}
+      <img class="earned-badge" src="./img/badges/oneDay.png" alt="One Day Badge">
+    {{!-- </div> --}}
+    {{/if}}
+    {{!-- 5 days badge --}}
+    {{#if user.badgeTwo}}
+    {{!-- <div class="badges-col"> --}}
+      <img class="earned-badge" src="./img/badges/fiveDay.png" alt="5 Day Badge">
+    {{!-- </div> --}}
+    {{/if}}
+    {{!-- 10 days badge --}}
+    {{#if user.badgeThree}}
+    {{!-- <div class="badges-col"> --}}
+      <img class="earned-badge" src="./img/badges/tenDay.png" alt="15 Day Badge">
+    {{!-- </div> --}}
+    {{/if}}
+    {{!-- 1 month badge --}}
+    {{#if user.badgeFour}}
+    {{!-- <div class="badges-col"> --}}
+      <img class="earned-badge" src="./img/badges/oneMonth.png" alt="One Month Badge">
+    {{!-- </div> --}}
+    {{/if}}
+    {{!-- 1 year badge --}}
+    {{#if user.badgeFive}}
+    {{!-- <div class="badges-col"> --}}
+      <img class="earned-badge" src="./img/badges/oneYear.png" alt="One Year Badge">
+    {{!-- </div> --}}
+    {{/if}}
+    {{!-- </div> --}}
   </div>
 
   <!-- Container total sober days -->
@@ -113,10 +112,14 @@
 <!-- mobile menu -->
 <footer class="navbar fixed-bottom">
   <div class="container footer">
-    <a href="/journal" class="foot-icon"><i class="fas fa-book"></i></a>
-    <a href="/resources" class="foot-icon"><i class="fas fa-hands-helping"></i></i></a>
-    <a href="/info" class="foot-icon info-link"><i class="fas fa-info-circle"></i> </a>
-    <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
+    <a href="/journal"><button class="btn" type="button" alt="journal-page"><i
+          class="foot-icon fas fa-book"></i></button></a>
+    <a href="/resources"><button class="btn" type="button" alt="resources-page"><i
+          class="foot-icon fas fa-hands-helping"></i></button></a>
+    <a href="/info"><button class="btn" type="button" alt="info-page"><i
+          class="foot-icon fas fa-info-circle"></i></button></a>
+    <a href="/logout"><button class="btn" type="button" alt="logout"><i
+          class="foot-icon fas fa-sign-out-alt"></i></button></a>
   </div>
 </footer>
 

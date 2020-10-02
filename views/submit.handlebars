@@ -34,6 +34,10 @@
       <a href="/logout" class="nav-link"><button type="button" class="btn btn-outline-light">
           logout
         </button></a>
+      {{!-- information link --}}
+      <li class="nav-item">
+        <a class="about-tag info-link" href="/info"><i class="fas fa-info-circle"></i> </a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -48,41 +52,50 @@
 
   <!-- Mood Emoji Box -->
   <div class="box submit-box">
-    <h4 class="submit-title pt-4">Submit a quote and our team will manually review it to be added to our Sobriety Quotes API.</h4>
-        <form class="submit-form pt-5">
-            <div class="form-group">
-                <label for="submit-email">Email Address<span class="submit-optional-span"> Optional</span></label>
-                <input type="email" class="form-control" id="submit-email" aria-describedby="emailHelp" placeholder="Your Email">
-            </div>
-            <div class="form-group">
-                <label for="quote">Quote</label>
-                <input type="text" class="form-control" id="submit-quote" placeholder="Quote Text" maxlength="300">
-            </div>
-            <div class="form-group">
-                <label for="author">Author</label>
-                <input type="text" class="form-control" id="submit-author" placeholder="Quote Author" maxlength="100">
-            </div>
-            <div class="form-group">
-                <label for="source">Source<span class="submit-optional-span"> Optional</span></label>
-                <input type="text" class="form-control" id="submit-source" placeholder="Quote Source" maxlength="100">
-            </div>
-            <div class="form-group">
-                <label for="category">Category</label>
-                <input type="text" class="form-control" id="submit-category" placeholder="Sobriety, Inspirational, Motivational, etc..." maxlength="100">
-            </div>
-            <button id="submit-quote-btn" type="submit" class="btn btn-outline-light mt-4 mb-2">Submit</button>
-            </form>
-    </div>
+    <h4 class="submit-title pt-4">Submit a quote and our team will manually review it to be added to our Sobriety Quotes
+      API.</h4>
+    <form class="submit-form pt-5">
+      <div class="form-group">
+        <label for="submit-email">Email Address<span class="submit-optional-span"> Optional</span></label>
+        <input type="email" class="form-control" id="submit-email" aria-describedby="emailHelp"
+          placeholder="Your Email">
+      </div>
+      <div class="form-group">
+        <label for="quote">Quote</label>
+        <input type="text" class="form-control" id="submit-quote" placeholder="Quote Text" maxlength="300">
+      </div>
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="submit-author" placeholder="Quote Author" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label for="source">Source<span class="submit-optional-span"> Optional</span></label>
+        <input type="text" class="form-control" id="submit-source" placeholder="Quote Source" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" class="form-control" id="submit-category"
+          placeholder="Sobriety, Inspirational, Motivational, etc..." maxlength="100">
+      </div>
+      <button id="submit-quote-btn" type="submit" class="btn btn-outline-light mt-4 mb-2">Submit</button>
+    </form>
   </div>
+</div>
 
 
 <!-- mobile menu -->
 <footer class="navbar fixed-bottom">
   <div class="container footer">
-    <a href="/counter" class="foot-icon"><i class="fas fa-user-circle"></i></a>
-    <a href="/resources" class="foot-icon"><i class="fas fa-book-open"></i></a>
-    <a href="/journal" class="foot-icon"><i class="far fa-comments"></i></a>
-    <a href="/logout" class="foot-icon"><i class="fas fa-sign-out-alt"></i></a>
+    <a href="/counter"><button class="btn" type="button" alt="counter-page"><i
+          class="foot-icon fas fa-house-user"></i></button></a>
+    <a href="/journal"><button class="btn" type="button" alt="journal-page"><i
+          class="foot-icon fas fa-book"></i></button></a>
+    <a href="/resources"><button class="btn" type="button" alt="resources-page"><i
+          class="foot icon fas fa-hands-helping"></i></i></button></a>
+    <a href="/info"><button class="btn" type="button" alt="info-page"><i
+          class="foot-icon fas fa-info-circle"></i></button></a>
+    <a href="/logout"><button class="btn" type="button" alt="logout"><i
+          class="foot-icon fas fa-sign-out-alt"></i></button></a>
   </div>
 </footer>
 

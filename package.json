@@ -22,6 +22,7 @@
     "luxon": "^1.25.0",
     "moment": "^2.29.0",
     "mysql2": "^1.6.5",
+    "nodemailer": "^6.4.12",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6"
