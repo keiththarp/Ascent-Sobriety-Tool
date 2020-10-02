@@ -353,8 +353,19 @@ label {
 }
 
 input[type=checkbox] {
-  height: 15px;
-  width: 15px;
+  height: 17px;
+  width: 17px;
+}
+
+label[for="soberYN"], label[for="remember"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
 }
 
 /* ---- Resources & Journal ---- */
@@ -496,6 +507,7 @@ div.outer-stars, div.badges {
 }
 
 /* Outer container for the row of badges */
+
 div.badges {
   padding: 0;
   max-width: 65%;
@@ -620,6 +632,7 @@ p.quote-author {
 }
 
 /* -------------------------------------- */
+
 /* API Submit Quote Page */
 
 a.submit-link {
@@ -664,10 +677,19 @@ label>span.submit-optional-span {
   .start-content {
     padding-bottom: 0rem;
   }
+  h2.welcome-title {
+    margin: 1rem;
+  }
+  div.mood-box {
+    padding-bottom: 0;
+  }
+  div.checkin-box {
+    margin-bottom: 2rem;
+  }
 }
 
 @media screen and (min-width: 600px) {
-  div.days-until, div.quote-container, div.badges{
+  div.days-until, div.quote-container, div.badges {
     width: 50%;
   }
   div.info-box {
