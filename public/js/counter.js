@@ -1,58 +1,37 @@
-$(document).ready(() => {
-  // const today = moment();
-  // variables for DOM elements
-  // const daysSoberContainer = $("p.days-sober");
-  // const timeLeft = $("span#time-left");
-  const quote = $("p.quote");
-  const quoteAuthor = $("p.quote-author");
+// request outside of $(document).ready to resolve latency issue
+const quote = $("p.quote");
+const quoteAuthor = $("p.quote-author");
 
-  // To diplay days sober in the counter
-  // const displayDaysSober = () => {
-  //   $.get("/api/user_data").then(response => {
-  //     const soberDate = moment(response.soberSince);
-  //     // calculate difference between datetime in mysql(soberSince) and today's date.
-  //     const daysSober = today.diff(soberDate, "days");
-  //     daysSoberContainer.text(daysSober);
-  //   });
-  // };
-
-  // to display inspirational quotes
-  // https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373/15
-  const displayRandomQuote = () => {
-    // Settings for the api
-    const settings = {
-      async: true,
-      crossDomain: true,
-      url: "https://desolate-caverns-92812.herokuapp.com/api/random",
-      method: "GET"
-    };
-
-    //Ajax call, there are 1643 total quotes available
-    $.ajax(settings).done(res => {
-      // const data = res;
-      //to get a random quote:
-      // const randomNum = Math.floor(Math.random() * (1643 - 1) + 1);
-      // const { quote, author } = data[randomNum];
-      // quote.quote(quote);
-      // quoteAuthor.quote("- " + res.author);
-      quote.text(res.quote);
-      quoteAuthor.text("- " + res.author);
-      console.log(`${res.quote} -${res.author}`);
-    });
+const displayRandomQuote = () => {
+  // Settings for the api
+  const settings = {
+    async: true,
+    crossDomain: true,
+    url: "https://desolate-caverns-92812.herokuapp.com/api/random",
+    method: "GET"
   };
 
-  // displayDaysSober();
-  displayRandomQuote();
+  //Ajax call to sobriety api
+  $.ajax(settings).done(res => {
+    quote.text(res.quote);
+    quoteAuthor.text("- " + res.author);
+    console.log(`${res.quote} -${res.author}`);
+  });
+};
 
+displayRandomQuote();
+
+$(document).ready(() => {
   // ********** FOR COUNTER/Chart ****************
   // How many sections in the chart; how many days/hours user has chosen for timeframe
+  // hardcoded for 24 hours for now
   const seriesLength = 24;
 
   const currentTimePoints = moment().format("kk");
 
   const seriesArray = [];
 
-  // Creates an array of pieces for the donut chart
+  // Creates an array of pieces for the donut chart based on the series length
   for (let i = 0; i < seriesLength; i++) {
     seriesArray.push(1);
   }
@@ -60,7 +39,7 @@ $(document).ready(() => {
   // Right now, just blue romance and grey(nepal); could add more colors to use
   const colors = ["#BFF0CF", "#87A2BB"];
 
-  // For the chart use blue romance for the current points, grey for those left to go
+  // For the chart use blue romance for the current points(hours past in the day), grey for those left to go
   const chartColors = [];
 
   for (let i = 0; i < seriesLength; i++) {
@@ -77,8 +56,8 @@ $(document).ready(() => {
       type: "donut",
       width: "100%"
     },
-    series: seriesArray, //length of array would come from the db
-    //labels would also depend on the time-frame the user was working with
+    series: seriesArray,
+    //labels for each section of the donut chart
     labels: [
       "hour",
       "hour",
@@ -105,7 +84,7 @@ $(document).ready(() => {
       "hour",
       "hour",
       "hour"
-    ], //note sure if we need labels
+    ],
 
     dataLabels: {
       enabled: false
@@ -124,6 +103,7 @@ $(document).ready(() => {
     plotOptions: {
       pie: {
         donut: {
+          // determines the size of the inner circle of the donut chart (the empty part)
           size: "85%"
         }
       }
@@ -137,6 +117,3 @@ $(document).ready(() => {
 
   chart.render();
 });
-
-//Can also render a blank chart initially and fetch data w/ ajax
-// https://apexcharts.com/docs/update-charts-from-json-api-ajax/

@@ -2,7 +2,7 @@ const router = require("express").Router();
 // Here we've add our isAuthenticated middleware to this route.
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("../models");
-// router.use("/", isAuthenticated);
+const nodemailer = require("nodemailer");
 
 // A user must be authenticated to access the below routes
 router.get("/daily", isAuthenticated, (req, res) => {
@@ -64,6 +64,34 @@ router.get("/journal", isAuthenticated, async (req, res) => {
     console.log(err);
     res.status(500).end();
   }
+});
+
+router.post("/email", isAuthenticated, async (req, res) => {
+  // create reusable transporter object using the default SMTP transport
+  const transporter = nodemailer.createTransport({
+    host: "smtp.ethereal.email",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: process.env.EM_USER, // generated ethereal user
+      pass: process.env.EM_PASS // generated ethereal password
+    }
+  });
+
+  const message = {
+    from: "user@ascent.com", // sender address
+    to: "helena.trantow9@ethereal.email", // list of receivers
+    subject: "New Quote", // Subject line
+    text: "A new quote has been added to the API.", // plain text body
+    html: "<i>A new quote has been added to the API.</i>" // html body
+  };
+
+  // send mail with defined transport object
+  const info = await transporter.sendMail(message);
+  // console.log(res);
+  console.log("Message sent: %s", info.messageId);
+
+  res.send("Email Sent!");
 });
 
 module.exports = router;

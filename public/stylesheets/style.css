@@ -487,7 +487,7 @@ div.info-box {
   background-color: rgba(58, 87, 114, 0.95);
 }
 
-div.outer-stars {
+div.outer-stars, div.badges {
   padding: 5px 10px;
   display: flex;
   flex-direction: row;
@@ -495,8 +495,11 @@ div.outer-stars {
   justify-content: center;
 }
 
+/* Outer container for the row of badges */
 div.badges {
-  max-width: 450px;
+  padding: 0;
+  max-width: 65%;
+  justify-content: space-around;
 }
 
 div.badges-col {
@@ -616,8 +619,11 @@ p.quote-author {
   text-align: right;
 }
 
+/* -------------------------------------- */
+/* API Submit Quote Page */
+
 a.submit-link {
-  color: #a6c7b1;
+  color: #617b92;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -626,10 +632,6 @@ a.submit-link:hover {
   font-weight: 500;
   color: #bce6c9;
 }
-
-/* -------------------------------------- */
-
-/* API Submit Quote Page */
 
 div.submit-box {
   max-width: 500px;
@@ -665,7 +667,7 @@ label>span.submit-optional-span {
 }
 
 @media screen and (min-width: 600px) {
-  div.days-until, div.quote-container {
+  div.days-until, div.quote-container, div.badges{
     width: 50%;
   }
   div.info-box {
