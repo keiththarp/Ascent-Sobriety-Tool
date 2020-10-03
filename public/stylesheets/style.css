@@ -523,7 +523,7 @@ div.badges-col {
 }
 
 img.earned-badge {
-  max-width: calc(35px + 4.2vmin);
+  width: calc(35px + 4.2vmin);
 }
 
 label.infoBadge {
