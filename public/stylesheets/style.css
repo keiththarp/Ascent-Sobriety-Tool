@@ -535,8 +535,8 @@ div.badges-col {
 }
 
 img.earned-badge {
-  width: calc(35px + 4.2vw);
-  height: calc(35px + 4.2vw);
+  width: calc(40px + 4.2vmin);
+  height: calc(40px + 4.2vmin);
 }
 
 label.infoBadge {
