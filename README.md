@@ -11,14 +11,16 @@
 ---
 
 #### Table of Contents
-- [Our Team](#our)
-- [Description](#description)
-- [Time Tracking](#time)
-- [Daily Check In](#daily)
-- [Technologies Used](#technologies)
-- [License](#license)
-- [Contributing](#contributing)
-- [Questions](#questions)
+- [Ascent](#ascent)
+      - [Table of Contents](#table-of-contents)
+  - [Our Team:](#our-team)
+  - [Description](#description)
+    - [Time Tracking](#time-tracking)
+    - [Daily Check In](#daily-check-in)
+    - [Demo](#demo)
+    - [Technologies Used](#technologies-used)
+    - [Contributing](#contributing)
+      - [License](#license)
 
 ---
 
@@ -83,6 +85,8 @@ Every day the member checks into the app, they are met with our check in page.
 - [Express](https://expressjs.com/)
 - [Sequelize](https://sequelize.org/)
 - [MySQL](https://www.mysql.com/)
+- [CORS](https://www.npmjs.com/package/cors)
+- [Nodemailer](https://nodemailer.com/about/)
 - [Passport](http://www.passportjs.org/)
 - [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
 - [Moment](https://momentjs.com/)
