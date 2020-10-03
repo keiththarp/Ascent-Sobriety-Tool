@@ -180,6 +180,15 @@ img.info {
   margin: .5rem;
 }
 
+div.info-badges {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
 /* ---- Register Stylings ---- */
 
 h2.signupTitle {
@@ -241,7 +250,7 @@ div.box {
   margin-top: 2rem;
   max-width: 700px;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -390,12 +399,15 @@ div.journal-box {
 }
 
 div.journal-entry, div.resource-article {
-  max-width: 375px;
   min-height: 225px;
   background-color: rgb(58, 87, 114, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+div.journal-entry {
+  width: 400px;
 }
 
 div.resource-article {
@@ -508,12 +520,12 @@ div.outer-stars, div.badges {
 
 /* Outer container for the row of badges */
 
-div.badges {
+/* div.badges {
   padding: 0;
   max-width: 65%;
   height: auto;
   justify-content: space-around;
-}
+} */
 
 div.badges-col {
   display: flex;
@@ -523,18 +535,24 @@ div.badges-col {
 }
 
 img.earned-badge {
-  max-width: calc(35px + 4.2vmin);
+  width: calc(40px + 4.2vmin);
+  height: calc(40px + 4.2vmin);
 }
 
 label.infoBadge {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0;
 }
 
 img.about {
   display: flex;
   max-width: calc(5vw);
+}
+
+p.about-info {
+  margin-bottom: 5px;
 }
 
 /*  For days/etc until next badge */
@@ -686,6 +704,9 @@ label>span.submit-optional-span {
   }
   div.checkin-box {
     margin-bottom: 2rem;
+  }
+  div.journal-entry {
+    width: 300px;
   }
 }
 

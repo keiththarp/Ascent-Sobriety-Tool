@@ -35,7 +35,7 @@
 
 <main class="main-content">
     {{!-- container for content with animatecss styling --}}
-    <div class="box info-box animate__animated animate__fadeIn animate__delay-0.5s">
+    <div class="box checkin-box info-box animate__animated animate__fadeIn animate__delay-0.5s">
         <div class="container">
             {{!-- subtitle --}}
             <h4>About Us</h4>
@@ -55,37 +55,33 @@
             <div classs="container">
                 {{!-- Description --}}
                 <p class="about-info">The smaller icons found on the home page represent your total sober time,
-                    discontinuous or otherwise. See below for a guide on what they all reprsent!</p>
-                <div class="small-icons outer-stars">
-                    <label class="info"><i class="fas fa-medal year-star info"></i> One Year</label>
-                    <label class="info"><i class="fas fa-star month-star info"></i> One Month</label>
-                    <label class="info"><i class="far fa-sun week-star info"></i> One Week</label>
-                    <label class="info"><i class="fas fa-sun day-star info"></i> One Day</label>
+                    discontinuous or otherwise. See below for a guide on what they all represent!</p>
+                <div class="container small-icons info-badges">
+                    <label class="infoBadge"><i class="fas fa-medal year-star info"></i>1 Year</label>
+                    <label class="infoBadge"><i class="fas fa-star month-star info"></i>1 Month</label>
+                    <label class="infoBadge"><i class="far fa-sun week-star info"></i>1 Week</label>
+                    <label class="infoBadge"><i class="fas fa-sun day-star info"></i>1 Day</label>
                 </div>
+                <hr />
                 <p class="about-info">The larger icons on the home page reflect your continuous time! See below for a
                     guide
                     on what they all mean.</p>
                 {{!-- Stars Container --}}
-                <div class="container outer-stars">
+                <div class="info-badges">
                     <label class="infoBadge"><img class="earned-badge info" src="./img/badges/oneDay.png"
-                            alt="One Day Badge"> One
-                        Day</label>
+                            alt="One Day Badge">1 Day</label>
                     <label class="infoBadge"><img class="earned-badge info" src="./img/badges/fiveDay.png"
-                            alt="5 Day Badge"> Five
-                        Days</label>
+                            alt="5 Day Badge"> 5 Days</label>
                     <label class="infoBadge"><img class="earned-badge info" src="./img/badges/tenDay.png"
-                            alt="15 Day Badge"> Ten
-                        Days</label>
+                            alt="15 Day Badge"> 10 Days</label>
                     <label class="infoBadge"><img class="earned-badge info" src="./img/badges/oneMonth.png"
-                            alt="One Month Badge"> One
-                        Month</label>
+                            alt="One Month Badge"> 1 Month</label>
                     <label class="infoBadge"><img class="earned-badge info" src="./img/badges/oneYear.png"
-                            alt="One Year Badge"> One
-                        Year</label>
+                            alt="One Year Badge"> 1 Year</label>
                 </div>
             </div>
         </div>
-
+    </div>
 </main>
 
 <!-- mobile menu -->
