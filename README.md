@@ -10,14 +10,17 @@
 ---
 
 #### Table of Contents
-- [Our Team](#our)
-- [Description](#description)
-- [Daily Check In](#daily)
-- [Time Tracking](#time)
-- [Technologies Used](#technologies)
-- [License](#license)
-- [Contributing](#contributing)
-- [Questions](#questions)
+- [Ascent](#ascent)
+      - [Deployed Link: check us out on heroku!](#deployed-link-check-us-out-on-heroku)
+      - [Table of Contents](#table-of-contents)
+  - [Our Team:](#our-team)
+  - [Description](#description)
+    - [Daily Check In](#daily-check-in)
+    - [Time Tracking](#time-tracking)
+    - [Demo](#demo)
+    - [Technologies Used](#technologies-used)
+    - [Contributing](#contributing)
+      - [License](#license)
 
 ---
 
@@ -81,6 +84,8 @@ The last element on the home page is an inspirational quote and an option to sub
 - [Express](https://expressjs.com/)
 - [Sequelize](https://sequelize.org/)
 - [MySQL](https://www.mysql.com/)
+- [CORS](https://www.npmjs.com/package/cors)
+- [Nodemailer](https://nodemailer.com/about/)
 - [Passport](http://www.passportjs.org/)
 - [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
 - [Moment](https://momentjs.com/)

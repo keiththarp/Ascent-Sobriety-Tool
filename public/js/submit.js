@@ -44,7 +44,7 @@ $(document).ready(() => {
 
     $.ajax(settings).done(res => {
       console.log(res);
-      window.location.reload();
+      window.location.replace("/counter");
     });
   };
 
