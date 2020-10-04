@@ -12,12 +12,3 @@ module.exports = {
     dialect: "mysql"
   }
 };
-
-// If we wanted to test we would use this database
-// "test": {
-//     "username": "root",
-//     "password": null,
-//     "database": "database_test",
-//     "host": "127.0.0.1",
-//     "dialect": "mysql"
-//   },

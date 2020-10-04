@@ -109,6 +109,7 @@ router.post("/check-in", (req, res) => {
     body: req.body.body,
     feeling: req.body.feeling,
     hiccup: req.body.hiccup,
+    soberTally: req.body.soberTally,
     postDate: req.body.postDate
   })
     .then(() => {

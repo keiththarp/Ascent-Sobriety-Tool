@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const CheckIn = sequelize.define("CheckIn", {
     id: {
       type: DataTypes.INTEGER,
@@ -28,6 +28,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
+    soberTally: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+
     postDate: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -35,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  CheckIn.associate = function(models) {
+  CheckIn.associate = function (models) {
     CheckIn.belongsTo(models.User, {
       targetKey: "id"
     });
