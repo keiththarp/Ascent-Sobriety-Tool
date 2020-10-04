@@ -3,8 +3,6 @@ $(document).ready(() => {
   let user = {};
   // This function just does a GET request to figure out which user is logged in
   $.get("/api/user_data").then(data => {
-    console.log("This is the user data");
-    console.log(data);
     displayName(data);
     user = data;
   });
@@ -26,12 +24,13 @@ $(document).ready(() => {
     });
   }
 
-  function sendCheckIn(id, userMood, soberYN, checkInText, today) {
+  function sendCheckIn(id, userMood, soberYN, consDays, checkInText, today) {
     $.post("/api/check-in", {
       authorId: id,
       body: checkInText,
       feeling: userMood,
       hiccup: soberYN,
+      soberTally: consDays,
       postDate: today
     })
       .then(() => {
@@ -126,7 +125,6 @@ $(document).ready(() => {
         break;
       case 365:
         user.badgeFive = 1;
-        // eslint-disable-next-line prettier/prettier
         break;
     }
 
@@ -134,7 +132,7 @@ $(document).ready(() => {
     checkInText = checkInBox.val().trim();
     const today = moment().format("ddd, MM/DD/YY h:mm A");
     sendSoberData(user.id, user.consDays, user.stars, user.badgeOne, user.badgeTwo, user.badgeThree, user.badgeFour, user.badgeFive).then(() => {
-      sendCheckIn(user.id, userMood, soberYN, checkInText, today);
+      sendCheckIn(user.id, userMood, soberYN, user.consDays, checkInText, today);
     });
   });
 
