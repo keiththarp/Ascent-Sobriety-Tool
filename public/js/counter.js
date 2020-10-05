@@ -15,7 +15,6 @@ const displayRandomQuote = () => {
   $.ajax(settings).done(res => {
     quote.text(res.quote);
     quoteAuthor.text("- " + res.author);
-    console.log(`${res.quote} -${res.author}`);
   });
 };
 
