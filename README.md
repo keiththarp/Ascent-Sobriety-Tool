@@ -1,5 +1,7 @@
-# Ascent
+# Ascent Sobriety Tool
 [![License: GPL v3.0](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
+
+Ascent is a sobriety tool that helps members track their daily mood & thoughts as well as various lengths of sobriety. In a time where more and more people are living sober lifestyles, this app caters to those who are seeking to track continuous time as well as discontinuous time.
 
 <img src="./public/img/md/front-page.png" alt="Image of start page of application" width="50%"><img src="./public/img/md/counter-page.png" alt="Image of counter page of application" width="50%">
     
